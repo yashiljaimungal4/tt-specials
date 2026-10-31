@@ -52,7 +52,7 @@ jobs:
         run: |
           git config user.name "tt-monitor"
           git config user.email "actions@users.noreply.github.com"
-          for f in state.json last_run.log docs/deals.json probe.json; do [ -f "$f" ] && git add "$f"; done; true
+          for f in state.json last_run.log docs/deals.json probe.json probe; do [ -e "$f" ] && git add "$f"; done; true
           git diff --cached --quiet || (git commit -m "Update deals" && git pull --rebase && git push)
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
