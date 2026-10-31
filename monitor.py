@@ -563,6 +563,9 @@ def main():
     hits = list(uniq.values())
 
     alerted = state["alerted"]
+    can_alert = DRY or (bool(os.environ.get("VAPID_PRIVATE_KEY", "").strip()) and bool(load_subscriptions()))
+    if not can_alert:
+        log("No phone connected yet - deals are shown in the app but not marked as alerted.")
     new, last_day = [], []
     for h in hits:
         key = f"{h['store']}|{h['url']}|{h['special'][1]:.2f}|{h['end'].date() if h['end'] else ''}"
@@ -570,7 +573,8 @@ def main():
             h["first_seen"] = alerted[key]["first_seen"]
         if key not in alerted:
             new.append(h)
-            alerted[key] = {"first_seen": NOW.isoformat(), "end": h["end"].isoformat() if h["end"] else None}
+            if can_alert:  # only remember it once a phone can actually be told
+                alerted[key] = {"first_seen": NOW.isoformat(), "end": h["end"].isoformat() if h["end"] else None}
         elif h["end"] and h["end"].date() == NOW.date() and h["kind"] != "clothing" and not alerted[key].get("lastday"):
             last_day.append(h)
             alerted[key]["lastday"] = True
