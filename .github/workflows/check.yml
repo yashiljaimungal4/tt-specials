@@ -44,7 +44,7 @@ jobs:
           case "${{ github.event.inputs.mode }}" in
             dry-run)    python monitor.py --dry-run ;;
             test-alert) python monitor.py --test-alert ;;
-            probe)      python probe.py ;;
+            probe)      pip install -q playwright && python -m playwright install --with-deps chromium >/dev/null && python probe.py ;;
             *)          python monitor.py ;;
           esac
       - name: Save results
