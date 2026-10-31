@@ -1,4 +1,4 @@
-Run at 2026-10-31 16:25 SAST
+Run at 2026-10-31 16:35 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 50 products, 50 on special
   Table Tennis 11 /clearance: 91 products, 91 on special
@@ -21,8 +21,16 @@ Checking JOOLA Europe...
 Checking Donic...
   Donic: 49 products checked, 0 on special
 Checking STIGA...
-  STIGA /en/category/sale/table-tennis-bats-sale: 5 products
+  STIGA /en/category/sale/table-tennis-bats-sale: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.stigasports.com/en/category/sale/table-tennis-bats-sale", waiting until "networkidle"
+
   STIGA /en/category/sale/outlet: 20 products
+No phone connected yet - deals are shown in the app but not marked as alerted.
+  (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
+  (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
+  (no phones subscribed - alert not sent: 49 new shoes specials)
+  (no phones subscribed - alert not sent: 301 new clothing specials)
 Done: 396 watchlist specials live, 352 new, 0 last-day reminders.
   * Table Tennis 11 | Andro Nuzn 55 | Andro Nuzn 55: €44.56 (~R830) (was €65.53 (~R1,220), -32%) — ends Sun 01 Nov at midnight
   * Table Tennis 11 | Clothing ≤R550 | Neottec Socks Style navy: €3.21 (~R60) (was €4.02 (~R75), -20%) — ends Sun 01 Nov at midnight
