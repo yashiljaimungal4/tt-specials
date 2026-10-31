@@ -1,0 +1,114 @@
+{
+  "monitor_end_date": "2027-01-31",
+  "timezone": "Africa/Johannesburg",
+  "tt11": {
+    "base": "https://tabletennis11.com/en",
+    "sale_pages": [
+      "/special-offers",
+      "/clearance"
+    ],
+    "rubbers": [
+      {
+        "label": "Donic Bluestar A1",
+        "search": "donic bluestar a1",
+        "must_contain": [
+          "bluestar",
+          "a1"
+        ]
+      },
+      {
+        "label": "Andro Nuzn 55",
+        "search": "andro nuzn 55",
+        "must_contain": [
+          "nuzn",
+          "55"
+        ]
+      }
+    ],
+    "clothing_max_zar": 550,
+    "shoes_search": "shoes"
+  },
+  "racketlon": {
+    "base": "https://racketlon.co.za",
+    "rubbers": [
+      {
+        "label": "Butterfly Dignics",
+        "search": "dignics",
+        "must_contain": [
+          "dignics"
+        ]
+      },
+      {
+        "label": "Butterfly Tenergy 05",
+        "search": "tenergy 05",
+        "must_contain": [
+          "tenergy",
+          "05"
+        ],
+        "must_not_contain": [
+          "fx"
+        ]
+      }
+    ],
+    "clothing_search": [
+      "table tennis shirt",
+      "table tennis shorts",
+      "table tennis clothing",
+      "butterfly shirt",
+      "stiga shirt"
+    ],
+    "shoes_search": [
+      "table tennis shoes"
+    ]
+  },
+  "clothing_keywords": [
+    "shirt",
+    "t-shirt",
+    "tshirt",
+    "polo",
+    "shorts",
+    "short ",
+    "skirt",
+    "dress",
+    "socks",
+    "sock",
+    "jacket",
+    "tracksuit",
+    "pants",
+    "trousers",
+    "hoodie",
+    "sweat",
+    "jersey",
+    "top",
+    "vest",
+    "cap"
+  ],
+  "shoe_keywords": [
+    "shoe",
+    "shoes"
+  ],
+  "tt_brands": [
+    "butterfly",
+    "stiga",
+    "donic",
+    "joola",
+    "tibhar",
+    "andro",
+    "xiom",
+    "yasaka",
+    "nittaku",
+    "mizuno",
+    "li-ning",
+    "dhs",
+    "victas",
+    "tsp",
+    "neottec",
+    "killerspin",
+    "sanwei",
+    "729",
+    "gewo",
+    "cornilleau"
+  ],
+  "app_url": "https://yashiljaimungal4.github.io/tt-specials/",
+  "vapid_subject": "https://yashiljaimungal4.github.io/tt-specials/"
+}

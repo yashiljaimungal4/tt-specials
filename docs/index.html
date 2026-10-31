@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TT Deals</title>
+<meta name="theme-color" content="#101B2D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TT Deals">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style>
+  :root {
+    --navy: #101B2D; --navy-2: #1B2A42; --red: #E63946; --red-soft: #FDECEE;
+    --ink: #121826; --muted: #6B7385; --line: #E6E9EF; --bg: #F3F5F8; --card: #FFFFFF;
+    --green: #12805C; --green-soft: #E5F5EE; --amber: #B45309; --amber-soft: #FEF3E2;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  button { font: inherit; cursor: pointer; }
+
+  header { background: var(--navy); color: #fff; padding: calc(env(safe-area-inset-top) + 18px) 20px 18px;
+    position: sticky; top: 0; z-index: 5; }
+  .top { display: flex; align-items: center; gap: 12px; }
+  .top img { width: 38px; height: 38px; border-radius: 10px; }
+  .top h1 { margin: 0; font-size: 21px; letter-spacing: -0.3px; }
+  .top .sub { font-size: 12.5px; color: #A9B4C7; margin-top: 1px; }
+  .bell { margin-left: auto; background: var(--navy-2); border: 0; color: #fff; width: 40px; height: 40px;
+    border-radius: 12px; display: grid; place-items: center; position: relative; }
+  .bell .dot { position: absolute; top: 8px; right: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
+  .bell.on .dot { background: #3DDC97; }
+
+  .tabs { display: flex; gap: 6px; margin-top: 16px; background: var(--navy-2); padding: 4px; border-radius: 14px; }
+  .tab { flex: 1; border: 0; background: transparent; color: #C3CCDA; padding: 9px 4px; border-radius: 11px; font-size: 13.5px; font-weight: 600; }
+  .tab.active { background: #fff; color: var(--navy); }
+  .tab .n { font-weight: 500; opacity: .6; margin-left: 3px; }
+
+  .stores { display: flex; gap: 8px; padding: 14px 20px 4px; overflow-x: auto; scrollbar-width: none; }
+  .chip { border: 1px solid var(--line); background: #fff; color: var(--muted); padding: 7px 13px;
+    border-radius: 999px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+  .chip.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+  main { padding: 8px 16px calc(env(safe-area-inset-bottom) + 90px); max-width: 720px; margin: 0 auto; }
+  .section { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; margin: 18px 6px 10px; }
+
+  .banner { background: #fff; border-radius: var(--radius); padding: 16px; margin: 14px 0 4px; display: flex; gap: 14px; align-items: center;
+    box-shadow: 0 1px 2px rgba(16,27,45,.05), 0 6px 20px rgba(16,27,45,.05); }
+  .banner .ic { width: 42px; height: 42px; border-radius: 12px; background: var(--red-soft); display: grid; place-items: center; flex: none; }
+  .banner b { display: block; font-size: 15px; }
+  .banner span { color: var(--muted); font-size: 13px; }
+  .btn { border: 0; background: var(--red); color: #fff; font-weight: 700; padding: 10px 14px; border-radius: 12px; font-size: 14px; white-space: nowrap; }
+  .btn.ghost { background: var(--bg); color: var(--ink); }
+
+  .feature { background: var(--card); border-radius: 22px; overflow: hidden; margin-bottom: 12px; display: block; color: inherit; text-decoration: none;
+    box-shadow: 0 1px 2px rgba(16,27,45,.05), 0 10px 30px rgba(16,27,45,.08); }
+  .feature .ph { height: 170px; background: #fff; display: grid; place-items: center; position: relative; border-bottom: 1px solid var(--line); }
+  .feature .ph img { max-height: 150px; max-width: 80%; object-fit: contain; }
+  .feature .body { padding: 16px 18px 18px; }
+  .feature .name { font-size: 19px; font-weight: 750; letter-spacing: -.2px; margin: 6px 0 10px; }
+  .feature .price { font-size: 30px; }
+
+  .card { background: var(--card); border-radius: var(--radius); padding: 12px; margin-bottom: 10px; display: flex; gap: 14px;
+    color: inherit; text-decoration: none; box-shadow: 0 1px 2px rgba(16,27,45,.05), 0 4px 14px rgba(16,27,45,.05); }
+  .card .ph { width: 92px; height: 92px; border-radius: 14px; background: #fff; border: 1px solid var(--line); flex: none;
+    display: grid; place-items: center; overflow: hidden; position: relative; }
+  .card .ph img { width: 100%; height: 100%; object-fit: contain; }
+  .ph .ph-fallback { font-size: 30px; }
+  .card .info { min-width: 0; flex: 1; display: flex; flex-direction: column; }
+  .card .name { font-weight: 650; font-size: 15px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin: 3px 0 6px; }
+
+  .meta { display: flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; }
+  .store-dot { width: 7px; height: 7px; border-radius: 50%; background: #3B82F6; }
+  .store-dot.rk { background: #F59E0B; }
+  .prices { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .price { font-size: 20px; font-weight: 800; letter-spacing: -.4px; }
+  .was { color: var(--muted); text-decoration: line-through; font-size: 13.5px; }
+  .orig { color: var(--muted); font-size: 12px; }
+  .off { background: var(--red); color: #fff; font-size: 12px; font-weight: 800; padding: 3px 7px; border-radius: 8px; }
+  .feature .off { position: absolute; top: 14px; left: 14px; font-size: 14px; padding: 5px 10px; border-radius: 10px; }
+  .foot { margin-top: auto; padding-top: 8px; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .pill { font-size: 12px; font-weight: 650; padding: 4px 9px; border-radius: 999px; background: var(--bg); color: var(--muted); display: inline-flex; align-items: center; gap: 5px; }
+  .pill.time { background: var(--green-soft); color: var(--green); }
+  .pill.soon { background: var(--amber-soft); color: var(--amber); }
+  .pill.last { background: var(--red-soft); color: var(--red); }
+  .pill.oos { background: #F1F2F5; color: #8A90A0; }
+  .pill.new { background: var(--navy); color: #fff; }
+
+  .empty { text-align: center; color: var(--muted); padding: 50px 20px; }
+  .empty .big { font-size: 42px; margin-bottom: 8px; }
+  .empty b { color: var(--ink); display: block; font-size: 16px; margin-bottom: 4px; }
+
+  .sheet-bg { position: fixed; inset: 0; background: rgba(16,27,45,.45); z-index: 20; display: none; }
+  .sheet { position: fixed; left: 0; right: 0; bottom: 0; background: #fff; border-radius: 24px 24px 0 0; z-index: 21;
+    padding: 10px 22px calc(env(safe-area-inset-bottom) + 24px); max-width: 720px; margin: 0 auto; transform: translateY(105%); transition: transform .25s ease; max-height: 85vh; overflow-y: auto; }
+  .sheet.open { transform: none; }
+  .sheet .grab { width: 40px; height: 5px; border-radius: 3px; background: var(--line); margin: 0 auto 14px; }
+  .sheet h2 { margin: 0 0 4px; font-size: 20px; }
+  .sheet p { color: var(--muted); margin: 0 0 14px; font-size: 14px; }
+  .wl { border: 1px solid var(--line); border-radius: 16px; padding: 4px 14px; margin-bottom: 12px; }
+  .wl .row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+  .wl .row:last-child { border-bottom: 0; }
+  .wl h3 { font-size: 13px; margin: 12px 0 4px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  .ok { color: var(--green); font-weight: 650; } .bad { color: var(--red); font-weight: 650; }
+  .steps { margin: 0 0 16px; padding-left: 20px; } .steps li { margin-bottom: 8px; }
+  .full { width: 100%; padding: 14px; font-size: 15px; margin-top: 4px; }
+  .toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom) + 24px); transform: translateX(-50%) translateY(150%);
+    background: var(--ink); color: #fff; padding: 12px 18px; border-radius: 14px; font-size: 14px; z-index: 30; transition: transform .25s, opacity .25s; max-width: 90vw; opacity: 0; visibility: hidden; }
+  .toast.show { transform: translateX(-50%); opacity: 1; visibility: visible; }
+  .skeleton { height: 116px; border-radius: var(--radius); background: linear-gradient(90deg,#eceff3 25%,#f6f7f9 50%,#eceff3 75%); background-size: 200% 100%; animation: sh 1.2s infinite; margin-bottom: 10px; }
+  @keyframes sh { to { background-position: -200% 0; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <img src="icons/icon-192.png" alt="">
+    <div>
+      <h1>TT Deals</h1>
+      <div class="sub" id="updated">Checking for specials…</div>
+    </div>
+    <button class="bell" id="bellBtn" aria-label="Alerts and watchlist">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+      <span class="dot"></span>
+    </button>
+  </div>
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-kind="all">All<span class="n"></span></button>
+    <button class="tab" data-kind="rubber">Rubbers<span class="n"></span></button>
+    <button class="tab" data-kind="shoes">Shoes<span class="n"></span></button>
+    <button class="tab" data-kind="clothing">Clothing<span class="n"></span></button>
+  </nav>
+</header>
+
+<div class="stores" id="stores">
+  <button class="chip active" data-store="all">All stores</button>
+  <button class="chip" data-store="Table Tennis 11">Table Tennis 11</button>
+  <button class="chip" data-store="Racketlon">Racketlon</button>
+</div>
+
+<main id="main">
+  <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+</main>
+
+<div class="sheet-bg" id="sheetBg"></div>
+<div class="sheet" id="sheet"><div class="grab"></div><div id="sheetBody"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const VAPID_PUBLIC = "BM9Cz8aVmt8DF4ltw3uH705wqUuTyouaieTXf19EaOUex8fnTokPiileL51oL3Ow7Ahul0mvkOrFxONu8jc4yP8";
+const REPO = "yashiljaimungal4/tt-specials";
+const state = { data: null, kind: "all", store: "all" };
+const $ = (s) => document.querySelector(s);
+const fmtR = (n) => "R" + Math.round(n).toLocaleString("en-ZA").replace(/,/g, " ");
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const standalone = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+const pushSupported = "serviceWorker" in navigator && "PushManager" in window && "Notification" in window;
+
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2800); }
+
+function timeLeft(end) {
+  if (!end) return null;
+  const ms = new Date(end) - Date.now();
+  if (ms <= 0) return { text: "Ended", cls: "oos" };
+  const h = Math.floor(ms / 3.6e6), d = Math.floor(h / 24), m = Math.floor((ms % 3.6e6) / 6e4);
+  const text = d >= 1 ? `Ends in ${d}d ${h % 24}h` : h >= 1 ? `Ends in ${h}h ${m}m` : `Ends in ${m}m`;
+  return { text: h < 24 ? (h < 6 ? "Last hours · " : "Last day · ") + text.replace("Ends in ", "") + " left" : text,
+           cls: h < 6 ? "last" : h < 24 ? "soon" : "time" };
+}
+
+const clock = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+const fallback = { rubber: "🏓", shoes: "👟", clothing: "👕" };
+
+function badges(d) {
+  const out = [];
+  const t = timeLeft(d.end);
+  if (t) out.push(`<span class="pill ${t.cls}">${clock}${t.text}</span>`);
+  else out.push(`<span class="pill">${d.where === "clearance" ? "Clearance · while stock lasts" : "No end date given"}</span>`);
+  if (!d.in_stock) out.push('<span class="pill oos">Out of stock</span>');
+  if (Date.now() - new Date(d.first_seen) < 36e5 * 24) out.push('<span class="pill new">New</span>');
+  return out.join("");
+}
+
+function photo(d, cls) {
+  const fb = `<span class="ph-fallback">${fallback[d.kind] || "🏓"}</span>`;
+  return d.image ? `<img src="${esc(d.image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ph-fallback',textContent:'${fallback[d.kind] || "🏓"}'}))">` : fb;
+}
+
+function priceBlock(d) {
+  return `<div class="prices"><span class="price">${fmtR(d.price_zar)}</span>` +
+    (d.was_zar ? `<span class="was">${fmtR(d.was_zar)}</span>` : "") +
+    (d.price_orig ? `<span class="orig">${esc(d.price_orig)}</span>` : "") + `</div>`;
+}
+
+function card(d) {
+  const rk = d.store === "Racketlon" ? " rk" : "";
+  return `<a class="card" href="${esc(d.url)}" target="_blank" rel="noopener" id="${esc(d.id)}">
+    <div class="ph">${photo(d)}</div>
+    <div class="info">
+      <div class="meta"><span class="store-dot${rk}"></span>${esc(d.store)}${d.pct ? ` · <span class="off">−${d.pct}%</span>` : ""}</div>
+      <div class="name">${esc(d.name)}</div>
+      ${priceBlock(d)}
+      <div class="foot">${badges(d)}</div>
+    </div></a>`;
+}
+
+function feature(d) {
+  const rk = d.store === "Racketlon" ? " rk" : "";
+  return `<a class="feature" href="${esc(d.url)}" target="_blank" rel="noopener" id="${esc(d.id)}">
+    <div class="ph">${photo(d)}${d.pct ? `<span class="off">−${d.pct}%</span>` : ""}</div>
+    <div class="body">
+      <div class="meta"><span class="store-dot${rk}"></span>${esc(d.store)} · On your watchlist</div>
+      <div class="name">${esc(d.name)}</div>
+      ${priceBlock(d)}
+      <div class="foot">${badges(d)}</div>
+    </div></a>`;
+}
+
+function alertBanner() {
+  if (localStorage.getItem("ttd-subscribed")) return "";
+  return `<div class="banner"><div class="ic">🔔</div><div style="flex:1"><b>Get alerts on your phone</b><span>Be told the moment your gear goes on special.</span></div><button class="btn" onclick="openAlerts()">Turn on</button></div>`;
+}
+
+function render() {
+  const d = state.data;
+  if (!d) return;
+  const deals = d.deals.filter((x) => state.store === "all" || x.store === state.store);
+  document.querySelectorAll(".tab").forEach((t) => {
+    const k = t.dataset.kind;
+    t.querySelector(".n").textContent = (k === "all" ? deals : deals.filter((x) => x.kind === k)).length || "";
+  });
+  const shown = deals.filter((x) => state.kind === "all" || x.kind === state.kind);
+  let html = alertBanner();
+  if (!shown.length) {
+    const label = { all: "specials", rubber: "rubber specials", shoes: "shoe specials", clothing: "clothing specials" }[state.kind];
+    html += `<div class="empty"><div class="big">🏓</div><b>No ${label} right now</b>We check 5 times a day and will alert you when something on your watchlist drops in price.</div>`;
+  } else {
+    const rubbers = shown.filter((x) => x.kind === "rubber");
+    const rest = shown.filter((x) => x.kind !== "rubber");
+    if (rubbers.length) html += `<div class="section">Your rubbers</div>` + rubbers.map(feature).join("");
+    for (const k of ["shoes", "clothing"]) {
+      const g = rest.filter((x) => x.kind === k);
+      if (g.length) html += `<div class="section">${k === "shoes" ? "Shoes" : "Clothing"} · ${g.length}</div>` + g.map(card).join("");
+    }
+  }
+  $("#main").innerHTML = html;
+}
+
+function setUpdated() {
+  if (!state.data) return;
+  const u = new Date(state.data.updated);
+  const mins = Math.round((Date.now() - u) / 6e4);
+  const ago = mins < 1 ? "just now" : mins < 60 ? `${mins} min ago` : mins < 1440 ? `${Math.round(mins / 60)} h ago` : u.toLocaleDateString("en-ZA", { day: "numeric", month: "short" });
+  $("#updated").textContent = `${state.data.deals.length} specials · checked ${ago}`;
+}
+
+async function load() {
+  try {
+    const r = await fetch("deals.json?t=" + Date.now(), { cache: "no-store" });
+    state.data = await r.json();
+  } catch (e) {
+    if (!state.data) { $("#main").innerHTML = `<div class="empty"><div class="big">📡</div><b>Can't load deals</b>Check your connection and pull to refresh.</div>`; return; }
+  }
+  const h = location.hash.slice(1);
+  if (["rubber", "shoes", "clothing"].includes(h)) setKind(h, false); else render();
+  setUpdated();
+  const el = h && document.getElementById(h);
+  if (el) el.scrollIntoView({ block: "center" });
+}
+
+function setKind(k, push = true) {
+  state.kind = k;
+  document.querySelectorAll(".tab").forEach((t) => t.classList.toggle("active", t.dataset.kind === k));
+  if (push) history.replaceState(null, "", k === "all" ? location.pathname : "#" + k);
+  render();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+$("#tabs").addEventListener("click", (e) => { const b = e.target.closest(".tab"); if (b) setKind(b.dataset.kind); });
+$("#stores").addEventListener("click", (e) => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  state.store = b.dataset.store;
+  document.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === b));
+  render();
+});
+
+// ---------- sheet: alerts + watchlist ----------
+function openSheet(html) { $("#sheetBody").innerHTML = html; $("#sheetBg").style.display = "block"; requestAnimationFrame(() => $("#sheet").classList.add("open")); }
+function closeSheet() { $("#sheet").classList.remove("open"); setTimeout(() => ($("#sheetBg").style.display = "none"), 250); }
+$("#sheetBg").onclick = closeSheet;
+
+function watchlistHtml() {
+  const d = state.data; if (!d) return "";
+  return Object.entries(d.watchlist).map(([store, items]) => {
+    const ok = d.stores[store];
+    return `<h3>${esc(store)} · <span class="${ok ? "ok" : "bad"}">${ok ? "reading OK" : "couldn't read"}</span></h3><div class="wl">` +
+      items.map((i) => {
+        const n = d.deals.filter((x) => x.store === store && x.watch.startsWith(i.split(" ≤")[0])).length;
+        return `<div class="row"><span>${esc(i)}</span><span class="${n ? "ok" : ""}" style="${n ? "" : "color:var(--muted)"}">${n ? n + " on special" : "—"}</span></div>`;
+      }).join("") + `</div>`;
+  }).join("");
+}
+
+function openAlerts() {
+  let top;
+  const subscribed = localStorage.getItem("ttd-subscribed");
+  if (subscribed) {
+    top = `<h2>Alerts are on ✅</h2><p>This phone gets an alert when something on your watchlist goes on special. Checks run at 07:07, 12:07, 13:37, 16:07 and 20:07.</p>`;
+  } else if (isIOS && !standalone) {
+    top = `<h2>Add TT Deals to your Home Screen</h2><p>On iPhone, alerts only work from the installed app.</p>
+      <ol class="steps"><li>Tap the <b>Share</b> button <span style="font-size:17px">⎋</span> in Safari</li><li>Choose <b>Add to Home Screen</b> → <b>Add</b></li><li>Open <b>TT Deals</b> from your Home Screen and tap the bell again</li></ol>`;
+  } else if (!pushSupported) {
+    top = `<h2>Alerts not supported here</h2><p>Open this page in Chrome (Android) or install it to your Home Screen (iPhone).</p>`;
+  } else {
+    top = `<h2>Turn on alerts</h2><p>Two taps: allow notifications, then confirm on GitHub (that's where your monitor runs). You'll get a test alert straight after.</p>
+      <button class="btn full" onclick="subscribe(this)">Allow notifications</button>`;
+  }
+  openSheet(top + `<div class="section" style="margin:22px 0 8px">Watching</div>` + watchlistHtml());
+}
+$("#bellBtn").onclick = openAlerts;
+window.openAlerts = openAlerts;
+
+function b64ToBytes(b64) {
+  const p = "=".repeat((4 - (b64.length % 4)) % 4);
+  const raw = atob((b64 + p).replace(/-/g, "+").replace(/_/g, "/"));
+  return Uint8Array.from([...raw].map((c) => c.charCodeAt(0)));
+}
+
+async function subscribe(btn) {
+  try {
+    btn.disabled = true; btn.textContent = "Asking permission…";
+    const perm = await Notification.requestPermission();
+    if (perm !== "granted") { btn.disabled = false; btn.textContent = "Allow notifications"; toast("Notifications were blocked. Allow them in your phone settings."); return; }
+    const reg = await navigator.serviceWorker.ready;
+    let sub = await reg.pushManager.getSubscription();
+    if (!sub) sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToBytes(VAPID_PUBLIC) });
+    const device = isIOS ? "iPhone" : /android/i.test(navigator.userAgent) ? "Android" : "Browser";
+    const body = "Tap **Submit new issue** below to connect this phone to your deals alerts. The page closes itself after.\n\n```json\n" +
+      JSON.stringify({ device, subscription: sub.toJSON() }) + "\n```";
+    const url = `https://github.com/${REPO}/issues/new?title=${encodeURIComponent("Subscribe " + device)}&body=${encodeURIComponent(body)}`;
+    localStorage.setItem("ttd-subscribed", "1");
+    $("#sheetBody").innerHTML = `<h2>Last step</h2><p>GitHub will open with everything filled in. Tap <b>Submit new issue</b> (or <b>Create</b>). Your test alert arrives within a minute or two.</p>
+      <a class="btn full" style="display:block;text-align:center;text-decoration:none" href="${url}" target="_blank" rel="noopener">Open GitHub to confirm</a>`;
+    render();
+  } catch (e) {
+    btn.disabled = false; btn.textContent = "Allow notifications";
+    toast("Couldn't turn on alerts: " + e.message);
+  }
+}
+window.subscribe = subscribe;
+
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+load();
+setInterval(() => { setUpdated(); if (state.data) render(); }, 60000);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) load(); });
+</script>
+</body>
+</html>

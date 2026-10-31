@@ -1,0 +1,69 @@
+name: Check table tennis specials
+
+on:
+  schedule:
+    # Times are UTC. South Africa = UTC+2.
+    - cron: "7 5 * * *"    # 07:07 SAST  morning
+    - cron: "7 10 * * *"   # 12:07 SAST  midday
+    - cron: "37 11 * * *"  # 13:37 SAST  lunch
+    - cron: "7 14 * * *"   # 16:07 SAST  afternoon
+    - cron: "7 18 * * *"   # 20:07 SAST  night
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "normal, dry-run, or test-alert"
+        default: "normal"
+  push:
+    branches: [main]
+    paths: ["docs/**"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: tt-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Run monitor
+        if: github.event_name != 'push'
+        env:
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+        run: |
+          case "${{ github.event.inputs.mode }}" in
+            dry-run)    python monitor.py --dry-run ;;
+            test-alert) python monitor.py --test-alert ;;
+            *)          python monitor.py ;;
+          esac
+      - name: Save results
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "tt-monitor"
+          git config user.email "actions@users.noreply.github.com"
+          for f in state.json last_run.log docs/deals.json; do [ -f "$f" ] && git add "$f"; done; true
+          git diff --cached --quiet || (git commit -m "Update deals" && git pull --rebase && git push)
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

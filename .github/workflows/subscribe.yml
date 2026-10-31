@@ -1,0 +1,43 @@
+name: Connect a phone for alerts
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: tt-monitor
+  cancel-in-progress: false
+
+jobs:
+  subscribe:
+    # Only the repository owner can connect phones.
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, 'Subscribe')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Save subscription
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python add_subscription.py
+      - name: Commit
+        run: |
+          git config user.name "tt-monitor"
+          git config user.email "actions@users.noreply.github.com"
+          git add subscriptions.json
+          git diff --cached --quiet || (git commit -m "Connect ${{ github.event.issue.title }}" && git pull --rebase && git push)
+      - name: Send test alert
+        env:
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+        run: python monitor.py --test-alert
+      - name: Close the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue close ${{ github.event.issue.number }} -R ${{ github.repository }} -c "✅ Phone connected. A test alert has been sent."
