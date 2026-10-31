@@ -106,6 +106,7 @@ def fmt(cur, amount):
 
 # ---------------------------------------------------------------- matching
 WL = CFG["watchlist"]
+PREFS_FILE = ROOT / "alert_prefs.json"
 
 
 def norm(s):
@@ -119,38 +120,111 @@ def matches(name, rule):
     return ok and not bad
 
 
-def has_kw(name, kws):
-    n = " " + (name or "").lower() + " "
+def has_kw(text, kws):
+    n = " " + re.sub(r"\s+", " ", (text or "").lower()) + " "
     return any(k in n for k in kws)
 
 
-NOT_GEAR = ["case", "bag", "protect", "towel", "ball", "net", "table ", "robot", "pickleball", "padel", "tennis racket",
-            "glue", "cleaner", "tape", "cover", "rucksack", "backpack", "bottle", "keychain", "gift card"]
+CATEGORIES = ["rubber", "blade", "racket", "balls", "clothing", "shoes", "bags", "accessories", "robots", "tables"]
+OTHER_SPORTS = ["padel", "pickleball", "badminton", "squash", "snowracer", "scooter", "kickbike", "golf", "tennis racket",
+                "tennis ball", "tennis string", "football", "hockey", "darts", "dart ", "netball", "skate", "sledge", "trampoline"]
+KW = {
+    "robots": ["robot", "amicus", "robo-pong", "robopong", "ipong", "pongbot", "ball machine", "trainerbot", "y&t", "power pong"],
+    "tables": [" table 25", " table 22", " table 19", " table 16", "rollaway", "centrefold", "europa 25", "nippon", "easifold",
+               "space saver", "outdoor table", "indoor table", "tt table", "table tennis table", "conversion top", "playback",
+               "rapid play", "inside 25", "nova ", "midsize", "compact table", "tisch ", "umpire table", "barrier", "surround",
+               "net and post", "net & post", "net set", "post set", "scoreboard", "score board", "scorer", "table cover", "table top"],
+    "shoes": ["shoe", "shoes", "schuh", "lezoline", "wave medal", "wave drive", "cross step", "speed flex", "kaito", "sneaker"],
+    "bags": ["bag", "backpack", "rucksack", "tasche", "case", "cover", "hülle", "trolley", "holdall", "wallet", "pouch", "box "],
+    "clothing": ["shirt", "t-shirt", "tshirt", "tee ", " tee", "polo", "shorts", "short ", "skirt", "skort", "dress", "socks", "sock",
+                 "jacket", "tracksuit", "track suit", "pants", "trousers", "hoodie", "sweat", "jersey", "trikot", "hose", "socken",
+                 "jacke", "trainingsanzug", "sleeve", " top ", " cap", "headband", "wristband", "hat ", "vest", "apparel", "singlet"],
+    "balls": [" ball", "balls", "40+", "3-star", "3 star", "3***", "***", "1-star", "training ball", "bälle"],
+    "racket": ["racket", "racquet", "bat ", " bat", "paddle", "pre-assembled", "preassembled", "proline", "pro-line", "pro line",
+               "schläger", "+ ", "set "],
+    "rubber": ["rubber", "belag", "sheet", " pips", "long pips", "short pips", "anti ", "rasanter", "hurricane", "tenergy", "dignics",
+               "rozena", "bluefire", "bluestar", "bluegrip", "bluestorm", "acuda", "dna ", "mantra", "helix", "omega", "vega ", "jekyll",
+               "evolution", "hybrid k", "quantum", "fastarc", "hammond", "moristo", "rakza", "mark v", "nuzn", "hexer", "target",
+               "tango", "rhyzer", "dynaryz", "rhyzm", "samba", "nexxus", "codexx", "neoflexx", "v > ", "vo >", "vs >", "v>", "sriver",
+               "bryce", "glayzer", "tackiness", "skyline", "big dipper", "battle", "neottec x", "genextion", "fastarc", "mx-p", "mx-s",
+               "el-p", "el-s", "k3", "k1", "aurus", "platin", "hybrid 5", "hybrid m", "hybrid h", "hybrid x", "hybrid s", "grass",
+               "curl", "feint", "tibhar 1", "air ", "yinhe", "palio", "friendship", "ventus", "spectol", "hydra", "d09c", "09c", "05 ",
+               "64 ", "80 ", "zyre", "spinart", "inspira", "cyber", "mx-d", "tsp ", "victas v", "grip", "spin rubber"],
+    "blade": ["blade", "holz", "carbon", "alc", "zlc", "zlf", "ply", "wood", "allround", " off", " def", "ligna", "synteliac",
+              "viscaria", "korbel", "innerforce", "primorac", "clipper", "ebenholz", "waldner", "persson", "septear", "acoustic",
+              "latika", "timo boll", "fan zhendong", "harimoto", "lin yun", "hinoki", "balsa", "coton", "cypress", "senso", "relevant",
+              "indeed", "dynasty", "infinity", "hadraw", "garaydia", "zhang jike", "ma long", "xu xin", "treiber", "kinetic",
+              "nexy", "ovtcharov", "boll ", "petr ", "stratus", "samsonov", "szocs", "defplay", "sword", "power", "ch.pen", "penhold"],
+    "accessories": ["glue", "booster", "edge tape", "tape", "cleaner", "protect", "film", "towel", "grip", "sponge", "net",
+                    "sealer", "lacquer", "cutter", "scissors", "key", "bottle", "sticker", "counter", "collector", "catch net",
+                    "ball pick", "kleber", "reiniger", "gift card", "accessor"],
+}
+HINTS = {  # category words shops put in product type / category fields
+    "rubbers": "rubber", "rubber": "rubber", "beläge": "rubber", "blades": "blade", "blade": "blade", "hölzer": "blade",
+    "rackets": "racket", "racket": "racket", "bat": "racket", "paddle": "racket", "balls": "balls", "ball": "balls",
+    "shoes": "shoes", "shoe": "shoes", "apparel": "clothing", "clothing": "clothing", "t-shirt": "clothing", "shorts": "clothing",
+    "short sleeve": "clothing", "long sleeve": "clothing", "socks": "clothing", "shirt": "clothing", "polo": "clothing",
+    "bags": "bags", "bag": "bags", "robots": "robots", "robot": "robots", "tables": "tables", "table": "tables",
+    "accessories": "accessories", "accessory": "accessories", "glue": "accessories", "nets": "tables",
+}
 
 
-def is_shoe(name):
-    return has_kw(name, WL["shoe_keywords"]) and not has_kw(name, ["bag", "lace", "sock", "pickleball", "padel"])
+STRONG_ACCESSORY = ["glue", "booster", "edge tape", "side tape", "power tape", " tape", "cleaner", "protection", "protector",
+                    "protect film", "sealer", "lacquer", "kleber", "reiniger", "chack", "free chack", "grip tape"]
+RACKET_MODELS = [" sg", "tbc ", "bty ", "striker", "prime c", "pro carbon", "nexy", "team ", "sbd ", "level ", "hobby"]
 
 
-def is_clothing(name):
-    return has_kw(name, WL["clothing_keywords"]) and not is_shoe(name) and not has_kw(name, NOT_GEAR)
+def categorize(name, cats=""):
+    """Best guess at the category: obvious product words first, then the shop's own label, then the name."""
+    n = " " + (name or "").lower().replace("table tennis", "tt") + " "
+    for cat in ("robots", "shoes"):
+        if has_kw(n, KW[cat]):
+            return cat
+    if has_kw(n, STRONG_ACCESSORY):
+        return "accessories"
+    if has_kw(n, ["shell", "case", "cover", "bag", "backpack"]) and not has_kw(n, ["shirt", "short"]):
+        return "bags"
+    c = (cats or "").lower().strip()
+    if c:
+        for h, cat in sorted(HINTS.items(), key=lambda x: -len(x[0])):
+            if re.search(rf"\b{re.escape(h)}\b", c) and not (h == "table" and "table tennis" in c and "tables" not in c
+                                                          and "table tennis table" not in c):
+                return cat
+    if has_kw(n, RACKET_MODELS) and not has_kw(n, KW["clothing"]):
+        return "racket"
+    for cat in ["tables", "bags", "clothing", "balls", "racket", "rubber", "blade", "accessories"]:
+        if has_kw(n, KW[cat]):
+            return cat
+    return "accessories"
 
 
-def classify(name):
-    """Which watchlist entry an item belongs to: ('rubber', label) / ('shoes', ...) / ('clothing', ...) / None."""
-    for rule in WL["rubbers"]:
+def watch_label(name):
+    for rule in WL["rubbers"] + load_prefs().get("watch_extra", []):
         if matches(name, rule):
-            return "rubber", rule["label"]
-    if is_shoe(name):
-        return "shoes", "Shoes"
-    if is_clothing(name):
-        return "clothing", "Clothing"
+            return rule["label"]
     return None
 
 
 def is_tt(i):
     t = (i["name"] + " " + i.get("cats", "")).lower()
-    return "table tennis" in t or "tischtennis" in t or "ping pong" in t or has_kw(i["name"], WL["tt_brands"])
+    if has_kw(t, OTHER_SPORTS):
+        return False
+    return ("table tennis" in t or "tischtennis" in t or "ping pong" in t or "ping-pong" in t
+            or has_kw(i["name"], WL["tt_brands"]) or i.get("tt_only_shop", False))
+
+
+_prefs = None
+
+
+def watch_searches():
+    return [r.get("search") or r["label"] for r in WL["rubbers"] + load_prefs().get("watch_extra", [])]
+
+
+def load_prefs():
+    global _prefs
+    if _prefs is None:
+        _prefs = json.loads(PREFS_FILE.read_text()) if PREFS_FILE.exists() else {}
+    return _prefs
 
 
 # ---------------------------------------------------------------- readers
@@ -210,7 +284,7 @@ def read_magento(st):
         for i in items:
             i["where"] = page["where"]
         hits += items
-    searches = [r["search"] for r in WL["rubbers"]] + st.get("extra_searches", [])
+    searches = watch_searches() + st.get("extra_searches", [])
     for q in searches:
         r = get(st["base"] + "/catalogsearch/result/?q=" + quote_plus(q))
         if not r:
@@ -226,8 +300,13 @@ def read_magento(st):
 def read_woo(st):
     """Racketlon (WooCommerce store API)."""
     hits, ok = [], False
-    for q in [r["search"] for r in WL["rubbers"]] + st.get("searches", []):
-        r = get(f"{st['base']}/wp-json/wc/store/v1/products", params={"search": q, "per_page": 50})
+    queries = [{"on_sale": "true", "per_page": 100, "page": n} for n in range(1, 6)]
+    queries += [{"search": q, "per_page": 50} for q in watch_searches()]
+    done_sale = False
+    for params in queries:
+        if "on_sale" in params and done_sale:
+            continue
+        r = get(f"{st['base']}/wp-json/wc/store/v1/products", params=params)
         if not r or "json" not in r.headers.get("content-type", ""):
             continue
         ok = True
@@ -244,6 +323,8 @@ def read_woo(st):
             i["on_sale"] = i["on_sale"] and bool(p.get("on_sale"))
             i["where"] = "product"
             hits.append(i)
+        if "on_sale" in params and len(r.json()) < params["per_page"]:
+            done_sale = True
     log(f"  {st['name']}: {len(hits)} products checked, {sum(i['on_sale'] for i in hits)} on special")
     return hits, ok
 
@@ -269,8 +350,9 @@ def read_megaspin(st):
                 old.extract()
             special = parse_money(pb.get_text("", strip=True))
             img = c.select_one(".product-image img")
+            mcat = re.search(r'"item_category"\s*:\s*"([^"]+)"', str(c))
             i = item(a.get_text(" ", strip=True), urljoin(url, a.get("href", "")), special, regular,
-                     img.get("src", "") if img else "", all_special=True)
+                     img.get("src", "") if img else "", cats=mcat.group(1) if mcat else "", all_special=True)
             i["where"] = "sale"
             hits.append(i)
             n += 1
@@ -337,7 +419,7 @@ def read_shopify(st):
 def read_shopware(st):
     """Donic: search for each watchlist item / clothing / shoes; on special when a list price is shown."""
     hits, ok = [], False
-    for q in [r["search"] for r in WL["rubbers"]] + st.get("searches", []):
+    for q in watch_searches() + st.get("searches", []):
         r = get(f"{st['base']}/search", params={"search": q})
         if not r:
             continue
@@ -396,13 +478,15 @@ def read_browser_stiga(st):
                     continue
                 first = prices[0][0]
                 name = parts[first - 2] if first >= 2 else parts[0]
+                ptype = parts[first - 1] if first >= 1 else ""
                 cur = {"EUR": "EUR", "SEK": "SEK", "USD": "USD", "GBP": "GBP"}[prices[0][1].group(2)]
                 val = lambda m: float(m.group(1).replace(",", ""))
                 special = (cur, val(prices[0][1]))
                 regular = (cur, val(prices[1][1])) if len(prices) > 1 else None
                 img = a.select_one("img")
                 i = item("STIGA " + name, urljoin(st["base"], a.get("href", "")), special, regular,
-                         urljoin(st["base"], img.get("src", "")) if img else "", all_special=page.get("all_special", False))
+                         urljoin(st["base"], img.get("src", "")) if img else "", cats=ptype,
+                         all_special=page.get("all_special", False))
                 i["where"] = page.get("where", "sale")
                 hits.append(i)
                 n += 1
@@ -419,27 +503,24 @@ READERS = {"magento": read_magento, "woo": read_woo, "megaspin": read_megaspin,
 def check_store(st):
     raw, ok = READERS[st["type"]](st)
     hits, seen = [], set()
-    cap = st.get("clothing_max_zar", WL.get("clothing_max_zar"))
     for i in raw:
         if not i["on_sale"] or i["url"] in seen:
             continue
-        c = classify(i["name"])
-        if not c:
-            continue
-        kind, watch = c
-        if kind in ("clothing", "shoes") and st.get("needs_tt_check") and not is_tt(i):
-            continue
-        if kind == "clothing" and cap and to_zar(*i["special"]) > cap:
+        i["tt_only_shop"] = not st.get("multi_sport", False)
+        if not is_tt(i):
             continue
         seen.add(i["url"])
+        cat = categorize(i["name"], i.get("cats", ""))
+        watch = watch_label(i["name"]) if cat in ("rubber", "racket", "blade", "accessories") else None
+        if watch:
+            cat = "rubber"
         where = i.get("where", "")
         end, et = None, {"weekly": "weekly special", "clearance": "clearance - while stock lasts",
-                         "monthly": "monthly sale", "promo": "weekly special"}.get(where, "sale - no end date given")
+                         "monthly": "monthly sale", "promo": "weekly special"}.get(where, "on sale")
         if where == "weekly" and st.get("weekly_ends_sunday"):
             end = end_of_week()
             et = f"ends Sun {end:%d %b} at midnight"
-        hits.append(dict(i, store=st["name"], kind=kind, watch=watch if kind == "rubber" else
-                         (f"Clothing ≤R{cap}" if (kind == "clothing" and cap) else watch), end=end, end_text=et))
+        hits.append(dict(i, store=st["name"], kind=cat, watch=watch, end=end, end_text=et))
     return hits, ok
 
 
@@ -487,7 +568,7 @@ def write_app_data(hits, store_ok):
     for h in hits:
         cur, sp = h["special"]
         deals.append({
-            "id": re.sub(r"[^a-z0-9]+", "-", (h["store"] + "-" + h["url"].rsplit("/", 1)[-1]).lower()).strip("-")[:80],
+            "id": re.sub(r"[^a-z0-9]+", "-", (h["store"] + "-" + h["url"].split("://")[-1].split("/", 1)[-1]).lower()).strip("-")[-90:],
             "store": h["store"], "kind": h["kind"], "watch": h["watch"], "name": h["name"], "url": h["url"],
             "image": h.get("image", ""),
             "price_zar": round(to_zar(cur, sp)), "was_zar": round(to_zar(*h["regular"])) if h.get("regular") else None,
@@ -496,10 +577,11 @@ def write_app_data(hits, store_ok):
             "in_stock": h.get("in_stock", True), "where": h.get("where", ""),
             "first_seen": h.get("first_seen") or NOW.isoformat(),
         })
-    order = {"rubber": 0, "shoes": 1, "clothing": 2}
-    deals.sort(key=lambda d: (order.get(d["kind"], 9), -d["pct"]))
+    deals.sort(key=lambda d: (0 if d["watch"] else 1, -d["pct"], d["price_zar"]))
+    prefs = load_prefs()
     out = {"updated": NOW.isoformat(), "stores": store_ok, "deals": deals,
-           "watchlist": [r["label"] for r in WL["rubbers"]] + [f"Clothing ≤R{WL['clothing_max_zar']}", "Shoes"],
+           "watch_items": [r["label"] for r in WL["rubbers"] + prefs.get("watch_extra", [])],
+           "alert_prefs": {k: v for k, v in prefs.items() if not k.startswith("_")},
            "store_list": [{"name": st["name"], "country": st.get("country", "")} for st in CFG["stores"]]}
     (ROOT / "docs").mkdir(exist_ok=True)
     (ROOT / "docs" / "deals.json").write_text(json.dumps(out, indent=1, ensure_ascii=False))
@@ -563,40 +645,60 @@ def main():
     hits = list(uniq.values())
 
     alerted = state["alerted"]
+    seen = state.setdefault("seen", {})
     can_alert = DRY or (bool(os.environ.get("VAPID_PRIVATE_KEY", "").strip()) and bool(load_subscriptions()))
     if not can_alert:
         log("No phone connected yet - deals are shown in the app but not marked as alerted.")
+    prefs = load_prefs()
+    cats_pref = prefs.get("categories", {})
+
+    def wants(h):
+        if h["store"] in prefs.get("stores_off", []):
+            return False
+        if h.get("watch"):
+            return prefs.get("watch_items_on", True)
+        c = cats_pref.get(h["kind"], {})
+        if not c.get("on"):
+            return False
+        if c.get("max_zar") and to_zar(*h["special"]) > float(c["max_zar"]):
+            return False
+        if c.get("min_pct") and pct(h) and pct(h) < float(c["min_pct"]):
+            return False
+        return True
+
     new, last_day = [], []
     for h in hits:
         key = f"{h['store']}|{h['url']}|{h['special'][1]:.2f}|{h['end'].date() if h['end'] else ''}"
-        if key in alerted:
-            h["first_seen"] = alerted[key]["first_seen"]
+        seen.setdefault(key, NOW.isoformat())
+        h["first_seen"] = seen[key]
+        h["key"] = key
         if key not in alerted:
-            new.append(h)
-            if can_alert:  # only remember it once a phone can actually be told
-                alerted[key] = {"first_seen": NOW.isoformat(), "end": h["end"].isoformat() if h["end"] else None}
-        elif h["end"] and h["end"].date() == NOW.date() and h["kind"] != "clothing" and not alerted[key].get("lastday"):
+            if wants(h):
+                new.append(h)
+                if can_alert:  # only remember it once a phone can actually be told
+                    alerted[key] = {"first_seen": NOW.isoformat(), "end": h["end"].isoformat() if h["end"] else None}
+        elif h["end"] and h["end"].date() == NOW.date() and not alerted[key].get("lastday") and (h.get("watch") or h["kind"] != "clothing"):
             last_day.append(h)
             alerted[key]["lastday"] = True
 
-    # alerts: one per watchlist rubber (high priority), one bundled for shoes / clothing
-    for h in [h for h in new if h["kind"] == "rubber"]:
+    labels = {"rubber": "rubber", "blade": "blade", "racket": "racket", "balls": "ball", "clothing": "clothing",
+              "shoes": "shoe", "bags": "bag", "accessories": "accessory", "robots": "robot", "tables": "table"}
+    for h in [h for h in new if h.get("watch")]:
         body = f"R{to_zar(*h['special']):,.0f}"
         if h.get("regular"):
             body += f"  (was R{to_zar(*h['regular']):,.0f}, −{pct(h)}%)"
         body += f"\n{h['store']} · {h['end_text']}"
-        notify(f"{h['watch']} is on special", body, click=h["url"], priority="high",
-               image=h.get("image"), tag=h["url"])
-    for kind in ("shoes", "clothing"):
-        group = sorted([h for h in new if h["kind"] == kind], key=lambda h: -pct(h))
+        notify(f"{h['watch']} is on special", body, click=h["url"], priority="high", image=h.get("image"), tag=h["url"])
+    for kind in CATEGORIES:
+        group = sorted([h for h in new if h["kind"] == kind and not h.get("watch")], key=lambda h: (-pct(h), to_zar(*h["special"])))
         if group:
-            n = len(group)
-            top = group[0]
-            body = f"Best: {top['name']} — R{to_zar(*top['special']):,.0f} (−{pct(top)}%)"
+            n, top = len(group), group[0]
+            body = f"{top['name']} — R{to_zar(*top['special']):,.0f}" + (f" (−{pct(top)}%)" if pct(top) else "") + f" at {top['store']}"
             if n > 1:
                 body += f"\n+{n - 1} more. Tap to see them all."
-            notify(f"{n} new {kind} special{'s' if n > 1 else ''}", body, click=f"{APP_URL}#{kind}",
-                   image=top.get("image"), tag=kind)
+            word = labels[kind]
+            notify(f"{n} new {word} special{'s' if n > 1 and word != 'clothing' else ''}", body,
+                   click=f"{APP_URL}#{kind}", image=top.get("image"), tag=kind)
     if last_day:
         names = ", ".join(h["name"] for h in last_day[:3]) + (f" +{len(last_day) - 3}" if len(last_day) > 3 else "")
         notify("Last day — specials end tonight", names, click=APP_URL, priority="high", tag="lastday")
@@ -604,10 +706,16 @@ def main():
     # forget alerts older than 60 days so a returning special alerts again
     cutoff = NOW - timedelta(days=60)
     state["alerted"] = {k: v for k, v in alerted.items() if datetime.fromisoformat(v["first_seen"]) > cutoff}
+    live = {h["key"] for h in hits}
+    state["seen"] = {k: v for k, v in seen.items() if k in live or datetime.fromisoformat(v) > cutoff}
     state["last_run"] = NOW.isoformat()
-    log(f"Done: {len(hits)} watchlist specials live, {len(new)} new, {len(last_day)} last-day reminders.")
+    log(f"Done: {len(hits)} specials live, {len(new)} new alerts, {len(last_day)} last-day reminders.")
+    from collections import Counter
+    for (st_, k), n in sorted(Counter((h["store"], h["kind"]) for h in hits).items()):
+        log(f"  {st_:16} {k:12} {n}")
     for h in hits:
-        log(f"  * {h['store']} | {h['watch']} | {line(h)}")
+        if h.get("watch"):
+            log(f"  * {h['store']} | {h['watch']} | {line(h)}")
     write_app_data(hits, store_ok)
     (ROOT / "last_run.log").write_text("\n".join(LOG) + "\n")
     if not DRY:

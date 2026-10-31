@@ -1,4 +1,4 @@
-name: Connect a phone for alerts
+name: Connect a phone / save alert settings
 
 on:
   issues:
@@ -16,7 +16,7 @@ concurrency:
 jobs:
   subscribe:
     # Only the repository owner can connect phones.
-    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, 'Subscribe')
+    if: github.event.issue.user.login == github.repository_owner && (startsWith(github.event.issue.title, 'Subscribe') || startsWith(github.event.issue.title, 'Settings'))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,23 +25,30 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - name: Save subscription
+        if: startsWith(github.event.issue.title, 'Subscribe')
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: python add_subscription.py
+      - name: Save alert settings
+        if: startsWith(github.event.issue.title, 'Settings')
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python save_prefs.py
       - name: Commit
         run: |
           git config user.name "tt-monitor"
           git config user.email "actions@users.noreply.github.com"
-          git add subscriptions.json
-          git diff --cached --quiet || (git commit -m "Connect ${{ github.event.issue.title }}" && git pull --rebase && git push)
+          for f in subscriptions.json alert_prefs.json; do [ -e "$f" ] && git add "$f"; done; true
+          git diff --cached --quiet || (git commit -m "Update from app" && git pull --rebase && git push)
       - name: Send test alert
+        if: startsWith(github.event.issue.title, 'Subscribe')
         env:
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
         run: python monitor.py --test-alert
       - name: Close the issue
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh issue close ${{ github.event.issue.number }} -R ${{ github.repository }} -c "✅ Phone connected. A test alert has been sent."
+        run: gh issue close ${{ github.event.issue.number }} -R ${{ github.repository }} -c "✅ Done. Your phone/settings are saved."
       - name: Run a full check now
         env:
           GH_TOKEN: ${{ github.token }}

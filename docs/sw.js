@@ -1,5 +1,5 @@
 // TT Deals service worker: offline shell + push notifications
-const CACHE = "tt-deals-v1";
+const CACHE = "tt-deals-v2";
 const SHELL = ["./", "index.html", "manifest.json", "icons/icon-192.png", "icons/badge-96.png"];
 
 self.addEventListener("install", (e) => {

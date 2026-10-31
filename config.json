@@ -57,46 +57,6 @@
         ]
       }
     ],
-    "clothing_max_zar": 550,
-    "clothing_keywords": [
-      "shirt",
-      "t-shirt",
-      "tshirt",
-      "tee ",
-      "polo",
-      "shorts",
-      "short ",
-      "skirt",
-      "skort",
-      "dress",
-      "socks",
-      "sock",
-      "jacket",
-      "tracksuit",
-      "pants",
-      "trousers",
-      "hoodie",
-      "sweat",
-      "jersey",
-      "trikot",
-      "hose",
-      "socken",
-      "jacke",
-      "trainingsanzug",
-      "sleeve",
-      "top "
-    ],
-    "shoe_keywords": [
-      "shoe",
-      "shoes",
-      "schuh",
-      "lezoline",
-      "wave medal",
-      "wave drive",
-      "cross step",
-      "speed flex",
-      "kaito"
-    ],
     "tt_brands": [
       "butterfly",
       "stiga",
@@ -147,18 +107,7 @@
       "country": "South Africa",
       "type": "woo",
       "base": "https://racketlon.co.za",
-      "clothing_max_zar": null,
-      "needs_tt_check": true,
-      "searches": [
-        "table tennis shirt",
-        "table tennis shorts",
-        "table tennis clothing",
-        "butterfly shirt",
-        "stiga shirt",
-        "table tennis shoes",
-        "butterfly shoes",
-        "mizuno shoes"
-      ]
+      "multi_sport": true
     },
     {
       "name": "Megaspin",
@@ -167,7 +116,12 @@
       "base": "https://www.megaspin.net",
       "collections": [
         "rubber-sale",
+        "blade-sale",
+        "racket-sale",
+        "table-sale",
+        "robot-sale",
         "butterfly-sale",
+        "butterfly-racket-sale",
         "butterfly-apparel-sale",
         "butterfly-clearance-sale"
       ]
@@ -209,14 +163,16 @@
       "currency": "USD",
       "type_must_contain": [
         "table tennis"
-      ]
+      ],
+      "multi_sport": true
     },
     {
       "name": "JOOLA Europe",
       "country": "Germany",
       "type": "shopify",
       "base": "https://joola.fr/en",
-      "currency": "EUR"
+      "currency": "EUR",
+      "multi_sport": true
     },
     {
       "name": "Donic",
@@ -239,6 +195,10 @@
       "base": "https://www.stigasports.com",
       "pages": [
         {
+          "path": "/en/category/sale",
+          "where": "sale"
+        },
+        {
           "path": "/en/category/sale/table-tennis-bats-sale",
           "where": "sale"
         },
@@ -247,7 +207,8 @@
           "where": "clearance",
           "all_special": true
         }
-      ]
+      ],
+      "multi_sport": true
     }
   ]
 }

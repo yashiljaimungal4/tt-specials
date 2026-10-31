@@ -12,10 +12,15 @@ A small app that watches table tennis shops for specials on my gear and alerts m
 - The app (`docs/`) shows those deals as cards, with a live countdown for Table Tennis 11 weekly specials (new ones every Monday, ending Sunday midnight).
 - New specials trigger a notification on every phone connected through the app's bell button. It alerts once per special, plus a "last day" reminder on Sundays.
 
-## Watchlist
-Edit `config.json`:
-Every shop is checked for the same list: Donic Bluestar A1, Andro Nuzn 55, Butterfly Dignics, Tenergy 05 / 05 Hard, clothing on special up to R550 (no cap at Racketlon), and shoes on special.
-- `monitor_end_date`: the app stops checking after this date (currently 31 Jan 2027)
+## What it covers
+Every table tennis special at those shops, sorted into rubbers, blades, rackets, balls, clothing, shoes, bags, accessories, robots and tables (sorting is automatic and occasionally wrong).
+
+Anyone can browse and filter the deals (price, % off, shop, search, sort); filters are saved on their own phone.
+
+## Alerts
+`alert_prefs.json` decides what alerts the owner's phone: watched items (always), plus each category on/off with a max rand price and minimum % off, and which shops. Change it from the app (bell > Alert settings > Save) or edit the file.
+Built-in watched items are in `config.json` (`watchlist.rubbers`).
+`monitor_end_date` in `config.json` stops checking after that date (currently 31 Jan 2027).
 
 ## Setup notes
 - Secret `VAPID_PRIVATE_KEY` (Settings → Secrets and variables → Actions) signs the notifications.

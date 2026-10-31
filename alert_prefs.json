@@ -1,0 +1,58 @@
+{
+ "_help": "Alert settings. Change these from the app (bell > Alert settings) or edit here. max_zar = only alert at or below this rand price (null = any price). min_pct = only alert when at least this % off (deals that don't show an old price still count).",
+ "watch_items_on": true,
+ "watch_extra": [],
+ "categories": {
+  "rubber": {
+   "on": false,
+   "max_zar": null,
+   "min_pct": 0
+  },
+  "blade": {
+   "on": false,
+   "max_zar": null,
+   "min_pct": 0
+  },
+  "racket": {
+   "on": false,
+   "max_zar": null,
+   "min_pct": 0
+  },
+  "balls": {
+   "on": false,
+   "max_zar": null,
+   "min_pct": 0
+  },
+  "clothing": {
+   "on": true,
+   "max_zar": 550,
+   "min_pct": 0
+  },
+  "shoes": {
+   "on": true,
+   "max_zar": null,
+   "min_pct": 0
+  },
+  "bags": {
+   "on": false,
+   "max_zar": null,
+   "min_pct": 0
+  },
+  "accessories": {
+   "on": false,
+   "max_zar": null,
+   "min_pct": 0
+  },
+  "robots": {
+   "on": false,
+   "max_zar": null,
+   "min_pct": 0
+  },
+  "tables": {
+   "on": false,
+   "max_zar": null,
+   "min_pct": 0
+  }
+ },
+ "stores_off": []
+}
