@@ -1,0 +1,13 @@
+[
+ {
+  "device": "Android",
+  "subscription": {
+   "endpoint": "https://fcm.googleapis.com/fcm/send/dWxjTJ4Pai4:APA91bGwgHPSOydqUHpowOVsRoIUBlKycojftQ9EMktu1KACNVCFkSMS9knyeUYZfdLmUd9Tn62LqVoK6QFRXSlaCm_Cl2uWmp0n69iklunMH-TrL4ckrUblxNgVfd51KJMSxNLLAg9A",
+   "expirationTime": null,
+   "keys": {
+    "p256dh": "BP3wAELc5wzmqBn7HQYqm2nWsrgsjvWem8bDnjocNUpYUt6G4vS95990Zcy_bj--UMUtr16huQRKVLR9afNDsfA",
+    "auth": "wK9ILUHdUH65wsh3RPrKvg"
+   }
+  }
+ }
+]
