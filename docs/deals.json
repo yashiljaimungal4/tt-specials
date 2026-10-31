@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T16:43:23.528849+02:00",
+ "updated": "2026-10-31T16:49:02.172960+02:00",
  "stores": {
   "Table Tennis 11": true,
   "Racketlon": true,
@@ -429,7 +429,7 @@
   {
    "id": "table-tennis-11-en-nittaku-specialist-x",
    "store": "Table Tennis 11",
-   "kind": "accessories",
+   "kind": "rubber",
    "watch": null,
    "name": "Nittaku Specialist X",
    "url": "https://tabletennis11.com/en/nittaku-specialist-x",
@@ -771,7 +771,7 @@
   {
    "id": "table-tennis-11-en-xiom-sigma-iv",
    "store": "Table Tennis 11",
-   "kind": "accessories",
+   "kind": "rubber",
    "watch": null,
    "name": "Xiom Sigma IV",
    "url": "https://tabletennis11.com/en/xiom-sigma-iv",
@@ -1563,7 +1563,7 @@
   {
    "id": "table-tennis-11-en-xiom-sigma-iii",
    "store": "Table Tennis 11",
-   "kind": "accessories",
+   "kind": "rubber",
    "watch": null,
    "name": "Xiom Sigma III",
    "url": "https://tabletennis11.com/en/xiom-sigma-iii",
@@ -3867,7 +3867,7 @@
   {
    "id": "joola-europe-en-products-joola-wood-proline-one",
    "store": "JOOLA Europe",
-   "kind": "blade",
+   "kind": "racket",
    "watch": null,
    "name": "JOOLA Blade PROline ONE",
    "url": "https://joola.fr/en/products/joola-wood-proline-one",
@@ -4443,7 +4443,7 @@
   {
    "id": "joola-europe-en-products-joola-white-infinity-carbon-3-prime-balls-40",
    "store": "JOOLA Europe",
-   "kind": "balls",
+   "kind": "racket",
    "watch": null,
    "name": "JOOLA WHITE INFINITY CARBON + 3 PRIME BALLS*** 40+",
    "url": "https://joola.fr/en/products/joola-white-infinity-carbon-3-prime-balls-40",
@@ -4461,7 +4461,7 @@
   {
    "id": "joola-europe-en-products-joola-white-infinity-z-carbon-3-prime-balls-40",
    "store": "JOOLA Europe",
-   "kind": "balls",
+   "kind": "racket",
    "watch": null,
    "name": "JOOLA WHITE INFINITY Z CARBON + 3 PRIME BALLS*** 40+",
    "url": "https://joola.fr/en/products/joola-white-infinity-z-carbon-3-prime-balls-40",
@@ -5469,7 +5469,7 @@
   {
    "id": "megaspin-store-default-asp-pid-b-table-cover",
    "store": "Megaspin",
-   "kind": "bags",
+   "kind": "tables",
    "watch": null,
    "name": "Butterfly Table Cover",
    "url": "https://www.megaspin.net/store/default.asp?pid=b-table-cover",
@@ -5919,7 +5919,7 @@
   {
    "id": "joola-europe-en-products-joola-wood-proline-oac",
    "store": "JOOLA Europe",
-   "kind": "blade",
+   "kind": "racket",
    "watch": null,
    "name": "JOOLA Blade PROline OAC",
    "url": "https://joola.fr/en/products/joola-wood-proline-oac",
@@ -6117,7 +6117,7 @@
   {
    "id": "joola-europe-en-products-joola-wood-proline-aw7",
    "store": "JOOLA Europe",
-   "kind": "blade",
+   "kind": "racket",
    "watch": null,
    "name": "JOOLA Blade PROline AW7",
    "url": "https://joola.fr/en/products/joola-wood-proline-aw7",
@@ -6567,7 +6567,7 @@
   {
    "id": "joola-europe-en-products-joola-wood-proline-iac",
    "store": "JOOLA Europe",
-   "kind": "blade",
+   "kind": "racket",
    "watch": null,
    "name": "JOOLA Blade PROline IAC",
    "url": "https://joola.fr/en/products/joola-wood-proline-iac",
@@ -6657,7 +6657,7 @@
   {
    "id": "joola-europe-en-products-joola-table-tennis-table-nova-200a-incl-net-cover",
    "store": "JOOLA Europe",
-   "kind": "bags",
+   "kind": "tables",
    "watch": null,
    "name": "JOOLA Table Tennis Table Nova 200A incl. Net + Cover",
    "url": "https://joola.fr/en/products/joola-table-tennis-table-nova-200a-incl-net-cover",
@@ -7269,7 +7269,7 @@
   {
    "id": "joola-europe-en-products-joola-white-infinity-gl-3-prime-balls-40",
    "store": "JOOLA Europe",
-   "kind": "balls",
+   "kind": "racket",
    "watch": null,
    "name": "JOOLA WHITE INFINITY GL + 3 PRIME BALLS*** 40+",
    "url": "https://joola.fr/en/products/joola-white-infinity-gl-3-prime-balls-40",
@@ -7287,7 +7287,7 @@
   {
    "id": "joola-europe-en-products-joola-wood-proline-aw5",
    "store": "JOOLA Europe",
-   "kind": "blade",
+   "kind": "racket",
    "watch": null,
    "name": "JOOLA Blade PROline AW5",
    "url": "https://joola.fr/en/products/joola-wood-proline-aw5",
@@ -8367,7 +8367,7 @@
   {
    "id": "joola-europe-en-products-joola-table-tennis-table-nova-100a-incl-net-cover",
    "store": "JOOLA Europe",
-   "kind": "bags",
+   "kind": "tables",
    "watch": null,
    "name": "JOOLA Table Tennis Table Nova 100A including Net + Cover",
    "url": "https://joola.fr/en/products/joola-table-tennis-table-nova-100a-incl-net-cover",
@@ -10455,7 +10455,7 @@
   {
    "id": "megaspin-store-default-asp-pid-pusun-dora-pro",
    "store": "Megaspin",
-   "kind": "robots",
+   "kind": "racket",
    "watch": null,
    "name": "Pusun Dora Pro w/150 Balls, Catch Net and Ball Picker",
    "url": "https://www.megaspin.net/store/default.asp?pid=pusun-dora-pro",
@@ -11715,7 +11715,7 @@
   {
    "id": "megaspin-store-default-asp-pid-b-towel-box-used",
    "store": "Megaspin",
-   "kind": "bags",
+   "kind": "accessories",
    "watch": null,
    "name": "Butterfly Towel and Box (Used)",
    "url": "https://www.megaspin.net/store/default.asp?pid=b-towel-box-used",
@@ -13353,7 +13353,7 @@
   {
    "id": "megaspin-store-default-asp-pid-b-outerforce-alc-pl",
    "store": "Megaspin",
-   "kind": "bags",
+   "kind": "racket",
    "watch": null,
    "name": "Butterfly Outerforce ALC Proline w/Rozena and Case",
    "url": "https://www.megaspin.net/store/default.asp?pid=b-outerforce-alc-pl",
@@ -13371,7 +13371,7 @@
   {
    "id": "megaspin-store-default-asp-pid-b-outerforce-caf-pl3",
    "store": "Megaspin",
-   "kind": "bags",
+   "kind": "racket",
    "watch": null,
    "name": "Butterfly Outerforce CAF Proline w/Glayzer and Case",
    "url": "https://www.megaspin.net/store/default.asp?pid=b-outerforce-caf-pl3",
@@ -13389,7 +13389,7 @@
   {
    "id": "megaspin-store-default-asp-pid-b-outerforce-alc-pl3",
    "store": "Megaspin",
-   "kind": "bags",
+   "kind": "racket",
    "watch": null,
    "name": "Butterfly Outerforce ALC Proline w/Glayzer and Case",
    "url": "https://www.megaspin.net/store/default.asp?pid=b-outerforce-alc-pl3",
@@ -13407,7 +13407,7 @@
   {
    "id": "megaspin-store-default-asp-pid-b-outerforce-zlc-pl",
    "store": "Megaspin",
-   "kind": "bags",
+   "kind": "racket",
    "watch": null,
    "name": "Butterfly Outerforce ZLC Proline w/Rozena and Case",
    "url": "https://www.megaspin.net/store/default.asp?pid=b-outerforce-zlc-pl",
@@ -13425,7 +13425,7 @@
   {
    "id": "megaspin-store-default-asp-pid-b-outerforce-zlc-pl3",
    "store": "Megaspin",
-   "kind": "bags",
+   "kind": "racket",
    "watch": null,
    "name": "Butterfly Outerforce ZLC Proline w/Glayzer and Case",
    "url": "https://www.megaspin.net/store/default.asp?pid=b-outerforce-zlc-pl3",
@@ -13515,7 +13515,7 @@
   {
    "id": "megaspin-store-default-asp-pid-b-centrefold-25-x3",
    "store": "Megaspin",
-   "kind": "tables",
+   "kind": "racket",
    "watch": null,
    "name": "Butterfly Centrefold 25 Blue - Set of 3",
    "url": "https://www.megaspin.net/store/default.asp?pid=b-centrefold-25-x3",
@@ -13929,7 +13929,7 @@
   {
    "id": "joola-europe-en-products-joola-table-tennis-table-j200a-cover",
    "store": "JOOLA Europe",
-   "kind": "bags",
+   "kind": "tables",
    "watch": null,
    "name": "JOOLA Table Tennis Table J200A + Cover",
    "url": "https://joola.fr/en/products/joola-table-tennis-table-j200a-cover",
@@ -15945,7 +15945,7 @@
   {
    "id": "dandoy-sports-joola-vision-pro-square-racket-case-html",
    "store": "Dandoy Sports",
-   "kind": "bags",
+   "kind": "racket",
    "watch": null,
    "name": "Joola Vision Pro Square Racket Case",
    "url": "https://www.dandoy-sports.com/joola-vision-pro-square-racket-case.html",
@@ -16323,7 +16323,7 @@
   {
    "id": "dandoy-sports-butterfly-pant-izumo-grijs-html",
    "store": "Dandoy Sports",
-   "kind": "accessories",
+   "kind": "clothing",
    "watch": null,
    "name": "Butterfly Pant Izumo Grijs",
    "url": "https://www.dandoy-sports.com/butterfly-pant-izumo-grijs.html",
@@ -16773,7 +16773,7 @@
   {
    "id": "dandoy-sports-donic-pant-craft-black-html",
    "store": "Dandoy Sports",
-   "kind": "accessories",
+   "kind": "clothing",
    "watch": null,
    "name": "Donic Pant Craft Black",
    "url": "https://www.dandoy-sports.com/donic-pant-craft-black.html",
@@ -17511,7 +17511,7 @@
   {
    "id": "dandoy-sports-butterfly-pant-meranji-dark-grey-html",
    "store": "Dandoy Sports",
-   "kind": "accessories",
+   "kind": "clothing",
    "watch": null,
    "name": "Butterfly Pant Meranji Dark Grey",
    "url": "https://www.dandoy-sports.com/butterfly-pant-meranji-dark-grey.html",
@@ -19095,7 +19095,7 @@
   {
    "id": "dandoy-sports-joola-pant-performance-html",
    "store": "Dandoy Sports",
-   "kind": "accessories",
+   "kind": "clothing",
    "watch": null,
    "name": "Joola Pant Performance",
    "url": "https://www.dandoy-sports.com/joola-pant-performance.html",
@@ -21615,7 +21615,7 @@
   {
    "id": "butterfly-us-towel-and-ball-box-used",
    "store": "Butterfly US",
-   "kind": "bags",
+   "kind": "accessories",
    "watch": null,
    "name": "Towel & Ball Box Used",
    "url": "https://shop.butterflyonline.com/towel-and-ball-box-used",
@@ -23361,7 +23361,7 @@
   {
    "id": "dandoy-sports-donic-anders-lind-exceptional-html",
    "store": "Dandoy Sports",
-   "kind": "accessories",
+   "kind": "blade",
    "watch": null,
    "name": "Donic Anders Lind Exceptional",
    "url": "https://www.dandoy-sports.com/donic-anders-lind-exceptional.html",
@@ -24063,7 +24063,7 @@
   {
    "id": "butterfly-us-family-table",
    "store": "Butterfly US",
-   "kind": "accessories",
+   "kind": "tables",
    "watch": null,
    "name": "Family Table",
    "url": "https://shop.butterflyonline.com/family-table",
@@ -24225,7 +24225,7 @@
   {
    "id": "butterfly-us-junior-table",
    "store": "Butterfly US",
-   "kind": "accessories",
+   "kind": "tables",
    "watch": null,
    "name": "Junior Stationary Table",
    "url": "https://shop.butterflyonline.com/junior-table",
@@ -24333,7 +24333,7 @@
   {
    "id": "butterfly-us-personal-rollaway",
    "store": "Butterfly US",
-   "kind": "accessories",
+   "kind": "tables",
    "watch": null,
    "name": "Personal 19 Table",
    "url": "https://shop.butterflyonline.com/personal-rollaway",
@@ -24351,7 +24351,7 @@
   {
    "id": "butterfly-us-active-19-home-table-tac19h",
    "store": "Butterfly US",
-   "kind": "accessories",
+   "kind": "tables",
    "watch": null,
    "name": "Active 19 Home Table",
    "url": "https://shop.butterflyonline.com/Active-19-Home-Table-TAC19H",
@@ -24369,7 +24369,7 @@
   {
    "id": "butterfly-us-active-16-table-tac16",
    "store": "Butterfly US",
-   "kind": "accessories",
+   "kind": "tables",
    "watch": null,
    "name": "Active 16 Table",
    "url": "https://shop.butterflyonline.com/active-16-table-tac16",
@@ -24423,7 +24423,7 @@
   {
    "id": "butterfly-us-aspire-16-table-tsa16",
    "store": "Butterfly US",
-   "kind": "accessories",
+   "kind": "tables",
    "watch": null,
    "name": "Aspire 16 Table",
    "url": "https://shop.butterflyonline.com/Aspire-16-Table-TSA16",
@@ -24513,7 +24513,7 @@
   {
    "id": "butterfly-us-aspire-22-table-tas22",
    "store": "Butterfly US",
-   "kind": "accessories",
+   "kind": "tables",
    "watch": null,
    "name": "Aspire 22 Table",
    "url": "https://shop.butterflyonline.com/Aspire-22-Table-TAS22",
@@ -24585,7 +24585,7 @@
   {
    "id": "butterfly-us-easyplay-22-table-tr46p",
    "store": "Butterfly US",
-   "kind": "accessories",
+   "kind": "tables",
    "watch": null,
    "name": "Easyplay 22 Table",
    "url": "https://shop.butterflyonline.com/easyplay-22-table-tr46p",
@@ -24621,7 +24621,7 @@
   {
    "id": "butterfly-us-aspire-25-table",
    "store": "Butterfly US",
-   "kind": "accessories",
+   "kind": "tables",
    "watch": null,
    "name": "Aspire 25 Table",
    "url": "https://shop.butterflyonline.com/Aspire-25-Table",
@@ -24675,7 +24675,7 @@
   {
    "id": "butterfly-us-national-league-25-tnl25",
    "store": "Butterfly US",
-   "kind": "accessories",
+   "kind": "tables",
    "watch": null,
    "name": "National League 25 Table",
    "url": "https://shop.butterflyonline.com/National-League-25-TNL25",
@@ -24801,7 +24801,7 @@
   {
    "id": "butterfly-us-octet-25-table",
    "store": "Butterfly US",
-   "kind": "accessories",
+   "kind": "tables",
    "watch": null,
    "name": "Octet 25 Table",
    "url": "https://shop.butterflyonline.com/Octet-25-Table",
@@ -24837,7 +24837,7 @@
   {
    "id": "butterfly-us-kyoto-hs-25-table-tky25",
    "store": "Butterfly US",
-   "kind": "accessories",
+   "kind": "tables",
    "watch": null,
    "name": "Kyoto HS 25 Table",
    "url": "https://shop.butterflyonline.com/kyoto-hs-25-table-tky25",

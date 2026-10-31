@@ -1,4 +1,4 @@
-Run at 2026-10-31 16:43 SAST
+Run at 2026-10-31 16:49 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 50 products, 50 on special
   Table Tennis 11 /clearance: 91 products, 91 on special
@@ -32,11 +32,11 @@ Checking STIGA...
 No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
-  (no phones subscribed - alert not sent: 305 new clothing special)
+  (no phones subscribed - alert not sent: 309 new clothing special)
   (no phones subscribed - alert not sent: 52 new shoe specials)
-Done: 1381 specials live, 359 new alerts, 0 last-day reminders.
-  Butterfly US     accessories  24
-  Butterfly US     bags         4
+Done: 1381 specials live, 363 new alerts, 0 last-day reminders.
+  Butterfly US     accessories  13
+  Butterfly US     bags         3
   Butterfly US     balls        1
   Butterfly US     blade        5
   Butterfly US     clothing     37
@@ -44,31 +44,30 @@ Done: 1381 specials live, 359 new alerts, 0 last-day reminders.
   Butterfly US     robots       5
   Butterfly US     rubber       1
   Butterfly US     shoes        13
-  Butterfly US     tables       21
-  Dandoy Sports    accessories  54
-  Dandoy Sports    bags         17
+  Butterfly US     tables       33
+  Dandoy Sports    accessories  49
+  Dandoy Sports    bags         16
   Dandoy Sports    balls        4
-  Dandoy Sports    blade        27
-  Dandoy Sports    clothing     272
-  Dandoy Sports    racket       9
+  Dandoy Sports    blade        28
+  Dandoy Sports    clothing     276
+  Dandoy Sports    racket       10
   Dandoy Sports    rubber       38
   Dandoy Sports    shoes        8
   JOOLA Europe     accessories  1
-  JOOLA Europe     bags         7
-  JOOLA Europe     balls        3
-  JOOLA Europe     blade        11
-  JOOLA Europe     racket       9
+  JOOLA Europe     bags         4
+  JOOLA Europe     blade        6
+  JOOLA Europe     racket       17
   JOOLA Europe     rubber       4
-  JOOLA Europe     tables       7
+  JOOLA Europe     tables       10
   JOOLA US         accessories  1
   JOOLA US         tables       3
-  Megaspin         accessories  13
-  Megaspin         bags         12
+  Megaspin         accessories  14
+  Megaspin         bags         5
   Megaspin         balls        2
   Megaspin         blade        94
   Megaspin         clothing     199
-  Megaspin         racket       76
-  Megaspin         robots       24
+  Megaspin         racket       83
+  Megaspin         robots       23
   Megaspin         rubber       106
   Megaspin         shoes        30
   Megaspin         tables       41
@@ -78,13 +77,13 @@ Done: 1381 specials live, 359 new alerts, 0 last-day reminders.
   STIGA            clothing     18
   STIGA            racket       1
   STIGA            rubber       4
-  Table Tennis 11  accessories  26
+  Table Tennis 11  accessories  23
   Table Tennis 11  bags         4
   Table Tennis 11  balls        2
   Table Tennis 11  blade        19
   Table Tennis 11  clothing     50
   Table Tennis 11  racket       2
-  Table Tennis 11  rubber       31
+  Table Tennis 11  rubber       34
   Table Tennis 11  shoes        9
   * Table Tennis 11 | Andro Nuzn 55 | Andro Nuzn 55: €44.56 (~R830) (was €65.53 (~R1,220), -32%) — ends Sun 01 Nov at midnight
   * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R752) — weekly special
