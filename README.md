@@ -1,6 +1,8 @@
 # TT Deals 🏓
 
-A small app that watches **Table Tennis 11** and **Racketlon Sports** for specials on my gear and alerts my phone.
+A small app that watches table tennis shops for specials on my gear and alerts my phone.
+
+**Shops:** Table Tennis 11 (Estonia), Racketlon (South Africa), Megaspin (USA), Dandoy Sports (Belgium), Butterfly US, JOOLA US, JOOLA Europe, Donic (Germany), STIGA (Sweden).
 
 **App:** https://yashiljaimungal4.github.io/tt-specials/
 
@@ -12,8 +14,7 @@ A small app that watches **Table Tennis 11** and **Racketlon Sports** for specia
 
 ## Watchlist
 Edit `config.json`:
-- **Table Tennis 11:** Donic Bluestar A1, Andro Nuzn 55, clothing on special up to R550, shoes on special
-- **Racketlon:** Butterfly Dignics, Tenergy 05 / 05 Hard, table tennis clothing and shoes on special
+Every shop is checked for the same list: Donic Bluestar A1, Andro Nuzn 55, Butterfly Dignics, Tenergy 05 / 05 Hard, clothing on special up to R550 (no cap at Racketlon), and shoes on special.
 - `monitor_end_date`: the app stops checking after this date (currently 31 Jan 2027)
 
 ## Setup notes

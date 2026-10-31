@@ -1,16 +1,13 @@
 {
   "monitor_end_date": "2027-01-31",
   "timezone": "Africa/Johannesburg",
-  "tt11": {
-    "base": "https://tabletennis11.com/en",
-    "sale_pages": [
-      "/special-offers",
-      "/clearance"
-    ],
+  "app_url": "https://yashiljaimungal4.github.io/tt-specials/",
+  "vapid_subject": "https://yashiljaimungal4.github.io/tt-specials/",
+  "watchlist": {
     "rubbers": [
       {
         "label": "Donic Bluestar A1",
-        "search": "donic bluestar a1",
+        "search": "bluestar a1",
         "must_contain": [
           "bluestar",
           "a1"
@@ -18,24 +15,29 @@
       },
       {
         "label": "Andro Nuzn 55",
-        "search": "andro nuzn 55",
+        "search": "nuzn 55",
         "must_contain": [
           "nuzn",
           "55"
         ]
-      }
-    ],
-    "clothing_max_zar": 550,
-    "shoes_search": "shoes"
-  },
-  "racketlon": {
-    "base": "https://racketlon.co.za",
-    "rubbers": [
+      },
       {
         "label": "Butterfly Dignics",
         "search": "dignics",
         "must_contain": [
           "dignics"
+        ],
+        "must_not_contain": [
+          "blade",
+          "racket",
+          "alc",
+          "zlc",
+          "carbon",
+          "innerforce",
+          "viscaria",
+          "mizutani",
+          "ovtcharov",
+          "harimoto"
         ]
       },
       {
@@ -46,69 +48,206 @@
           "05"
         ],
         "must_not_contain": [
-          "fx"
+          "fx",
+          "blade",
+          "racket",
+          "alc",
+          "zlc",
+          "carbon"
         ]
       }
     ],
-    "clothing_search": [
-      "table tennis shirt",
-      "table tennis shorts",
-      "table tennis clothing",
-      "butterfly shirt",
-      "stiga shirt"
+    "clothing_max_zar": 550,
+    "clothing_keywords": [
+      "shirt",
+      "t-shirt",
+      "tshirt",
+      "tee ",
+      "polo",
+      "shorts",
+      "short ",
+      "skirt",
+      "skort",
+      "dress",
+      "socks",
+      "sock",
+      "jacket",
+      "tracksuit",
+      "pants",
+      "trousers",
+      "hoodie",
+      "sweat",
+      "jersey",
+      "trikot",
+      "hose",
+      "socken",
+      "jacke",
+      "trainingsanzug",
+      "sleeve",
+      "top "
     ],
-    "shoes_search": [
-      "table tennis shoes"
+    "shoe_keywords": [
+      "shoe",
+      "shoes",
+      "schuh",
+      "lezoline",
+      "wave medal",
+      "wave drive",
+      "cross step",
+      "speed flex",
+      "kaito"
+    ],
+    "tt_brands": [
+      "butterfly",
+      "stiga",
+      "donic",
+      "joola",
+      "tibhar",
+      "andro",
+      "xiom",
+      "yasaka",
+      "nittaku",
+      "mizuno",
+      "li-ning",
+      "dhs",
+      "victas",
+      "tsp",
+      "neottec",
+      "killerspin",
+      "sanwei",
+      "729",
+      "gewo",
+      "cornilleau",
+      "double fish"
     ]
   },
-  "clothing_keywords": [
-    "shirt",
-    "t-shirt",
-    "tshirt",
-    "polo",
-    "shorts",
-    "short ",
-    "skirt",
-    "dress",
-    "socks",
-    "sock",
-    "jacket",
-    "tracksuit",
-    "pants",
-    "trousers",
-    "hoodie",
-    "sweat",
-    "jersey",
-    "top",
-    "vest",
-    "cap"
-  ],
-  "shoe_keywords": [
-    "shoe",
-    "shoes"
-  ],
-  "tt_brands": [
-    "butterfly",
-    "stiga",
-    "donic",
-    "joola",
-    "tibhar",
-    "andro",
-    "xiom",
-    "yasaka",
-    "nittaku",
-    "mizuno",
-    "li-ning",
-    "dhs",
-    "victas",
-    "tsp",
-    "neottec",
-    "killerspin",
-    "sanwei",
-    "729",
-    "gewo",
-    "cornilleau"
-  ],
-  "app_url": "https://yashiljaimungal4.github.io/tt-specials/",
-  "vapid_subject": "https://yashiljaimungal4.github.io/tt-specials/"
+  "stores": [
+    {
+      "name": "Table Tennis 11",
+      "country": "Estonia",
+      "type": "magento",
+      "base": "https://tabletennis11.com/en",
+      "weekly_ends_sunday": true,
+      "extra_searches": [
+        "shoes"
+      ],
+      "sale_pages": [
+        {
+          "path": "/special-offers",
+          "where": "weekly"
+        },
+        {
+          "path": "/clearance",
+          "where": "clearance"
+        }
+      ]
+    },
+    {
+      "name": "Racketlon",
+      "country": "South Africa",
+      "type": "woo",
+      "base": "https://racketlon.co.za",
+      "clothing_max_zar": null,
+      "needs_tt_check": true,
+      "searches": [
+        "table tennis shirt",
+        "table tennis shorts",
+        "table tennis clothing",
+        "butterfly shirt",
+        "stiga shirt",
+        "table tennis shoes",
+        "butterfly shoes",
+        "mizuno shoes"
+      ]
+    },
+    {
+      "name": "Megaspin",
+      "country": "USA",
+      "type": "megaspin",
+      "base": "https://www.megaspin.net",
+      "collections": [
+        "rubber-sale",
+        "butterfly-sale",
+        "butterfly-apparel-sale",
+        "butterfly-clearance-sale"
+      ]
+    },
+    {
+      "name": "Dandoy Sports",
+      "country": "Belgium",
+      "type": "magento",
+      "base": "https://www.dandoy-sports.com",
+      "extra_searches": [
+        "shoes"
+      ],
+      "sale_pages": [
+        {
+          "path": "/promotion",
+          "where": "promo",
+          "all_special": true
+        },
+        {
+          "path": "/liquidation",
+          "where": "clearance",
+          "all_special": true
+        }
+      ]
+    },
+    {
+      "name": "Butterfly US",
+      "country": "USA",
+      "type": "suitecommerce",
+      "base": "https://shop.butterflyonline.com",
+      "company": "739136",
+      "category": "/shop/table-tennis-monthly-sale"
+    },
+    {
+      "name": "JOOLA US",
+      "country": "USA",
+      "type": "shopify",
+      "base": "https://joola.com",
+      "currency": "USD",
+      "type_must_contain": [
+        "table tennis"
+      ]
+    },
+    {
+      "name": "JOOLA Europe",
+      "country": "Germany",
+      "type": "shopify",
+      "base": "https://joola.fr/en",
+      "currency": "EUR"
+    },
+    {
+      "name": "Donic",
+      "country": "Germany",
+      "type": "shopware",
+      "base": "https://www.donic.com",
+      "searches": [
+        "shirt",
+        "shorts",
+        "socken",
+        "jacke",
+        "trainingsanzug",
+        "schuh"
+      ]
+    },
+    {
+      "name": "STIGA",
+      "country": "Sweden",
+      "type": "stiga",
+      "base": "https://www.stigasports.com",
+      "pages": [
+        {
+          "path": "/en/category/sale/table-tennis-bats-sale",
+          "where": "sale"
+        },
+        {
+          "path": "/en/category/sale/outlet",
+          "where": "clearance",
+          "all_special": true
+        }
+      ]
+    }
+  ]
 }

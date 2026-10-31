@@ -105,6 +105,9 @@ def fmt(cur, amount):
 
 
 # ---------------------------------------------------------------- matching
+WL = CFG["watchlist"]
+
+
 def norm(s):
     return re.sub(r"[^a-z0-9]+", " ", (s or "").lower()).strip()
 
@@ -121,232 +124,322 @@ def has_kw(name, kws):
     return any(k in n for k in kws)
 
 
-def is_clothing(name):
-    return has_kw(name, CFG["clothing_keywords"]) and not has_kw(name, CFG["shoe_keywords"]) \
-        and not has_kw(name, ["case", "bag", "protect", "towel", "ball"])
+NOT_GEAR = ["case", "bag", "protect", "towel", "ball", "net", "table ", "robot", "pickleball", "padel", "tennis racket",
+            "glue", "cleaner", "tape", "cover", "rucksack", "backpack", "bottle", "keychain", "gift card"]
 
 
 def is_shoe(name):
-    return has_kw(name, CFG["shoe_keywords"]) and not has_kw(name, ["bag", "lace"])
+    return has_kw(name, WL["shoe_keywords"]) and not has_kw(name, ["bag", "lace", "sock", "pickleball", "padel"])
 
 
-# ---------------------------------------------------------------- TT11 (Magento)
-def tt11_end_of_week():
-    """TT11 weekly specials run Monday -> Sunday night."""
-    days = (7 - NOW.weekday()) % 7 or 7
-    end = (NOW + timedelta(days=days)).replace(hour=0, minute=0, second=0, microsecond=0)
-    return end - timedelta(minutes=1)  # Sunday 23:59
+def is_clothing(name):
+    return has_kw(name, WL["clothing_keywords"]) and not is_shoe(name) and not has_kw(name, NOT_GEAR)
 
 
-def parse_magento_list(html, base):
+def classify(name):
+    """Which watchlist entry an item belongs to: ('rubber', label) / ('shoes', ...) / ('clothing', ...) / None."""
+    for rule in WL["rubbers"]:
+        if matches(name, rule):
+            return "rubber", rule["label"]
+    if is_shoe(name):
+        return "shoes", "Shoes"
+    if is_clothing(name):
+        return "clothing", "Clothing"
+    return None
+
+
+def is_tt(i):
+    t = (i["name"] + " " + i.get("cats", "")).lower()
+    return "table tennis" in t or "tischtennis" in t or "ping pong" in t or has_kw(i["name"], WL["tt_brands"])
+
+
+# ---------------------------------------------------------------- readers
+def end_of_week():
+    """Sunday 23:59 SA time - when weekly specials (Monday-Sunday) end."""
+    days = (6 - NOW.weekday()) % 7
+    return (NOW + timedelta(days=days)).replace(hour=23, minute=59, second=0, microsecond=0)
+
+
+def item(name, url, special, regular=None, image="", in_stock=True, cats="", all_special=False):
+    on_sale = bool(special and special[1] > 0 and (all_special or (regular and regular[1] > special[1] + 0.001)))
+    if regular and special and regular[1] <= special[1] + 0.001:
+        regular = None
+    return {"name": name.strip(), "url": url, "special": special, "regular": regular, "image": image,
+            "in_stock": in_stock, "cats": cats, "on_sale": on_sale}
+
+
+def magento_list(html, base, all_special=False):
     soup = BeautifulSoup(html, "html.parser")
-    items = []
+    out = []
     for el in soup.select("li.product-item, div.product-item, li.item.product"):
         a = el.select_one("a.product-item-link") or el.select_one(".product-item-name a") or el.select_one("a[href]")
         if not a:
             continue
-        name = a.get_text(" ", strip=True)
-        url = urljoin(base, a.get("href", ""))
         text = el.get_text(" ", strip=True)
         special = regular = None
-        # Magento renders hidden labels: "Special Price €x Regular Price €y" / "As low as €x Regular Price €y"
-        m = re.search(r"(?:Special Price|As low as|Sale Price)\s*([€R$£]\s?[0-9.,\s]+)", text, re.I)
+        m = re.search(r"(?:Special Price|As low as|Starting at|Sale Price)\s*([€R$£]\s?[0-9.,\s]+)", text, re.I)
         m2 = re.search(r"(?:Regular Price|Was)\s*([€R$£]\s?[0-9.,\s]+)", text, re.I)
         if m:
             special = parse_money(m.group(1))
         if m2:
             regular = parse_money(m2.group(1))
         if not special:
-            fp = el.select_one('[data-price-type="finalPrice"] .price, .special-price .price')
+            fp = el.select_one('[data-price-type="finalPrice"] .price, .special-price .price, .price')
             special = parse_money(fp.get_text()) if fp else None
         if not regular:
             op = el.select_one('[data-price-type="oldPrice"] .price, .old-price .price')
             regular = parse_money(op.get_text()) if op else None
-        on_sale = bool(special and regular and regular[1] > special[1] + 0.001)
         img = el.select_one("img.product-image-photo") or el.select_one("img")
         image = (img.get("data-src") or img.get("src") or "") if img else ""
-        items.append({"name": name, "url": url, "special": special, "regular": regular, "image": urljoin(base, image) if image else "",
-                      "on_sale": on_sale, "in_stock": "not in stock" not in text.lower()
-                      and "out of stock" not in text.lower()})
-    return items
+        out.append(item(a.get_text(" ", strip=True), urljoin(base, a.get("href", "")), special, regular,
+                        urljoin(base, image) if image else "",
+                        "not in stock" not in text.lower() and "out of stock" not in text.lower(), all_special=all_special))
+    return out
 
 
-def tt11_page(path_or_url):
-    base = CFG["tt11"]["base"]
-    url = path_or_url if path_or_url.startswith("http") else base + path_or_url
-    r = get(url)
-    if not r:
-        return None
-    items = parse_magento_list(r.text, url)
-    log(f"  TT11 {url}: {len(items)} products, {sum(i['on_sale'] for i in items)} on special")
-    return items
-
-
-def check_tt11():
-    t = CFG["tt11"]
+def read_magento(st):
+    """Table Tennis 11 / Dandoy: sale pages + searches for the watchlist rubbers and shoes."""
     hits, ok = [], False
-    weekly_end = tt11_end_of_week()
-
-    sale_items = []
-    for p in t["sale_pages"]:
-        items = tt11_page(p)
-        if items is not None:
-            ok = True
-            for i in items:
-                i["where"] = "weekly" if "special" in p else "clearance"
-            sale_items += items
-
-    def end_text(i):
-        if i.get("where") == "weekly":
-            return weekly_end, f"ends Sun {weekly_end:%d %b} at midnight"
-        if i.get("where") == "clearance":
-            return None, "clearance - while stock lasts"
-        return None, "no end date shown"
-
-    # 1+2: watchlist rubbers (sale pages + search, in case of hidden specials)
-    for rule in t["rubbers"]:
-        found = [i for i in sale_items if i["on_sale"] and matches(i["name"], rule)]
-        res = tt11_page("/catalogsearch/result/?q=" + quote_plus(rule["search"]))
-        if res is not None:
-            ok = True
-            seen_urls = {i["url"] for i in found}
-            found += [dict(i, where="product") for i in res
-                      if i["on_sale"] and matches(i["name"], rule) and i["url"] not in seen_urls]
-        for i in found:
-            end, et = end_text(i)
-            hits.append(dict(i, store="Table Tennis 11", kind="rubber", watch=rule["label"], end=end, end_text=et))
-
-    # 3: clothing on special <= R550
-    cap = t["clothing_max_zar"]
-    for i in sale_items:
-        if i["on_sale"] and is_clothing(i["name"]) and to_zar(*i["special"]) <= cap:
-            end, et = end_text(i)
-            hits.append(dict(i, store="Table Tennis 11", kind="clothing", watch=f"Clothing ≤R{cap}", end=end, end_text=et))
-
-    # 4: shoes on special
-    shoe_items = [i for i in sale_items if is_shoe(i["name"])]
-    res = tt11_page("/catalogsearch/result/?q=" + quote_plus(t["shoes_search"]))
-    if res is not None:
-        urls = {i["url"] for i in shoe_items}
-        shoe_items += [dict(i, where="product") for i in res if is_shoe(i["name"]) and i["url"] not in urls]
-    for i in shoe_items:
-        if i["on_sale"]:
-            end, et = end_text(i)
-            hits.append(dict(i, store="Table Tennis 11", kind="shoes", watch="Shoes", end=end, end_text=et))
+    for page in st["sale_pages"]:
+        r = get(st["base"] + page["path"])
+        if not r:
+            continue
+        ok = True
+        items = magento_list(r.text, r.url, all_special=page.get("all_special", False))
+        log(f"  {st['name']} {page['path']}: {len(items)} products, {sum(i['on_sale'] for i in items)} on special")
+        for i in items:
+            i["where"] = page["where"]
+        hits += items
+    searches = [r["search"] for r in WL["rubbers"]] + st.get("extra_searches", [])
+    for q in searches:
+        r = get(st["base"] + "/catalogsearch/result/?q=" + quote_plus(q))
+        if not r:
+            continue
+        ok = True
+        items = magento_list(r.text, r.url)
+        for i in items:
+            i["where"] = "product"
+        hits += items
     return hits, ok
 
 
-# ---------------------------------------------------------------- Racketlon
-def rk_search_shopify(base, q):
-    r = get(f"{base}/search/suggest.json", params={"q": q, "resources[type]": "product", "resources[limit]": 10})
-    if not r or "json" not in r.headers.get("content-type", ""):
-        return None
-    out = []
-    for p in r.json().get("resources", {}).get("results", {}).get("products", []):
-        price = float(p.get("price") or 0)
-        cmp_ = float(p.get("compare_at_price_max") or 0)
-        out.append({"name": p.get("title", ""), "url": urljoin(base, p.get("url", "")),
-                    "image": (p.get("featured_image") or {}).get("url", "") or p.get("image", ""),
-                    "special": ("ZAR", price), "regular": ("ZAR", cmp_) if cmp_ else None,
-                    "on_sale": cmp_ > price > 0, "in_stock": p.get("available", True),
-                    "cats": " ".join([p.get("type", "")] + p.get("tags", []))})
-    return out
+def read_woo(st):
+    """Racketlon (WooCommerce store API)."""
+    hits, ok = [], False
+    for q in [r["search"] for r in WL["rubbers"]] + st.get("searches", []):
+        r = get(f"{st['base']}/wp-json/wc/store/v1/products", params={"search": q, "per_page": 50})
+        if not r or "json" not in r.headers.get("content-type", ""):
+            continue
+        ok = True
+        for p in r.json():
+            pr = p.get("prices", {})
+            mu = 10 ** int(pr.get("currency_minor_unit", 2))
+            cur = pr.get("currency_code", "ZAR")
+            price, reg = int(pr.get("price") or 0) / mu, int(pr.get("regular_price") or 0) / mu
+            imgs = p.get("images") or []
+            i = item(BeautifulSoup(p.get("name", ""), "html.parser").get_text(), p.get("permalink", ""),
+                     (cur, price), (cur, reg) if reg else None,
+                     (imgs[0].get("thumbnail") or imgs[0].get("src", "")) if imgs else "",
+                     p.get("is_in_stock", True), " ".join(c.get("name", "") for c in p.get("categories", [])))
+            i["on_sale"] = i["on_sale"] and bool(p.get("on_sale"))
+            i["where"] = "product"
+            hits.append(i)
+    log(f"  {st['name']}: {len(hits)} products checked, {sum(i['on_sale'] for i in hits)} on special")
+    return hits, ok
 
 
-def rk_search_woo(base, q):
-    r = get(f"{base}/wp-json/wc/store/v1/products", params={"search": q, "per_page": 50})
-    if not r or "json" not in r.headers.get("content-type", ""):
-        return None
-    out = []
-    for p in r.json():
-        pr = p.get("prices", {})
-        mu = 10 ** int(pr.get("currency_minor_unit", 2))
-        price = int(pr.get("price") or 0) / mu
-        reg = int(pr.get("regular_price") or 0) / mu
-        imgs = p.get("images") or []
-        out.append({"name": BeautifulSoup(p.get("name", ""), "html.parser").get_text(), "url": p.get("permalink", ""),
-                    "image": (imgs[0].get("thumbnail") or imgs[0].get("src", "")) if imgs else "",
-                    "special": ("ZAR", price), "regular": ("ZAR", reg) if reg else None,
-                    "on_sale": bool(p.get("on_sale")) and reg > price > 0,
-                    "in_stock": p.get("is_in_stock", True),
-                    "cats": " ".join(c.get("name", "") for c in p.get("categories", []))})
-    return out
-
-
-def rk_search_html(base, q):
-    for url in (f"{base}/?s={quote_plus(q)}&post_type=product", f"{base}/search?q={quote_plus(q)}&type=product"):
+def read_megaspin(st):
+    hits, ok = [], False
+    for cid in st["collections"]:
+        url = f"{st['base']}/store/collection.asp?id={cid}"
         r = get(url)
         if not r:
             continue
+        ok = True
         soup = BeautifulSoup(r.text, "html.parser")
-        out = []
-        for el in soup.select("li.product, div.product, .product-item, .grid-product, .card-wrapper, .product-card"):
-            a = el.select_one("h2 a, h3 a, .woocommerce-loop-product__title, a[href*='/product']") or el.select_one("a[href]")
-            name_el = el.select_one(".woocommerce-loop-product__title, h2, h3, .card__heading, .product-card__title") or a
-            if not a or not name_el:
+        n = 0
+        for c in soup.select(".product-card"):
+            a = c.select_one(".product-name a")
+            pb = c.select_one(".product-price")
+            if not a or not pb:
                 continue
-            old = el.select_one("del, s, .price--compare, .compare-at-price, .price-item--regular")
-            new = el.select_one("ins, .price-item--sale, .sale-price, .price--sale")
-            special = parse_money(new.get_text()) if new else None
+            old = pb.select_one("s")
             regular = parse_money(old.get_text()) if old else None
-            im = el.select_one("img")
-            out.append({"name": name_el.get_text(" ", strip=True), "url": urljoin(base, a.get("href", "")),
-                        "image": urljoin(base, im.get("data-src") or im.get("src") or "") if im else "",
-                        "special": special, "regular": regular,
-                        "on_sale": bool(special and regular and regular[1] > special[1]),
-                        "in_stock": "out of stock" not in el.get_text(" ").lower(), "cats": ""})
-        if out:
-            return out
-    return None
+            if old:
+                old.extract()
+            special = parse_money(pb.get_text("", strip=True))
+            img = c.select_one(".product-image img")
+            i = item(a.get_text(" ", strip=True), urljoin(url, a.get("href", "")), special, regular,
+                     img.get("src", "") if img else "", all_special=True)
+            i["where"] = "sale"
+            hits.append(i)
+            n += 1
+        log(f"  {st['name']} {cid}: {n} products")
+    return hits, ok
 
 
-_rk_method = None
+def read_suitecommerce(st):
+    """Butterfly US (NetSuite): everything in the monthly-sale category is on special."""
+    hits, ok, offset = [], False, 0
+    while offset < 600:
+        r = get(f"{st['base']}/api/items", params={"c": st["company"], "country": "US", "currency": "USD", "fieldset": "search",
+                                                   "language": "en", "n": 2, "commercecategoryurl": st["category"],
+                                                   "limit": 100, "offset": offset})
+        if not r:
+            break
+        ok = True
+        d = r.json()
+        for it in d.get("items", []):
+            price = (it.get("onlinecustomerprice_detail") or {}).get("onlinecustomerprice") or it.get("onlinecustomerprice") or 0
+            img = ((it.get("itemimages_detail") or {}).get("main") or {}).get("url", "")
+            i = item(it.get("storedisplayname2") or it.get("displayname", ""), f"{st['base']}/{it.get('urlcomponent', '')}",
+                     ("USD", float(price)), None, img.replace(" ", "%20"), it.get("isinstock", True), all_special=True)
+            i["where"] = "monthly"
+            hits.append(i)
+        offset += 100
+        if offset >= d.get("total", 0):
+            break
+    log(f"  {st['name']}: {len(hits)} sale items")
+    return hits, ok
 
 
-def rk_search(q):
-    global _rk_method
-    base = CFG["racketlon"]["base"]
-    methods = [("shopify", rk_search_shopify), ("woo", rk_search_woo), ("html", rk_search_html)]
-    if _rk_method:
-        methods = [m for m in methods if m[0] == _rk_method]
-    for name, fn in methods:
-        res = fn(base, q)
-        if res is not None:
-            if not _rk_method:
-                log(f"  Racketlon: using {name} method")
-            _rk_method = name
-            log(f"  Racketlon '{q}': {len(res)} products, {sum(i['on_sale'] for i in res)} on special")
-            return res
-    return None
-
-
-def is_tt(i):
-    t = (i["name"] + " " + i.get("cats", "")).lower()
-    return "table tennis" in t or "ping pong" in t or has_kw(i["name"], CFG["tt_brands"])
-
-
-def check_racketlon():
-    rk = CFG["racketlon"]
+def read_shopify(st):
+    """JOOLA shops: whole catalogue via products.json; on special when compare-at price > price."""
     hits, ok = [], False
-    for rule in rk["rubbers"]:
-        res = rk_search(rule["search"])
-        if res is None:
+    for page in range(1, 9):
+        r = get(f"{st['base']}/products.json", params={"limit": 250, "page": page})
+        if not r or "json" not in r.headers.get("content-type", ""):
+            break
+        ok = True
+        ps = r.json().get("products", [])
+        for p in ps:
+            ptype = (p.get("product_type") or "") + " " + " ".join(p.get("tags", []) if isinstance(p.get("tags"), list) else [p.get("tags") or ""])
+            if st.get("type_must_contain") and not any(t.lower() in ptype.lower() for t in st["type_must_contain"]):
+                continue
+            if has_kw(ptype + " " + p.get("title", ""), ["pickleball", "padel"]):
+                continue
+            vs = p.get("variants") or [{}]
+            best = min(vs, key=lambda v: float(v.get("price") or 1e9))
+            price = float(best.get("price") or 0)
+            cmp_ = max(float(v.get("compare_at_price") or 0) for v in vs)
+            imgs = p.get("images") or []
+            i = item(p.get("title", ""), f"{st['base']}/products/{p.get('handle', '')}", (st["currency"], price),
+                     (st["currency"], cmp_) if cmp_ else None, imgs[0].get("src", "") if imgs else "",
+                     any(v.get("available", True) for v in vs), ptype)
+            i["where"] = "sale"
+            hits.append(i)
+        if len(ps) < 250:
+            break
+    log(f"  {st['name']}: {len(hits)} table tennis products, {sum(i['on_sale'] for i in hits)} on special")
+    return hits, ok
+
+
+def read_shopware(st):
+    """Donic: search for each watchlist item / clothing / shoes; on special when a list price is shown."""
+    hits, ok = [], False
+    for q in [r["search"] for r in WL["rubbers"]] + st.get("searches", []):
+        r = get(f"{st['base']}/search", params={"search": q})
+        if not r:
             continue
         ok = True
-        for i in res:
-            if i["on_sale"] and matches(i["name"], rule):
-                hits.append(dict(i, store="Racketlon", kind="rubber", watch=rule["label"], end=None, end_text="no end date listed"))
-    seen = set()
-    for kind, queries, test in (("clothing", rk["clothing_search"], is_clothing), ("shoes", rk["shoes_search"], is_shoe)):
-        for q in queries:
-            res = rk_search(q)
-            if res is None:
+        soup = BeautifulSoup(r.text, "html.parser")
+        for b in soup.select(".product-box"):
+            n = b.select_one(".product-name")
+            if not n:
+                continue
+            pp = b.select_one(".product-price")
+            lp = b.select_one(".list-price-price, .list-price .list-price-price, .product-price .list-price")
+            regular = parse_money(lp.get_text(" ", strip=True)) if lp else None
+            if lp:
+                lp.extract()
+            special = parse_money(pp.get_text(" ", strip=True)) if pp else None
+            img = b.select_one("img")
+            i = item(n.get_text(" ", strip=True), urljoin(st["base"], n.get("href", "")), special, regular,
+                     (img.get("src") or img.get("data-src") or "") if img else "")
+            i["where"] = "product"
+            hits.append(i)
+    log(f"  {st['name']}: {len(hits)} products checked, {sum(i['on_sale'] for i in hits)} on special")
+    return hits, ok
+
+
+def read_browser_stiga(st):
+    """STIGA: pages build their product grid with JavaScript, so render them in a headless browser."""
+    hits, ok = [], False
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        log("  playwright not installed - skipping STIGA")
+        return hits, False
+    price_re = re.compile(r"^([0-9][0-9.,]*)\s*(EUR|SEK|USD|GBP)$")
+    with sync_playwright() as p:
+        b = p.chromium.launch()
+        pg = b.new_page(locale="en-US")
+        for page in st["pages"]:
+            url = st["base"] + page["path"]
+            try:
+                pg.goto(url, wait_until="networkidle", timeout=60000)
+                pg.wait_for_timeout(3000)
+                for _ in range(4):
+                    pg.mouse.wheel(0, 4000)
+                    pg.wait_for_timeout(700)
+                html = pg.content()
+            except Exception as e:
+                log(f"  {st['name']} {page['path']}: {e}")
                 continue
             ok = True
-            for i in res:
-                if i["on_sale"] and test(i["name"]) and is_tt(i) and i["url"] not in seen:
-                    seen.add(i["url"])
-                    hits.append(dict(i, store="Racketlon", kind=kind, watch=kind.title(), end=None, end_text="no end date listed"))
+            soup = BeautifulSoup(html, "html.parser")
+            n = 0
+            for a in soup.select('a[href*="/product/"]'):
+                parts = [x for x in a.get_text(" | ", strip=True).split(" | ") if x]
+                prices = [(i, price_re.match(x)) for i, x in enumerate(parts) if price_re.match(x)]
+                if not prices:
+                    continue
+                first = prices[0][0]
+                name = parts[first - 2] if first >= 2 else parts[0]
+                cur = {"EUR": "EUR", "SEK": "SEK", "USD": "USD", "GBP": "GBP"}[prices[0][1].group(2)]
+                val = lambda m: float(m.group(1).replace(",", ""))
+                special = (cur, val(prices[0][1]))
+                regular = (cur, val(prices[1][1])) if len(prices) > 1 else None
+                img = a.select_one("img")
+                i = item("STIGA " + name, urljoin(st["base"], a.get("href", "")), special, regular,
+                         urljoin(st["base"], img.get("src", "")) if img else "", all_special=page.get("all_special", False))
+                i["where"] = page.get("where", "sale")
+                hits.append(i)
+                n += 1
+            log(f"  {st['name']} {page['path']}: {n} products")
+        b.close()
+    return hits, ok
+
+
+READERS = {"magento": read_magento, "woo": read_woo, "megaspin": read_megaspin,
+           "suitecommerce": read_suitecommerce, "shopify": read_shopify, "shopware": read_shopware,
+           "stiga": read_browser_stiga}
+
+
+def check_store(st):
+    raw, ok = READERS[st["type"]](st)
+    hits, seen = [], set()
+    cap = st.get("clothing_max_zar", WL.get("clothing_max_zar"))
+    for i in raw:
+        if not i["on_sale"] or i["url"] in seen:
+            continue
+        c = classify(i["name"])
+        if not c:
+            continue
+        kind, watch = c
+        if kind in ("clothing", "shoes") and st.get("needs_tt_check") and not is_tt(i):
+            continue
+        if kind == "clothing" and cap and to_zar(*i["special"]) > cap:
+            continue
+        seen.add(i["url"])
+        where = i.get("where", "")
+        end, et = None, {"weekly": "weekly special", "clearance": "clearance - while stock lasts",
+                         "monthly": "monthly sale", "promo": "weekly special"}.get(where, "sale - no end date given")
+        if where == "weekly" and st.get("weekly_ends_sunday"):
+            end = end_of_week()
+            et = f"ends Sun {end:%d %b} at midnight"
+        hits.append(dict(i, store=st["name"], kind=kind, watch=watch if kind == "rubber" else
+                         (f"Clothing ≤R{cap}" if (kind == "clothing" and cap) else watch), end=end, end_text=et))
     return hits, ok
 
 
@@ -406,8 +499,8 @@ def write_app_data(hits, store_ok):
     order = {"rubber": 0, "shoes": 1, "clothing": 2}
     deals.sort(key=lambda d: (order.get(d["kind"], 9), -d["pct"]))
     out = {"updated": NOW.isoformat(), "stores": store_ok, "deals": deals,
-           "watchlist": {"Table Tennis 11": [r["label"] for r in CFG["tt11"]["rubbers"]] + [f"Clothing ≤R{CFG['tt11']['clothing_max_zar']}", "Shoes"],
-                         "Racketlon": [r["label"] for r in CFG["racketlon"]["rubbers"]] + ["Clothing", "Shoes"]}}
+           "watchlist": [r["label"] for r in WL["rubbers"]] + [f"Clothing ≤R{WL['clothing_max_zar']}", "Shoes"],
+           "store_list": [{"name": st["name"], "country": st.get("country", "")} for st in CFG["stores"]]}
     (ROOT / "docs").mkdir(exist_ok=True)
     (ROOT / "docs" / "deals.json").write_text(json.dumps(out, indent=1, ensure_ascii=False))
 
@@ -444,10 +537,11 @@ def main():
 
     log(f"Run at {NOW:%Y-%m-%d %H:%M} SAST")
     all_hits, store_ok = [], {}
-    for store, fn in (("Table Tennis 11", check_tt11), ("Racketlon", check_racketlon)):
+    for st in CFG["stores"]:
+        store = st["name"]
         log(f"Checking {store}...")
         try:
-            hits, ok = fn()
+            hits, ok = check_store(st)
         except Exception as e:
             log(f"  {store} crashed: {e!r}")
             hits, ok = [], False
@@ -459,8 +553,8 @@ def main():
         else:
             state["fails"][store] = fails + 1
             if state["fails"][store] == 3:  # warn once after 3 failed runs in a row
-                notify(f"⚠️ Can't read {store}", f"The monitor couldn't read {store} for 3 checks in a row. "
-                       "It will keep trying. Check the GitHub Actions log for details.", tags="warning")
+                notify(f"Can't read {store}", f"The monitor couldn't read {store} for 3 checks in a row. It will keep trying.",
+                       tag="warn-" + store)
 
     # dedupe
     uniq = {}

@@ -73,8 +73,7 @@
   .card .name { font-weight: 650; font-size: 15px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin: 3px 0 6px; }
 
   .meta { display: flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; }
-  .store-dot { width: 7px; height: 7px; border-radius: 50%; background: #3B82F6; }
-  .store-dot.rk { background: #F59E0B; }
+  .store-dot { width: 7px; height: 7px; border-radius: 50%; background: #3B82F6; flex: none; }
   .prices { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
   .price { font-size: 20px; font-weight: 800; letter-spacing: -.4px; }
   .was { color: var(--muted); text-decoration: line-through; font-size: 13.5px; }
@@ -101,7 +100,7 @@
   .sheet h2 { margin: 0 0 4px; font-size: 20px; }
   .sheet p { color: var(--muted); margin: 0 0 14px; font-size: 14px; }
   .wl { border: 1px solid var(--line); border-radius: 16px; padding: 4px 14px; margin-bottom: 12px; }
-  .wl .row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+  .wl .row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
   .wl .row:last-child { border-bottom: 0; }
   .wl h3 { font-size: 13px; margin: 12px 0 4px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
   .ok { color: var(--green); font-weight: 650; } .bad { color: var(--red); font-weight: 650; }
@@ -137,8 +136,6 @@
 
 <div class="stores" id="stores">
   <button class="chip active" data-store="all">All stores</button>
-  <button class="chip" data-store="Table Tennis 11">Table Tennis 11</button>
-  <button class="chip" data-store="Racketlon">Racketlon</button>
 </div>
 
 <main id="main">
@@ -173,13 +170,18 @@ function timeLeft(end) {
 }
 
 const clock = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+const DOTS = ["#3B82F6","#F59E0B","#10B981","#8B5CF6","#EF4444","#0EA5E9","#EC4899","#84CC16","#F97316"];
+const dot = (store) => { const names = (state.data?.store_list || []).map((x) => x.name); const i = names.indexOf(store); return `<span class="store-dot" style="background:${DOTS[(i < 0 ? 0 : i) % DOTS.length]}"></span>`; };
 const fallback = { rubber: "🏓", shoes: "👟", clothing: "👕" };
 
 function badges(d) {
   const out = [];
   const t = timeLeft(d.end);
   if (t) out.push(`<span class="pill ${t.cls}">${clock}${t.text}</span>`);
-  else out.push(`<span class="pill">${d.where === "clearance" ? "Clearance · while stock lasts" : "No end date given"}</span>`);
+  else {
+    const label = { clearance: "Clearance · while stock lasts", promo: "Weekly special", monthly: "Monthly sale", weekly: "Weekly special" }[d.where] || "On sale";
+    out.push(`<span class="pill">${label}</span>`);
+  }
   if (!d.in_stock) out.push('<span class="pill oos">Out of stock</span>');
   if (Date.now() - new Date(d.first_seen) < 36e5 * 24) out.push('<span class="pill new">New</span>');
   return out.join("");
@@ -197,11 +199,10 @@ function priceBlock(d) {
 }
 
 function card(d) {
-  const rk = d.store === "Racketlon" ? " rk" : "";
   return `<a class="card" href="${esc(d.url)}" target="_blank" rel="noopener" id="${esc(d.id)}">
     <div class="ph">${photo(d)}</div>
     <div class="info">
-      <div class="meta"><span class="store-dot${rk}"></span>${esc(d.store)}${d.pct ? ` · <span class="off">−${d.pct}%</span>` : ""}</div>
+      <div class="meta">${dot(d.store)}${esc(d.store)}${d.pct ? ` · <span class="off">−${d.pct}%</span>` : ""}</div>
       <div class="name">${esc(d.name)}</div>
       ${priceBlock(d)}
       <div class="foot">${badges(d)}</div>
@@ -209,11 +210,10 @@ function card(d) {
 }
 
 function feature(d) {
-  const rk = d.store === "Racketlon" ? " rk" : "";
   return `<a class="feature" href="${esc(d.url)}" target="_blank" rel="noopener" id="${esc(d.id)}">
     <div class="ph">${photo(d)}${d.pct ? `<span class="off">−${d.pct}%</span>` : ""}</div>
     <div class="body">
-      <div class="meta"><span class="store-dot${rk}"></span>${esc(d.store)} · On your watchlist</div>
+      <div class="meta">${dot(d.store)}${esc(d.store)} · On your watchlist</div>
       <div class="name">${esc(d.name)}</div>
       ${priceBlock(d)}
       <div class="foot">${badges(d)}</div>
@@ -265,11 +265,20 @@ async function load() {
   } catch (e) {
     if (!state.data) { $("#main").innerHTML = `<div class="empty"><div class="big">📡</div><b>Can't load deals</b>Check your connection and pull to refresh.</div>`; return; }
   }
+  buildChips();
   const h = location.hash.slice(1);
   if (["rubber", "shoes", "clothing"].includes(h)) setKind(h, false); else render();
   setUpdated();
   const el = h && document.getElementById(h);
   if (el) el.scrollIntoView({ block: "center" });
+}
+
+function buildChips() {
+  const list = (state.data.store_list || []).map((x) => x.name);
+  const withDeals = list.filter((n) => state.data.deals.some((d) => d.store === n));
+  if (state.store !== "all" && !withDeals.includes(state.store)) state.store = "all";
+  $("#stores").innerHTML = [`<button class="chip${state.store === "all" ? " active" : ""}" data-store="all">All stores</button>`]
+    .concat(withDeals.map((n) => `<button class="chip${state.store === n ? " active" : ""}" data-store="${esc(n)}">${esc(n)}</button>`)).join("");
 }
 
 function setKind(k, push = true) {
@@ -295,14 +304,18 @@ $("#sheetBg").onclick = closeSheet;
 
 function watchlistHtml() {
   const d = state.data; if (!d) return "";
-  return Object.entries(d.watchlist).map(([store, items]) => {
-    const ok = d.stores[store];
-    return `<h3>${esc(store)} · <span class="${ok ? "ok" : "bad"}">${ok ? "reading OK" : "couldn't read"}</span></h3><div class="wl">` +
-      items.map((i) => {
-        const n = d.deals.filter((x) => x.store === store && x.watch.startsWith(i.split(" ≤")[0])).length;
-        return `<div class="row"><span>${esc(i)}</span><span class="${n ? "ok" : ""}" style="${n ? "" : "color:var(--muted)"}">${n ? n + " on special" : "—"}</span></div>`;
-      }).join("") + `</div>`;
-  }).join("");
+  const items = Array.isArray(d.watchlist) ? d.watchlist : [];
+  const count = (label) => d.deals.filter((x) => (label.startsWith("Clothing") ? x.kind === "clothing" : label === "Shoes" ? x.kind === "shoes" : x.watch === label)).length;
+  let html = `<div class="wl">` + items.map((i) => {
+    const n = count(i);
+    return `<div class="row"><span>${esc(i)}</span><span class="${n ? "ok" : ""}" style="${n ? "" : "color:var(--muted)"}">${n ? n + " on special" : "—"}</span></div>`;
+  }).join("") + `</div>`;
+  html += `<h3>Shops checked</h3><div class="wl">` + (d.store_list || []).map((st) => {
+    const ok = d.stores[st.name];
+    const n = d.deals.filter((x) => x.store === st.name).length;
+    return `<div class="row"><span>${dot(st.name)}&nbsp; ${esc(st.name)} <span style="color:var(--muted);font-size:12px">${esc(st.country || "")}</span></span><span class="${ok ? "ok" : "bad"}">${ok ? (n ? n + " deals" : "OK") : "can't read"}</span></div>`;
+  }).join("") + `</div>`;
+  return html;
 }
 
 function openAlerts() {

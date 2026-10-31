@@ -36,6 +36,9 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      - name: Install browser (for STIGA)
+        if: github.event_name != 'push'
+        run: python -m playwright install --with-deps chromium > /dev/null
       - name: Run monitor
         if: github.event_name != 'push'
         env:
@@ -44,7 +47,6 @@ jobs:
           case "${{ github.event.inputs.mode }}" in
             dry-run)    python monitor.py --dry-run ;;
             test-alert) python monitor.py --test-alert ;;
-            probe)      pip install -q playwright && python -m playwright install --with-deps chromium >/dev/null && python probe.py ;;
             *)          python monitor.py ;;
           esac
       - name: Save results
@@ -52,7 +54,7 @@ jobs:
         run: |
           git config user.name "tt-monitor"
           git config user.email "actions@users.noreply.github.com"
-          for f in state.json last_run.log docs/deals.json probe.json probe; do [ -e "$f" ] && git add "$f"; done; true
+          for f in state.json last_run.log docs/deals.json; do [ -e "$f" ] && git add "$f"; done; true
           git diff --cached --quiet || (git commit -m "Update deals" && git pull --rebase && git push)
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
