@@ -1,12 +1,17 @@
-Run at 2026-10-31 16:35 SAST
+Run at 2026-10-31 16:43 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 50 products, 50 on special
   Table Tennis 11 /clearance: 91 products, 91 on special
 Checking Racketlon...
-  Racketlon: 10 products checked, 0 on special
+  Racketlon: 143 products checked, 134 on special
 Checking Megaspin...
   Megaspin rubber-sale: 101 products
+  Megaspin blade-sale: 87 products
+  Megaspin racket-sale: 71 products
+  Megaspin table-sale: 0 products
+  Megaspin robot-sale: 24 products
   Megaspin butterfly-sale: 217 products
+  Megaspin butterfly-racket-sale: 17 products
   Megaspin butterfly-apparel-sale: 132 products
   Megaspin butterfly-clearance-sale: 125 products
 Checking Dandoy Sports...
@@ -21,410 +26,66 @@ Checking JOOLA Europe...
 Checking Donic...
   Donic: 49 products checked, 0 on special
 Checking STIGA...
-  STIGA /en/category/sale/table-tennis-bats-sale: Page.goto: Timeout 60000ms exceeded.
-Call log:
-  - navigating to "https://www.stigasports.com/en/category/sale/table-tennis-bats-sale", waiting until "networkidle"
-
-  STIGA /en/category/sale/outlet: 20 products
+  STIGA /en/category/sale: 8 products
+  STIGA /en/category/sale/table-tennis-bats-sale: 5 products
+  STIGA /en/category/sale/outlet: 23 products
 No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
-  (no phones subscribed - alert not sent: 49 new shoes specials)
-  (no phones subscribed - alert not sent: 301 new clothing specials)
-Done: 396 watchlist specials live, 352 new, 0 last-day reminders.
+  (no phones subscribed - alert not sent: 305 new clothing special)
+  (no phones subscribed - alert not sent: 52 new shoe specials)
+Done: 1381 specials live, 359 new alerts, 0 last-day reminders.
+  Butterfly US     accessories  24
+  Butterfly US     bags         4
+  Butterfly US     balls        1
+  Butterfly US     blade        5
+  Butterfly US     clothing     37
+  Butterfly US     racket       22
+  Butterfly US     robots       5
+  Butterfly US     rubber       1
+  Butterfly US     shoes        13
+  Butterfly US     tables       21
+  Dandoy Sports    accessories  54
+  Dandoy Sports    bags         17
+  Dandoy Sports    balls        4
+  Dandoy Sports    blade        27
+  Dandoy Sports    clothing     272
+  Dandoy Sports    racket       9
+  Dandoy Sports    rubber       38
+  Dandoy Sports    shoes        8
+  JOOLA Europe     accessories  1
+  JOOLA Europe     bags         7
+  JOOLA Europe     balls        3
+  JOOLA Europe     blade        11
+  JOOLA Europe     racket       9
+  JOOLA Europe     rubber       4
+  JOOLA Europe     tables       7
+  JOOLA US         accessories  1
+  JOOLA US         tables       3
+  Megaspin         accessories  13
+  Megaspin         bags         12
+  Megaspin         balls        2
+  Megaspin         blade        94
+  Megaspin         clothing     199
+  Megaspin         racket       76
+  Megaspin         robots       24
+  Megaspin         rubber       106
+  Megaspin         shoes        30
+  Megaspin         tables       41
+  Racketlon        clothing     7
+  STIGA            accessories  2
+  STIGA            blade        1
+  STIGA            clothing     18
+  STIGA            racket       1
+  STIGA            rubber       4
+  Table Tennis 11  accessories  26
+  Table Tennis 11  bags         4
+  Table Tennis 11  balls        2
+  Table Tennis 11  blade        19
+  Table Tennis 11  clothing     50
+  Table Tennis 11  racket       2
+  Table Tennis 11  rubber       31
+  Table Tennis 11  shoes        9
   * Table Tennis 11 | Andro Nuzn 55 | Andro Nuzn 55: €44.56 (~R830) (was €65.53 (~R1,220), -32%) — ends Sun 01 Nov at midnight
-  * Table Tennis 11 | Clothing ≤R550 | Neottec Socks Style navy: €3.21 (~R60) (was €4.02 (~R75), -20%) — ends Sun 01 Nov at midnight
-  * Table Tennis 11 | Clothing ≤R550 | Neottec T-Shirt Izumo grey: €14.63 (~R272) (was €20.90 (~R389), -30%) — ends Sun 01 Nov at midnight
-  * Table Tennis 11 | Clothing ≤R550 | Neottec T-Shirt Izumo blue: €14.63 (~R272) (was €20.90 (~R389), -30%) — ends Sun 01 Nov at midnight
-  * Table Tennis 11 | Clothing ≤R550 | Neottec Socks Style white/navy: €3.21 (~R60) (was €4.02 (~R75), -20%) — ends Sun 01 Nov at midnight
-  * Table Tennis 11 | Clothing ≤R550 | Neottec Socks Style white/turquoise: €3.21 (~R60) (was €4.02 (~R75), -20%) — ends Sun 01 Nov at midnight
-  * Table Tennis 11 | Clothing ≤R550 | Donic T-Shirt Scorpion red/black: €19.13 (~R356) (was €29.43 (~R548), -35%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Donic Shorts Dive navy: €20.08 (~R374) (was €29.43 (~R548), -32%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Li-Ning T-Shirt AAYU031-4C sky blue/grey: €18.57 (~R346) (was €26.53 (~R494), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Donic Shirt Spider black/pink: €22.57 (~R420) (was €37.62 (~R700), -40%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Tibhar T-Shirt Azur pink/yellow/blue: €24.61 (~R458) (was €35.16 (~R655), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Victas V-Shorts 312 navy: €17.18 (~R320) (was €24.51 (~R456), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Li-Ning Shirt AHSU859-2C black: €18.57 (~R346) (was €26.53 (~R494), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Li-Ning T-Shirt AHSU285-1C black: €13.93 (~R259) (was €18.77 (~R349), -26%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Andro T-Shirt Tylos black: €21.21 (~R395) (was €30.29 (~R564), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Tibhar Shirt Jura green: €26.59 (~R495) (was €40.90 (~R762), -35%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Victas Shirt V-232 red: €26.91 (~R501) (was €38.44 (~R716), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Nittaku Shirt Eddy (2215) blue: €27.49 (~R512) (was €45.82 (~R853), -40%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Nittaku Shirt Brightcity (2209) red: €28.95 (~R539) (was €45.00 (~R838), -36%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Nittaku Shirt Brekle (2210) pink: €28.15 (~R524) (was €43.36 (~R807), -35%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Nittaku Shirt Brekle (2210) red: €28.15 (~R524) (was €43.36 (~R807), -35%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Andro Sweat pants Doley: €28.66 (~R534) (was €40.94 (~R762), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Victas Tracksuit Pants V-116 black: €22.92 (~R427) (was €32.74 (~R610), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Li-Ning Shirt AHSU859-4C light blue: €18.57 (~R346) (was €26.53 (~R494), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Andro Women's Shirt Avos blue/yellow: €26.21 (~R488) (was €40.94 (~R762), -36%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Xiom Shorts Lucian magenta: €28.90 (~R538) (was €43.36 (~R807), -33%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Andro T-Shirt Alpha Melange orange: €17.19 (~R320) (was €24.55 (~R457), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Andro T-Shirt Likya red-graffiti: €20.06 (~R374) (was €28.65 (~R533), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Victas Tracksuit Pants V-117 black: €22.92 (~R427) (was €32.74 (~R610), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Andro T-Shirt Likya green-graffiti: €20.06 (~R374) (was €28.65 (~R533), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Li-Ning T-Shirt AHSU285-4C orange: €13.93 (~R259) (was €19.90 (~R371), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Mizuno Shorts 8 IN Flex 62GB2601 Estate blue: €27.66 (~R515) (was €36.89 (~R687), -25%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Andro Shirt Longsleeve Scalzo: €22.92 (~R427) (was €32.74 (~R610), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Xiom Shorts Lucian mint: €28.90 (~R538) (was €43.36 (~R807), -33%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Mizuno Shorts Core 5.5 parisian blue: €25.82 (~R481) (was €34.43 (~R641), -25%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Andro Shirt Avos grey/blue: €28.66 (~R534) (was €40.94 (~R762), -30%) — clearance - while stock lasts
-  * Table Tennis 11 | Clothing ≤R550 | Mizuno Flex Skort Black: €24.73 (~R460) (was €32.98 (~R614), -25%) — clearance - while stock lasts
-  * Table Tennis 11 | Shoes | Mizuno Wave Medal Neo blue: €97.54 (~R1,816) (was €114.76 (~R2,137), -15%) — clearance - while stock lasts
-  * Table Tennis 11 | Shoes | Xiom Shoes FT IGRE blue: €66.35 (~R1,235) (was €73.73 (~R1,373), -10%) — clearance - while stock lasts
-  * Table Tennis 11 | Shoes | Andro Shoes Cross Step Pro black/gold: €73.73 (~R1,373) (was €81.92 (~R1,525), -10%) — clearance - while stock lasts
-  * Table Tennis 11 | Shoes | Xiom Shoes FT IGRE white: €66.35 (~R1,235) (was €73.73 (~R1,373), -10%) — clearance - while stock lasts
-  * Table Tennis 11 | Shoes | Li-Ning Shoes APPU019-1C: €89.11 (~R1,659) (was €111.40 (~R2,074), -20%) — clearance - while stock lasts
-  * Table Tennis 11 | Shoes | Andro Shoes Cross Step 2 white/black/green: €66.35 (~R1,235) (was €73.73 (~R1,373), -10%) — clearance - while stock lasts
-  * Table Tennis 11 | Shoes | Neottec Shoes Kaito Pro: €48.31 (~R900) (was €61.40 (~R1,143), -21%) — sale - no end date given
-  * Table Tennis 11 | Shoes | Double Fish Shoes DF-938: €37.02 (~R689) (was €49.10 (~R914), -25%) — sale - no end date given
-  * Table Tennis 11 | Shoes | Tibhar Shoes Blizzard Speed II white/royal: €55.90 (~R1,041) (was €65.49 (~R1,219), -15%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Levalis - Stealth Black: $149.99 (~R2,501) (was $169.99 (~R2,834), -12%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Vilight II - White: $99.99 (~R1,667) (was $114.99 (~R1,917), -13%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Rifones - White: $139.99 (~R2,334) (was $159.99 (~R2,667), -13%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Rifones - Black: $139.99 (~R2,334) (was $159.99 (~R2,667), -13%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Levalis - Flash Red: $149.99 (~R2,501) (was $169.99 (~R2,834), -12%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Gigu - White/Silver: $114.99 (~R1,917) (was $129.99 (~R2,167), -12%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Mach - Blue: $129.99 (~R2,167) (was $149.99 (~R2,501), -13%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Rifones - Navy: $139.99 (~R2,334) (was $159.99 (~R2,667), -13%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Levalis - Platinum White: $149.99 (~R2,501) (was $169.99 (~R2,834), -12%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Vilight II - Royal Blue: $99.99 (~R1,667) (was $114.99 (~R1,917), -13%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Vilight II - Black: $99.99 (~R1,667) (was $114.99 (~R1,917), -13%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Reiss - Black: $74.99 (~R1,250) (was $84.99 (~R1,417), -12%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Unizes II - White: $69.99 (~R1,167) (was $84.99 (~R1,417), -18%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Reiss - Navy: $74.99 (~R1,250) (was $84.99 (~R1,417), -12%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Nine: $134.99 (~R2,251) (was $149.99 (~R2,501), -10%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Mach - Navy: $129.99 (~R2,167) (was $149.99 (~R2,501), -13%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Unizes II - Navy: $69.99 (~R1,167) (was $84.99 (~R1,417), -18%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Vilata - White: $89.99 (~R1,500) (was $99.99 (~R1,667), -10%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Vilata - Navy: $89.99 (~R1,500) (was $99.99 (~R1,667), -10%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly LT Socks II - White: $14.44 (~R241) (was $16.99 (~R283), -15%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Reiss - Purple: $72.24 (~R1,204) (was $84.99 (~R1,417), -15%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Reiss - Blue: $72.24 (~R1,204) (was $84.99 (~R1,417), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Albury Socks - Blue: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly LT Socks II - Black: $14.44 (~R241) (was $16.99 (~R283), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Tosy Lady Shirt - Blue: $20.00 (~R333) (was $49.99 (~R833), -60%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly 2025 US Open Shirt: $20.00 (~R333) (was $29.99 (~R500), -33%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Short Color Socks III - White: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Rydal Socks - Black: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Lamiora Socks - Saxe Blue: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly ES Socks II - Black: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Clyde Socks - Black: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Albury Socks - Orange: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Germany 23 Socks: $10.19 (~R170) (was $11.99 (~R200), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Taidarin Socks - Orange: $14.44 (~R241) (was $16.99 (~R283), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Lamiora Socks - Turquoise-Blule: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Lamiora Socks - Pink: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly ES Socks II - White: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly ES Socks II - Royal Blue: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Clyde Socks - Rose: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Albury Socks - Lime Green: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Short Color Socks III - Navy: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Short Color Socks III - Black: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Short Color Socks III - Turquoise-Blue: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Taidarin Socks - Lime-Sky: $14.44 (~R241) (was $16.99 (~R283), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Taidarin Socks - Blue: $14.44 (~R241) (was $16.99 (~R283), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Lamiora Socks - Navy: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Clyde Socks - Turquoise-Blue: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Clyde Socks - Royal Blue: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Albury Socks - Red: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Rydal Socks - Turquoise-Blue: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Rydal Socks - Rose: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Short Color Socks III - Coral Pink: $12.74 (~R212) (was $14.99 (~R250), -15%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Levalis - Rose/Grape: $149.99 (~R2,501) (was $169.99 (~R2,834), -12%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Gigu - Black/Red: $114.99 (~R1,917) (was $141.99 (~R2,367), -19%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Vilight - Turqoise: $84.99 (~R1,417) (was $99.99 (~R1,667), -15%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Vilight - Navy: $84.99 (~R1,417) (was $99.99 (~R1,667), -15%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Mach - Black: $129.99 (~R2,167) (was $149.99 (~R2,501), -13%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Unizes - Black: $59.99 (~R1,000) (was $74.99 (~R1,250), -20%) — sale - no end date given
-  * Megaspin | Shoes | Butterfly Lezoline Unizes - Navy: $74.99 (~R1,250) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly 2025 US Nationals Shirt: $20.00 (~R333) (was $29.99 (~R500), -33%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Sutairu Lady Shirt - Red: $20.00 (~R333) (was $59.99 (~R1,000), -67%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly USA Team 23 Practice Shirt: $20.00 (~R333) (was $54.99 (~R917), -64%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Higo Lady Shirt - Anthracite: $20.00 (~R333) (was $59.99 (~R1,000), -67%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Nagano Lady Shirt - Light Blue: $20.00 (~R333) (was $49.99 (~R833), -60%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Kariya Lady Shirt - Sky Grey: $20.00 (~R333) (was $49.99 (~R833), -60%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Kariya Lady Shirt - Red: $20.00 (~R333) (was $49.99 (~R833), -60%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Izumo Lady Shirt - Red: $20.00 (~R333) (was $49.99 (~R833), -60%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Meranji Shorts: $20.00 (~R333) (was $44.99 (~R750), -56%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Tosy Lady Shirt - Black: $20.00 (~R333) (was $49.99 (~R833), -60%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Puren Shirt - Blue: $20.00 (~R333) (was $37.99 (~R633), -47%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Puren Shirt - Black: $20.00 (~R333) (was $37.99 (~R633), -47%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Puren Lady Shirt - Red: $20.00 (~R333) (was $37.99 (~R633), -47%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Toc T-Shirt - Red: $20.00 (~R333) (was $39.99 (~R667), -50%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Kuro Shirt: $20.00 (~R333) (was $29.99 (~R500), -33%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Puren Shirt - Red: $20.00 (~R333) (was $37.99 (~R633), -47%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Izumo Lady Shirt - Grey: $20.00 (~R333) (was $49.99 (~R833), -60%) — sale - no end date given
-  * Megaspin | Clothing ≤R550 | Butterfly Higo Lady Shirt - Red: $20.00 (~R333) (was $59.99 (~R1,000), -67%) — sale - no end date given
   * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R752) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Stiga Pants Horizon Green: €23.55 (~R438) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Stiga T-Shirt Pro Green/Sky: €20.99 (~R391) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Stiga T-Shirt Pro Sky/Green: €20.99 (~R391) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Stiga Short Jupiter Navy: €20.33 (~R379) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Dandoy T-Shirt Flash Grey: €16.53 (~R308) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Dandoy T-Shirt Flash Red/Yellow: €16.53 (~R308) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Nuvon Blue: €27.85 (~R519) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Nuvon Green: €27.85 (~R519) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Nuvon Red: €27.85 (~R519) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Donic Shorts Velora Navy: €24.13 (~R449) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Donic Shorts Velora Black: €24.13 (~R449) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Tibhar TT-Shirt Corner Blue/Pink: €26.61 (~R495) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Tibhar TT-Shirt Corner Blue/Turquoise: €26.61 (~R495) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Tibhar TT-Shirt Corner Blue/Light Blue: €26.61 (~R495) — weekly special
-  * Dandoy Sports | Shoes | Donic Shoes Saphir: €43.39 (~R808) — weekly special
-  * Dandoy Sports | Shoes | Joola Shoes Court'20: €35.29 (~R657) — weekly special
-  * Dandoy Sports | Shoes | Joola Shoes Court Junior: €27.85 (~R519) — weekly special
   * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R923) — weekly special
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Socks Player: €5.21 (~R97) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Anvia Navy: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Short Sprint Black: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Short Sprint Navy: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Liska Women Black/Yellow: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Liska Women Blue/Black: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Ping Pang T-Shirt Inspiration Navy: €18.60 (~R346) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Ping Pang T-Shirt Inspiration Grey: €18.60 (~R346) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Ping Pang T-Shirt Justesse Grey: €18.60 (~R346) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Ping Pang T-Shirt Respiration Black: €18.60 (~R346) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Ping Pang T-Shirt Respiration White: €18.60 (~R346) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Tilston Red/Black: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Tilston Women Red/Black: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Pants Millar: €27.19 (~R506) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Sygma Navy/Red: €18.93 (~R352) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Sygma Navy/Green: €18.93 (~R352) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola T-Shirt Flection Blue: €18.93 (~R352) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Pants Synergy: €19.75 (~R368) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Jacket Synergy White/Grey: €28.84 (~R537) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Pants Chilax Black: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Pants Chilax Navy: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Pants Pulse Black: €16.53 (~R308) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Jacket Pulse Red/Black: €21.40 (~R398) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Jacket Pulse Grey/Black: €21.40 (~R398) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Pants Pulse Navy: €16.53 (~R308) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Pulse Blue/Black: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Pulse Red/Black: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Pulse Anthracite/Navy: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Pulse Grey/Black: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Yasaka Shirt Galax Navy: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Yasaka Shirt Galax Black: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Yasaka Shirt Galax Lady Navy: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Pro Red: €28.43 (~R529) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Pro Dusty Orange: €28.43 (~R529) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Airform Navy: €25.54 (~R476) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Airform Bordeaux: €25.54 (~R476) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Airform Grey: €25.54 (~R476) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola T-Shirt Airform Bordeaux: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola T-Shirt Airform Grey: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Plexus Navy/Blue: €24.71 (~R460) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Plexus Black/Green: €24.71 (~R460) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Edge Black/Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Edge Black/Green: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Edge Navy/Orange: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Edge Lady Black/Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Edge Lady Navy/Blue: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Short Maco Grey: €18.93 (~R352) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Rafter Anthracite/Black: €24.71 (~R460) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Caliber Black/Red: €24.71 (~R460) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Caliber Black/Cyan: €24.71 (~R460) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Caliber Navy/Lime: €24.71 (~R460) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Caliber Lady Navy/Lime: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Effect Black/Grey: €24.71 (~R460) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Short React Navy: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic T-Shirt Bluestar: €14.38 (~R268) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Avos Blue/Yellow: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Avos Women Blue/Yellow: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Lavor Black/Red: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Lavor Dark Blue/Blue: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Lavor Black/Yellow: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Lavor Women Dark Blue/Blue: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Barci Multicolor: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Pants Salivan: €24.79 (~R462) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Mundo Black/Green: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Mundo Navy/Petrol: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Mundo Navy/Red: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Mundo Petrol/Navy: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Mundo Red/Navy: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Mundo Lady Black/Green: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Mundo Lady Navy/Petrol: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Mundo Lady Navy/Red: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Mundo Lady Petrol/Navy: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Mundo Lady Red/Navy: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Trend Blue/Black: €22.23 (~R414) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Shirt Trend Red/Black: €22.23 (~R414) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Centrela Black/Blue: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Centrela Black/Red: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Centrela Black/Grey: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Centrela Lady Black/Blue: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Centrela Lady Black/Red: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Zephir Black/Red: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola T-Shirt Solstice Navy/Blue: €18.93 (~R352) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola T-Shirt Solstice Black/Red: €18.93 (~R352) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola T-shirt Solstice Navy/Purple: €18.93 (~R352) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola T-Shirt Solstice Lady Navy/Blue: €18.93 (~R352) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Flame Black/Yellow: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Flame Black/Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Flame Navy/Blue: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Flame Lady Black/Yellow: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Barci Yellow/Pink: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Short Dive Navy: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Aviator Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Aviator Navy: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Manic Black/Grey/Lime: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Nitro Black/Red: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Nitro Navy/Blue: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Nitro Lady Black/Red: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Nitro Lady Navy/Blue: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic T-Shirt Slate Black/Red: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Pants Capri Black: €23.14 (~R431) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Pants Capri Navy: €23.14 (~R431) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Avos Black/Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Avos Grey/Blue: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Avos Women Black/Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Avos Women Grey/Blue: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Ataxa Black/Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Ataxa Blue/Green: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Ataxa Black/Yellow: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Ataxa Women Black/Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Ataxa Women Blue/Green: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro T-Shirt Alpha-T Black/Green: €20.21 (~R376) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro T-Shirt Alpha-T White/Green: €20.21 (~R376) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Pants Etna Black: €23.88 (~R445) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar Pants Osmium: €26.36 (~R491) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar T-Shirt Smash Navy: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar T-Shirt Smash Red: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Tibhar T-Shirt Smash Green: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Pluton Red/Blue: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Pluton Light Blue/White: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Neptune Dark Blue/Pink: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Neptune Pink: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Neptune Blue/Yellow: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Uranus Blue: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Uranus Yellow/Blue: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Uranus Pink: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Butterfly Polo Ageo Blue: €26.36 (~R491) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro T-Shirt Panji Black/Purple: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro T-Shirt Panji Black/Yellow: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro T-Shirt Panji Black/Green: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro T-Shirt Likya Graffiti/Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro T-Shirt Likya Graffiti/Green: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Uranus Orange: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Zephir Black/Blue: €23.06 (~R429) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Short Unit Navy: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Shirt Ace Lady Black/Blue: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Skirt Mara Navy: €18.93 (~R352) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Short Maco Black: €18.93 (~R352) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Joola Short Maco Navy: €18.93 (~R352) — clearance - while stock lasts
-  * Dandoy Sports | Shoes | Joola Shoes NexTT White: €37.52 (~R699) — clearance - while stock lasts
-  * Dandoy Sports | Shoes | Joola Shoes NexTT Blue: €37.52 (~R699) — clearance - while stock lasts
-  * Dandoy Sports | Shoes | Andro Cross Step Pro Black/Gold: €61.94 (~R1,153) — clearance - while stock lasts
-  * Dandoy Sports | Shoes | Andro Cross Step Pro White/Silver: €61.94 (~R1,153) — clearance - while stock lasts
-  * Dandoy Sports | Shoes | Andro Shoes Cross Step 2 Black/Lime: €49.55 (~R923) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Team Green/Black: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Team Black/Green: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Team Red/Black: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Team Black/Red: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Club Navy/Red: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Club Red/Navy: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Tank Top Agility Blue: €20.62 (~R384) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Tank Top Agility Black: €20.62 (~R384) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Creative Black/Red: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Creative Red/Black: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Creative Navy/Yellow: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Creative Yellow/Navy: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Heaven Vivid Blue/Navy: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Heaven Ladies Navy/Vivid Blue: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Heaven Ladies Vivid Blue/Navy: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Lines Yellow: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Lines Blue: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Lines Pink: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Pacific Navy/Red/White: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Pacific Vivid Blue/Black/White: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Pacific Black/Vivid Blue/White: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Pacific Black/Yellow/White: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shirt Odyssey Navy/Red: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga T-Shirt River Blue: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga T-Shirt River Pink: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga T-Shirt River Red: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga T-Shirt River Green: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga T-Shirt River Blue/Navy/Yellow: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Short Marine Navy: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Shorts Triumph Navy: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Stiga Tracksuit Action Red: €19.90 (~R371) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro Shirt Harris Women Black/Red: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Flow Black/Lime: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Flow Lady Black/Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Push Black/Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Push Black/Yellow: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Splash Blue/Navy: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Libra Black/Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Libra Navy/Blue: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Libra Lady Black/Lime: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Stripes Blue Melange: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Force Navy/Blue: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Force Black/Red: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Clash Lady Royal Blue/Navy: €20.58 (~R383) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Raceflex Anthracite: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Raceflex Navy: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Donic Shirt Hyper (polyester) Black: €12.31 (~R229) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro T-Shirt Darcly Blue/Camouflage: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Andro T-Shirt Darcly Grey/Camouflage: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt EVOLUTION Red/Black/White: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt EVOLUTION Navy/Blue/White: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt EVOLUTION Lime/Grey/White: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt EVOLUTION Grey/Lime/White: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt EVOLUTION Black/Yellow/White: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Tracksuit RIO Red: €15.00 (~R279) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Tracksuit RIO Blue: €15.00 (~R279) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Tracksuit RIO Black: €15.00 (~R279) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports T-shirt RIO Black: €5.00 (~R93) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Sweatshirt RIO Red: €5.00 (~R93) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Sweatshirt RIO Blue: €5.00 (~R93) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Sweatshirt RIO Black: €5.00 (~R93) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt RIO Red: €5.00 (~R93) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt RIO Blue: €5.00 (~R93) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt RIO Black: €5.00 (~R93) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt QUITO Yellow: €5.00 (~R93) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt QUITO Red: €5.00 (~R93) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt QUITO Green: €5.00 (~R93) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt QUITO Blue: €5.00 (~R93) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt QUITO Black: €5.00 (~R93) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Skirt PERFORMANCE Navy: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Skirt PERFORMANCE Grey: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shorts PERFORMANCE Navy: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shorts PERFORMANCE Grey: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shorts PERFORMANCE Black: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Tracksuit PERFORMANCE Red: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Tracksuit PERFORMANCE Navy: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Tracksuit PERFORMANCE Grey: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Tracksuit PERFORMANCE Black: €16.45 (~R306) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt Performance White: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt Performance Navy: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt Performance Red: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt Performance Grey: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt Performance Green: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Shirt Performance Blue: €4.13 (~R77) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Sweatshirt Performance Navy: €8.18 (~R152) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Sweatshirt Performance White: €8.18 (~R152) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Sweatshirt Performance Grey: €8.18 (~R152) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Jacket Cup Blue: €9.92 (~R185) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Jacket Cup Navy: €9.92 (~R185) — clearance - while stock lasts
-  * Dandoy Sports | Clothing ≤R550 | Dsports Pants Cup Navy: €6.61 (~R123) — clearance - while stock lasts
-  * Butterfly US | Clothing ≤R550 | Taidarin Socks: $16.99 (~R283) — monthly sale
-  * Butterfly US | Clothing ≤R550 | ES Socks II: $14.99 (~R250) — monthly sale
-  * Butterfly US | Clothing ≤R550 | Lamiora Socks: $14.99 (~R250) — monthly sale
-  * Butterfly US | Shoes | Lezoline Vilight II Shoes: $114.99 (~R1,917) — monthly sale
-  * Butterfly US | Clothing ≤R550 | Clyde Socks: $14.99 (~R250) — monthly sale
-  * Butterfly US | Clothing ≤R550 | Albury Socks: $14.99 (~R250) — monthly sale
-  * Butterfly US | Clothing ≤R550 | Short Color Socks III: $14.99 (~R250) — monthly sale
-  * Butterfly US | Clothing ≤R550 | LT Socks II: $16.99 (~R283) — monthly sale
-  * Butterfly US | Clothing ≤R550 | Rydal Socks: $14.99 (~R250) — monthly sale
-  * Butterfly US | Shoes | Lezoline Unizes II Shoes: $84.99 (~R1,417) — monthly sale
-  * Butterfly US | Shoes | Lezoline TR Shoes: $114.99 (~R1,917) — monthly sale
-  * Butterfly US | Shoes | Lezoline Levalis Shoes: $169.99 (~R2,834) — monthly sale
-  * Butterfly US | Shoes | Lezoline Vilata Shoes: $99.99 (~R1,667) — monthly sale
-  * Butterfly US | Shoes | Lezoline Sneaker: $89.99 (~R1,500) — monthly sale
-  * Butterfly US | Shoes | Lezoline Nine Shoes: $149.99 (~R2,501) — monthly sale
-  * Butterfly US | Clothing ≤R550 | Germany 23 Socks: $11.99 (~R200) — monthly sale
-  * Butterfly US | Shoes | Lezoline Reiss Shoes: $84.99 (~R1,417) — monthly sale
-  * Butterfly US | Shoes | Lezoline Vilight Shoes: $99.99 (~R1,667) — monthly sale
-  * Butterfly US | Shoes | Lezoline Gigu Shoes: $129.99 (~R2,167) — monthly sale
-  * Butterfly US | Shoes | Lezoline Mach Shoes: $149.99 (~R2,501) — monthly sale
-  * Butterfly US | Shoes | Lezoline Rifones Shoes: $159.99 (~R2,667) — monthly sale
