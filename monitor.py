@@ -129,20 +129,20 @@ CATEGORIES = ["rubber", "blade", "racket", "balls", "clothing", "shoes", "bags",
 OTHER_SPORTS = ["padel", "pickleball", "badminton", "squash", "snowracer", "scooter", "kickbike", "golf", "tennis racket",
                 "tennis ball", "tennis string", "football", "hockey", "darts", "dart ", "netball", "skate", "sledge", "trampoline"]
 KW = {
-    "robots": ["robot", "amicus", "robo-pong", "robopong", "ipong", "pongbot", "ball machine", "trainerbot", "y&t", "power pong"],
-    "tables": [" table 25", " table 22", " table 19", " table 16", "rollaway", "centrefold", "europa 25", "nippon", "easifold",
+    "robots": ["robot", "table top pro", "trainer motion", "amicus", "robo-pong", "robopong", "ipong", "pongbot", "ball machine", "trainerbot", "y&t", "power pong"],
+    "tables": [" compact 1", " compact 2", " octet ", " spirit ", " active 1", " garden ", " table 25", " table 22", " table 19", " table 16", "rollaway", "centrefold", "europa 25", "nippon", "easifold",
                "space saver", "outdoor table", "indoor table", "tt table", "table tennis table", "conversion top", "playback",
                "rapid play", "inside 25", "nova ", "midsize", "compact table", "tisch ", "umpire table", "barrier", "surround",
                "net and post", "net & post", "net set", "post set", "scoreboard", "score board", "scorer", "table cover", "table top"],
     "shoes": ["shoe", "shoes", "schuh", "lezoline", "wave medal", "wave drive", "cross step", "speed flex", "kaito", "sneaker"],
     "bags": ["bag", "backpack", "rucksack", "tasche", "case", "cover", "hülle", "trolley", "holdall", "wallet", "pouch", "box "],
-    "clothing": ["shirt", "t-shirt", "tshirt", "tee ", " tee", "polo", "shorts", "short ", "skirt", "skort", "dress", "socks", "sock",
+    "clothing": ["shirt", " pant ", "pant ", "legging", "bra ", "underwear", "t-shirt", "tshirt", "tee ", " tee", "polo", "shorts", "short ", "skirt", "skort", "dress", "socks", "sock",
                  "jacket", "tracksuit", "track suit", "pants", "trousers", "hoodie", "sweat", "jersey", "trikot", "hose", "socken",
                  "jacke", "trainingsanzug", "sleeve", " top ", " cap", "headband", "wristband", "hat ", "vest", "apparel", "singlet"],
     "balls": [" ball", "balls", "40+", "3-star", "3 star", "3***", "***", "1-star", "training ball", "bälle"],
     "racket": ["racket", "racquet", "bat ", " bat", "paddle", "pre-assembled", "preassembled", "proline", "pro-line", "pro line",
                "schläger", "+ ", "set "],
-    "rubber": ["rubber", "belag", "sheet", " pips", "long pips", "short pips", "anti ", "rasanter", "hurricane", "tenergy", "dignics",
+    "rubber": ["rubber", "sigma", "specialist", "mx-k", "c55", "c52", "c57", "dhs neo", "rakza", "fastarc", "tenergy", "zyre", "belag", "sheet", " pips", "long pips", "short pips", "anti ", "rasanter", "hurricane", "tenergy", "dignics",
                "rozena", "bluefire", "bluestar", "bluegrip", "bluestorm", "acuda", "dna ", "mantra", "helix", "omega", "vega ", "jekyll",
                "evolution", "hybrid k", "quantum", "fastarc", "hammond", "moristo", "rakza", "mark v", "nuzn", "hexer", "target",
                "tango", "rhyzer", "dynaryz", "rhyzm", "samba", "nexxus", "codexx", "neoflexx", "v > ", "vo >", "vs >", "v>", "sriver",
@@ -150,7 +150,7 @@ KW = {
                "el-p", "el-s", "k3", "k1", "aurus", "platin", "hybrid 5", "hybrid m", "hybrid h", "hybrid x", "hybrid s", "grass",
                "curl", "feint", "tibhar 1", "air ", "yinhe", "palio", "friendship", "ventus", "spectol", "hydra", "d09c", "09c", "05 ",
                "64 ", "80 ", "zyre", "spinart", "inspira", "cyber", "mx-d", "tsp ", "victas v", "grip", "spin rubber"],
-    "blade": ["blade", "holz", "carbon", "alc", "zlc", "zlf", "ply", "wood", "allround", " off", " def", "ligna", "synteliac",
+    "blade": ["blade", "anders lind", "exceptional", "ovtcharov", "true carbon", "persson", "fiber", "zx-gear", "award", "gaia", "duo", "prithika", "holz", "carbon", "alc", "zlc", "zlf", "ply", "wood", "allround", " off", " def", "ligna", "synteliac",
               "viscaria", "korbel", "innerforce", "primorac", "clipper", "ebenholz", "waldner", "persson", "septear", "acoustic",
               "latika", "timo boll", "fan zhendong", "harimoto", "lin yun", "hinoki", "balsa", "coton", "cypress", "senso", "relevant",
               "indeed", "dynasty", "infinity", "hadraw", "garaydia", "zhang jike", "ma long", "xu xin", "treiber", "kinetic",
@@ -174,15 +174,22 @@ STRONG_ACCESSORY = ["glue", "booster", "edge tape", "side tape", "power tape", "
 RACKET_MODELS = [" sg", "tbc ", "bty ", "striker", "prime c", "pro carbon", "nexy", "team ", "sbd ", "level ", "hobby"]
 
 
+COMBO = [" w/", " with ", " + ", "proline", "pro-line", "pro line", "set of", "racket", "racquet", "paddle", "bat "]
+
+
 def categorize(name, cats=""):
     """Best guess at the category: obvious product words first, then the shop's own label, then the name."""
     n = " " + (name or "").lower().replace("table tennis", "tt") + " "
     for cat in ("robots", "shoes"):
         if has_kw(n, KW[cat]):
             return cat
-    if has_kw(n, STRONG_ACCESSORY):
+    if has_kw(n, STRONG_ACCESSORY + ["towel"]):
         return "accessories"
-    if has_kw(n, ["shell", "case", "cover", "bag", "backpack"]) and not has_kw(n, ["shirt", "short"]):
+    if has_kw(n, [" tt table", "tt table ", " table ", "rollaway", "outdoor table", "indoor table"]) and not has_kw(n, ["cover only", "tennis bat"]):
+        return "tables"
+    if has_kw(n, COMBO) and not has_kw(n, KW["clothing"] + [" bag", "backpack", "cover", "shell"]):
+        return "racket"
+    if has_kw(n, ["shell", "case", "cover", " bag", "backpack", "rucksack"]) and not has_kw(n, ["shirt", "short"]):
         return "bags"
     c = (cats or "").lower().strip()
     if c:
