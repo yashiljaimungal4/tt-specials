@@ -459,8 +459,12 @@ def read_browser_stiga(st):
         for page in st["pages"]:
             url = st["base"] + page["path"]
             try:
-                pg.goto(url, wait_until="networkidle", timeout=60000)
-                pg.wait_for_timeout(3000)
+                pg.goto(url, wait_until="domcontentloaded", timeout=90000)
+                try:
+                    pg.wait_for_selector('a[href*="/product/"]', timeout=30000)
+                except Exception:
+                    pass
+                pg.wait_for_timeout(2500)
                 for _ in range(4):
                     pg.mouse.wheel(0, 4000)
                     pg.wait_for_timeout(700)

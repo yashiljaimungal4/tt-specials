@@ -54,8 +54,9 @@ jobs:
         run: |
           git config user.name "tt-monitor"
           git config user.email "actions@users.noreply.github.com"
+          git fetch -q origin main && git reset -q origin/main
           for f in state.json last_run.log docs/deals.json; do [ -e "$f" ] && git add "$f"; done; true
-          git diff --cached --quiet || (git commit -m "Update deals" && git pull --rebase && git push)
+          git diff --cached --quiet || (git commit -m "Update deals" && git push)
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
