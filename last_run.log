@@ -1,90 +1,14 @@
-Run at 2026-10-31 16:49 SAST
-Checking Table Tennis 11...
-  Table Tennis 11 /special-offers: 50 products, 50 on special
-  Table Tennis 11 /clearance: 91 products, 91 on special
-Checking Racketlon...
-  Racketlon: 143 products checked, 134 on special
-Checking Megaspin...
-  Megaspin rubber-sale: 101 products
-  Megaspin blade-sale: 87 products
-  Megaspin racket-sale: 71 products
-  Megaspin table-sale: 0 products
-  Megaspin robot-sale: 24 products
-  Megaspin butterfly-sale: 217 products
-  Megaspin butterfly-racket-sale: 17 products
-  Megaspin butterfly-apparel-sale: 132 products
-  Megaspin butterfly-clearance-sale: 125 products
-Checking Dandoy Sports...
-  Dandoy Sports /promotion: 113 products, 113 on special
-  Dandoy Sports /liquidation: 316 products, 316 on special
-Checking Butterfly US...
-  Butterfly US: 134 sale items
-Checking JOOLA US...
-  JOOLA US: 154 table tennis products, 8 on special
-Checking JOOLA Europe...
-  JOOLA Europe: 181 table tennis products, 54 on special
-Checking Donic...
-  Donic: 49 products checked, 0 on special
-Checking STIGA...
-  STIGA /en/category/sale: 8 products
-  STIGA /en/category/sale/table-tennis-bats-sale: 5 products
-  STIGA /en/category/sale/outlet: 23 products
-No phone connected yet - deals are shown in the app but not marked as alerted.
-  (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
-  (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
-  (no phones subscribed - alert not sent: 309 new clothing special)
-  (no phones subscribed - alert not sent: 52 new shoe specials)
-Done: 1381 specials live, 363 new alerts, 0 last-day reminders.
-  Butterfly US     accessories  13
-  Butterfly US     bags         3
-  Butterfly US     balls        1
-  Butterfly US     blade        5
-  Butterfly US     clothing     37
-  Butterfly US     racket       22
-  Butterfly US     robots       5
-  Butterfly US     rubber       1
-  Butterfly US     shoes        13
-  Butterfly US     tables       33
-  Dandoy Sports    accessories  49
-  Dandoy Sports    bags         16
-  Dandoy Sports    balls        4
-  Dandoy Sports    blade        28
-  Dandoy Sports    clothing     276
-  Dandoy Sports    racket       10
-  Dandoy Sports    rubber       38
-  Dandoy Sports    shoes        8
-  JOOLA Europe     accessories  1
-  JOOLA Europe     bags         4
-  JOOLA Europe     blade        6
-  JOOLA Europe     racket       17
-  JOOLA Europe     rubber       4
-  JOOLA Europe     tables       10
-  JOOLA US         accessories  1
-  JOOLA US         tables       3
-  Megaspin         accessories  14
-  Megaspin         bags         5
-  Megaspin         balls        2
-  Megaspin         blade        94
-  Megaspin         clothing     199
-  Megaspin         racket       83
-  Megaspin         robots       23
-  Megaspin         rubber       106
-  Megaspin         shoes        30
-  Megaspin         tables       41
-  Racketlon        clothing     7
-  STIGA            accessories  2
-  STIGA            blade        1
-  STIGA            clothing     18
-  STIGA            racket       1
-  STIGA            rubber       4
-  Table Tennis 11  accessories  23
-  Table Tennis 11  bags         4
-  Table Tennis 11  balls        2
-  Table Tennis 11  blade        19
-  Table Tennis 11  clothing     50
-  Table Tennis 11  racket       2
-  Table Tennis 11  rubber       34
-  Table Tennis 11  shoes        9
-  * Table Tennis 11 | Andro Nuzn 55 | Andro Nuzn 55: €44.56 (~R830) (was €65.53 (~R1,220), -32%) — ends Sun 01 Nov at midnight
-  * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R752) — weekly special
-  * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R923) — weekly special
+  alert error: VapidException("Missing 'sub' from claims. 'sub' is your admin email as a mailto: link.")
+Traceback (most recent call last):
+  File "/home/runner/work/tt-specials/tt-specials/monitor.py", line 569, in notify
+    webpush(subscription_info=sub, data=data, vapid_private_key=key,
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/pywebpush/__init__.py", line 513, in webpush
+    vapid_headers = vv.sign(vapid_claims)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/py_vapid/__init__.py", line 335, in sign
+    sig = sign(self._base_sign(claims), self.private_key)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/py_vapid/__init__.py", line 269, in _base_sign
+    raise VapidException(
+py_vapid.VapidException: Missing 'sub' from claims. 'sub' is your admin email as a mailto: link.
+
