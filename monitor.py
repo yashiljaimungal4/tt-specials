@@ -340,32 +340,44 @@ def read_woo(st):
 _browser = {}
 
 
-def browser_get(url):
-    """Fetch a page with a real (headless) browser, for shops that block simple requests."""
-    try:
+def browser_page():
+    """One shared headless browser for shops that need it (STIGA, and Megaspin when it blocks plain requests)."""
+    if "page" not in _browser:
         from playwright.sync_api import sync_playwright
-    except ImportError:
-        return None
+        _browser["pw"] = sync_playwright().start()
+        _browser["b"] = _browser["pw"].chromium.launch()
+        _browser["page"] = _browser["b"].new_page(locale="en-US", user_agent=HEADERS["User-Agent"])
+    return _browser["page"]
+
+
+def browser_get(url, tries=2):
     try:
-        if "page" not in _browser:
-            _browser["pw"] = sync_playwright().start()
-            _browser["b"] = _browser["pw"].chromium.launch()
-            _browser["page"] = _browser["b"].new_page(locale="en-US", user_agent=HEADERS["User-Agent"])
-        pg = _browser["page"]
-        resp = pg.goto(url, wait_until="domcontentloaded", timeout=60000)
-        pg.wait_for_timeout(2500)
-        if resp and resp.status >= 400:
-            log(f"  browser got HTTP {resp.status} for {url}")
-            return None
-        return pg.content()
+        pg = browser_page()
     except Exception as e:
-        log(f"  browser error for {url}: {str(e)[:150]}")
+        log(f"  browser unavailable: {str(e)[:150]}")
         return None
+    for attempt in range(tries):
+        try:
+            resp = pg.goto(url, wait_until="domcontentloaded", timeout=60000)
+            pg.wait_for_timeout(2500)
+            if resp and resp.status in (403, 429, 503) and attempt + 1 < tries:
+                time.sleep(20)
+                continue
+            if resp and resp.status >= 400:
+                log(f"  browser got HTTP {resp.status} for {url}")
+                return None
+            return pg.content()
+        except Exception as e:
+            log(f"  browser error for {url}: {str(e)[:150]}")
+            return None
+    return None
 
 
 def read_megaspin(st):
     hits, ok = [], False
-    for cid in st["collections"]:
+    for n_page, cid in enumerate(st["collections"]):
+        if n_page:
+            time.sleep(st.get("delay", 6))
         url = f"{st['base']}/store/collection.asp?id={cid}"
         r = None if st.get("_use_browser") else get(url)
         html = r.text if r else None
@@ -486,14 +498,12 @@ def read_browser_stiga(st):
     """STIGA: pages build their product grid with JavaScript, so render them in a headless browser."""
     hits, ok = [], False
     try:
-        from playwright.sync_api import sync_playwright
-    except ImportError:
-        log("  playwright not installed - skipping STIGA")
+        pg = browser_page()
+    except Exception as e:
+        log(f"  browser unavailable - skipping STIGA: {str(e)[:120]}")
         return hits, False
     price_re = re.compile(r"^([0-9][0-9.,]*)\s*(EUR|SEK|USD|GBP)$")
-    with sync_playwright() as p:
-        b = p.chromium.launch()
-        pg = b.new_page(locale="en-US")
+    if True:
         for page in st["pages"]:
             url = st["base"] + page["path"]
             try:
@@ -533,7 +543,6 @@ def read_browser_stiga(st):
                 hits.append(i)
                 n += 1
             log(f"  {st['name']} {page['path']}: {n} products")
-        b.close()
     return hits, ok
 
 
