@@ -33,6 +33,7 @@ HEADERS = {
 }
 DRY = "--dry-run" in sys.argv
 LOG = []
+SENT = {"ok": 0, "tried": 0}
 
 
 def log(msg):
@@ -336,15 +337,45 @@ def read_woo(st):
     return hits, ok
 
 
+_browser = {}
+
+
+def browser_get(url):
+    """Fetch a page with a real (headless) browser, for shops that block simple requests."""
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        return None
+    try:
+        if "page" not in _browser:
+            _browser["pw"] = sync_playwright().start()
+            _browser["b"] = _browser["pw"].chromium.launch()
+            _browser["page"] = _browser["b"].new_page(locale="en-US", user_agent=HEADERS["User-Agent"])
+        pg = _browser["page"]
+        resp = pg.goto(url, wait_until="domcontentloaded", timeout=60000)
+        pg.wait_for_timeout(2500)
+        if resp and resp.status >= 400:
+            log(f"  browser got HTTP {resp.status} for {url}")
+            return None
+        return pg.content()
+    except Exception as e:
+        log(f"  browser error for {url}: {str(e)[:150]}")
+        return None
+
+
 def read_megaspin(st):
     hits, ok = [], False
     for cid in st["collections"]:
         url = f"{st['base']}/store/collection.asp?id={cid}"
-        r = get(url)
-        if not r:
+        r = None if st.get("_use_browser") else get(url)
+        html = r.text if r else None
+        if html is None:
+            st["_use_browser"] = True
+            html = browser_get(url)
+        if not html:
             continue
         ok = True
-        soup = BeautifulSoup(r.text, "html.parser")
+        soup = BeautifulSoup(html, "html.parser")
         n = 0
         for c in soup.select(".product-card"):
             a = c.select_one(".product-name a")
@@ -575,12 +606,14 @@ def notify(title, body, click=None, tags="", priority="default", image=None, tag
     if len(data.encode()) > 3500:
         payload["body"] = payload["body"][:1500] + "…"
         data = json.dumps(payload)
+    SENT["tried"] += 1
     for sub in list(subs):
         try:
             webpush(subscription_info=sub, data=data, vapid_private_key=key,
                     vapid_claims={"sub": CFG.get("vapid_subject", "https://github.com")}, ttl=86400,
                     headers={"Urgency": "high" if priority == "high" else "normal"})
             log(f"  alert sent: {title}")
+            SENT["ok"] += 1
         except WebPushException as e:
             code = getattr(e.response, "status_code", None)
             log(f"  alert failed ({code}): {str(e)[:200]}")
@@ -730,6 +763,12 @@ def main():
     if last_day:
         names = ", ".join(h["name"] for h in last_day[:3]) + (f" +{len(last_day) - 3}" if len(last_day) > 3 else "")
         notify("Last day — specials end tonight", names, click=APP_URL, priority="high", tag="lastday")
+
+    if not DRY and SENT["tried"] and not SENT["ok"]:
+        # nothing reached a phone: don't mark these as alerted, so they go out once a phone is (re)connected
+        for h in new:
+            alerted.pop(h["key"], None)
+        log("No alert reached a phone - these deals will alert again once a phone is connected.")
 
     # forget alerts older than 60 days so a returning special alerts again
     cutoff = NOW - timedelta(days=60)
