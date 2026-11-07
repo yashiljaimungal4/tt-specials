@@ -572,6 +572,9 @@ def notify(title, body, click=None, tags="", priority="default", image=None, tag
             log(f"  alert sent: {title}")
         except WebPushException as e:
             log(f"  alert failed ({getattr(e.response, 'status_code', '?')}): {e}")
+        except Exception as e:
+            import traceback
+            log(f"  alert error: {e!r}\n{traceback.format_exc()[-1500:]}")
 
 
 def write_app_data(hits, store_ok):
@@ -734,4 +737,12 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception:
+        import traceback
+        log("CRASH:\n" + traceback.format_exc())
+        (ROOT / "last_run.log").write_text("\n".join(LOG) + "\n")
+        raise
+    if "--test-alert" in sys.argv:
+        (ROOT / "last_run.log").write_text("\n".join(LOG) + "\n")
