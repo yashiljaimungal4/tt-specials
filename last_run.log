@@ -1,9 +1,9 @@
-Run at 2026-11-07 14:36 SAST
+Run at 2026-11-07 14:45 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 46 products, 46 on special
   Table Tennis 11 /clearance: 89 products, 89 on special
 Checking Racketlon...
-  Racketlon: 131 products checked, 117 on special
+  Racketlon: 130 products checked, 116 on special
 Checking Megaspin...
   HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
@@ -11,10 +11,6 @@ Checking Megaspin...
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
 Checking Dandoy Sports...
   Dandoy Sports /promotion: 118 products, 118 on special
   Dandoy Sports /liquidation: 316 products, 316 on special
