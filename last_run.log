@@ -1,4 +1,4 @@
-Run at 2026-11-07 14:27 SAST
+Run at 2026-11-07 14:31 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 46 products, 46 on special
   Table Tennis 11 /clearance: 89 products, 89 on special
@@ -6,14 +6,15 @@ Checking Racketlon...
   Racketlon: 131 products checked, 117 on special
 Checking Megaspin...
   HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
+  Megaspin racket-sale: 70 products
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
 Checking Dandoy Sports...
   Dandoy Sports /promotion: 118 products, 118 on special
   Dandoy Sports /liquidation: 316 products, 316 on special
@@ -26,18 +27,13 @@ Checking JOOLA Europe...
 Checking Donic...
   Donic: 49 products checked, 0 on special
 Checking STIGA...
-  STIGA /en/category/sale: 0 products
-  STIGA /en/category/sale/table-tennis-bats-sale: 0 products
-  STIGA /en/category/sale/outlet: 23 products
-  alert failed (410): WebPushException: Push failed: 410 Gone
-Response body:push subscription has unsubscribed or expired.
-, Response push subscription has unsubscribed or expired.
-
-  removed an expired phone connection (0 left) - reconnect from the app's bell button
+  STIGA crashed: Error('It looks like you are using Playwright Sync API inside the asyncio loop.\nPlease use the Async API instead.')
+No phone connected yet - deals are shown in the app but not marked as alerted.
+  (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
-  (no phones subscribed - alert not sent: 264 new clothing special)
-  (no phones subscribed - alert not sent: 29 new shoe specials)
-Done: 770 specials live, 295 new alerts, 0 last-day reminders.
+  (no phones subscribed - alert not sent: 293 new clothing special)
+  (no phones subscribed - alert not sent: 35 new shoe specials)
+Done: 819 specials live, 330 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -64,9 +60,7 @@ Done: 770 specials live, 295 new alerts, 0 last-day reminders.
   JOOLA Europe     tables       10
   JOOLA US         accessories  1
   JOOLA US         tables       3
-  STIGA            accessories  2
-  STIGA            clothing     18
-  STIGA            racket       1
+  Megaspin         racket       70
   Table Tennis 11  accessories  27
   Table Tennis 11  bags         5
   Table Tennis 11  blade        15
