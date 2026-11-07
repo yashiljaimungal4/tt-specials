@@ -547,6 +547,17 @@ def load_subscriptions():
     return [x["subscription"] if "subscription" in x else x for x in subs]
 
 
+def drop_subscription(endpoint):
+    """The phone's push connection has expired: forget it so it can be reconnected from the app."""
+    f = ROOT / "subscriptions.json"
+    if DRY or not f.exists():
+        return
+    subs = json.loads(f.read_text())
+    keep = [x for x in subs if (x.get("subscription", x)).get("endpoint") != endpoint]
+    f.write_text(json.dumps(keep, indent=1))
+    log(f"  removed an expired phone connection ({len(keep)} left) - reconnect from the app's bell button")
+
+
 def notify(title, body, click=None, tags="", priority="default", image=None, tag=None):
     """Send a notification to every phone that enabled alerts in the app."""
     payload = {"title": title, "body": body, "url": click or APP_URL, "image": image or "",
@@ -564,14 +575,17 @@ def notify(title, body, click=None, tags="", priority="default", image=None, tag
     if len(data.encode()) > 3500:
         payload["body"] = payload["body"][:1500] + "…"
         data = json.dumps(payload)
-    for sub in subs:
+    for sub in list(subs):
         try:
             webpush(subscription_info=sub, data=data, vapid_private_key=key,
                     vapid_claims={"sub": CFG.get("vapid_subject", "https://github.com")}, ttl=86400,
                     headers={"Urgency": "high" if priority == "high" else "normal"})
             log(f"  alert sent: {title}")
         except WebPushException as e:
-            log(f"  alert failed ({getattr(e.response, 'status_code', '?')}): {e}")
+            code = getattr(e.response, "status_code", None)
+            log(f"  alert failed ({code}): {str(e)[:200]}")
+            if code in (404, 410):
+                drop_subscription(sub["endpoint"])
         except Exception as e:
             import traceback
             log(f"  alert error: {e!r}\n{traceback.format_exc()[-1500:]}")

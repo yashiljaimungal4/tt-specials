@@ -386,7 +386,8 @@ function openAlerts() {
   P = prefsFromData();
   const subscribed = localStorage.getItem("ttd-subscribed");
   let top;
-  if (subscribed) top = `<h2>Alerts are on ✅</h2><p>This phone is told when something matching the settings below goes on special. Checks run at 07:07, 12:07, 13:37, 16:07 and 20:07.</p>`;
+  if (subscribed) top = `<h2>Alerts are on ✅</h2><p>This phone is told when something matching the settings below goes on special. Checks run at 07:07, 12:07, 13:37, 16:07 and 20:07.</p>
+    <p>Stopped getting alerts? <button class="btn ghost" onclick="reconnect(this)">Reconnect this phone</button></p>`;
   else if (isIOS && !standalone) top = `<h2>Add TT Deals to your Home Screen</h2><p>On iPhone, alerts only work from the installed app.</p><ol class="steps"><li>Tap <b>Share</b> in Safari</li><li><b>Add to Home Screen</b> → <b>Add</b></li><li>Open <b>TT Deals</b> from your Home Screen and tap the bell again</li></ol>`;
   else if (!pushSupported) top = `<h2>Alerts not supported here</h2><p>Open this page in Chrome (Android) or install it to your Home Screen (iPhone).</p>`;
   else top = `<h2>Turn on alerts</h2><p>For the app owner: allow notifications, then confirm on GitHub. You'll get a test alert straight after.</p><button class="btn full" onclick="subscribe(this)">Allow notifications</button>`;
@@ -453,8 +454,22 @@ async function subscribe(btn) {
   } catch (e) { btn.disabled = false; btn.textContent = "Allow notifications"; toast("Couldn't turn on alerts: " + e.message); }
 }
 window.subscribe = subscribe;
+window.reconnect = async (btn) => {
+  try { const reg = await navigator.serviceWorker.ready; const old = await reg.pushManager.getSubscription(); if (old) await old.unsubscribe(); } catch (_) {}
+  localStorage.removeItem("ttd-subscribed");
+  subscribe(btn);
+};
 
+async function checkSubscription() {
+  if (!pushSupported || !localStorage.getItem("ttd-subscribed")) return;
+  try {
+    const reg = await navigator.serviceWorker.ready;
+    const sub = await reg.pushManager.getSubscription();
+    if (!sub || Notification.permission !== "granted") { localStorage.removeItem("ttd-subscribed"); $("#bellBtn").classList.remove("on"); }
+  } catch (_) {}
+}
 if (localStorage.getItem("ttd-subscribed")) $("#bellBtn").classList.add("on");
+checkSubscription();
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
 load_();
 setInterval(setUpdated, 60000);
