@@ -373,9 +373,42 @@ def browser_get(url, tries=2):
     return None
 
 
+CACHE_FILE = ROOT / "page_cache.json"
+_cache = None
+
+
+def cache_load():
+    global _cache
+    if _cache is None:
+        _cache = json.loads(CACHE_FILE.read_text()) if CACHE_FILE.exists() else {}
+    return _cache
+
+
+def cache_put(key, items):
+    cache_load()[key] = {"t": NOW.isoformat(), "items": items}
+
+
+def cache_get(key, max_hours=72):
+    c = cache_load().get(key)
+    if c and (NOW - datetime.fromisoformat(c["t"])).total_seconds() < max_hours * 3600:
+        return c["items"], c["t"]
+    return None, None
+
+
+def cache_age(key):
+    c = cache_load().get(key)
+    return datetime.fromisoformat(c["t"]) if c else datetime(2000, 1, 1, tzinfo=TZ)
+
+
 def read_megaspin(st):
-    hits, ok = [], False
-    for n_page, cid in enumerate(st["collections"]):
+    """Megaspin blocks bursts of automated visits, so: oldest pages first, slow pacing, stop after repeated
+    blocks, and fall back to each page's last good result (up to 3 days old)."""
+    hits, ok, blocked = [], False, 0
+    order = sorted(st["collections"], key=lambda c: cache_age("megaspin:" + c))
+    fresh = set()
+    for n_page, cid in enumerate(order):
+        if blocked >= 3:
+            break
         if n_page:
             time.sleep(st.get("delay", 6))
         url = f"{st['base']}/store/collection.asp?id={cid}"
@@ -385,10 +418,11 @@ def read_megaspin(st):
             st["_use_browser"] = True
             html = browser_get(url)
         if not html:
+            blocked += 1
             continue
-        ok = True
+        blocked = 0
         soup = BeautifulSoup(html, "html.parser")
-        n = 0
+        items = []
         for c in soup.select(".product-card"):
             a = c.select_one(".product-name a")
             pb = c.select_one(".product-price")
@@ -404,9 +438,21 @@ def read_megaspin(st):
             i = item(a.get_text(" ", strip=True), urljoin(url, a.get("href", "")), special, regular,
                      img.get("src", "") if img else "", cats=mcat.group(1) if mcat else "", all_special=True)
             i["where"] = "sale"
-            hits.append(i)
-            n += 1
-        log(f"  {st['name']} {cid}: {n} products")
+            items.append(i)
+        log(f"  {st['name']} {cid}: {len(items)} products")
+        if items:
+            ok = True
+            fresh.add(cid)
+            cache_put("megaspin:" + cid, items)
+            hits += items
+    for cid in st["collections"]:
+        if cid in fresh:
+            continue
+        items, t = cache_get("megaspin:" + cid)
+        if items:
+            ok = True
+            hits += items
+            log(f"  {st['name']} {cid}: blocked today - using {len(items)} products saved {t[:16]}")
     return hits, ok
 
 
@@ -543,6 +589,14 @@ def read_browser_stiga(st):
                 hits.append(i)
                 n += 1
             log(f"  {st['name']} {page['path']}: {n} products")
+            key = "stiga:" + page["path"]
+            if n:
+                cache_put(key, hits[-n:])
+            else:
+                cached, t = cache_get(key)
+                if cached:
+                    hits += cached
+                    log(f"  {st['name']} {page['path']}: empty today - using {len(cached)} products saved {t[:16]}")
     return hits, ok
 
 
@@ -793,6 +847,9 @@ def main():
         if h.get("watch"):
             log(f"  * {h['store']} | {h['watch']} | {line(h)}")
     write_app_data(hits, store_ok)
+    if _cache is not None and not DRY:
+        cutoff_c = NOW - timedelta(days=4)
+        CACHE_FILE.write_text(json.dumps({k: v for k, v in _cache.items() if datetime.fromisoformat(v["t"]) > cutoff_c}))
     (ROOT / "last_run.log").write_text("\n".join(LOG) + "\n")
     if not DRY:
         STATE_FILE.write_text(json.dumps(state, indent=1, sort_keys=True))
