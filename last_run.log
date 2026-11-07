@@ -1,14 +1,4 @@
-  alert error: VapidException("Missing 'sub' from claims. 'sub' is your admin email as a mailto: link.")
-Traceback (most recent call last):
-  File "/home/runner/work/tt-specials/tt-specials/monitor.py", line 569, in notify
-    webpush(subscription_info=sub, data=data, vapid_private_key=key,
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/pywebpush/__init__.py", line 513, in webpush
-    vapid_headers = vv.sign(vapid_claims)
-                    ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/py_vapid/__init__.py", line 335, in sign
-    sig = sign(self._base_sign(claims), self.private_key)
-               ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/py_vapid/__init__.py", line 269, in _base_sign
-    raise VapidException(
-py_vapid.VapidException: Missing 'sub' from claims. 'sub' is your admin email as a mailto: link.
+  alert failed (410): WebPushException: Push failed: 410 Gone
+Response body:push subscription has unsubscribed or expired.
+, Response push subscription has unsubscribed or expired.
 
