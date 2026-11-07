@@ -1,4 +1,78 @@
+Run at 2026-11-07 14:27 SAST
+Checking Table Tennis 11...
+  Table Tennis 11 /special-offers: 46 products, 46 on special
+  Table Tennis 11 /clearance: 89 products, 89 on special
+Checking Racketlon...
+  Racketlon: 131 products checked, 117 on special
+Checking Megaspin...
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
+Checking Dandoy Sports...
+  Dandoy Sports /promotion: 118 products, 118 on special
+  Dandoy Sports /liquidation: 316 products, 316 on special
+Checking Butterfly US...
+  Butterfly US: 133 sale items
+Checking JOOLA US...
+  JOOLA US: 155 table tennis products, 8 on special
+Checking JOOLA Europe...
+  JOOLA Europe: 180 table tennis products, 54 on special
+Checking Donic...
+  Donic: 49 products checked, 0 on special
+Checking STIGA...
+  STIGA /en/category/sale: 0 products
+  STIGA /en/category/sale/table-tennis-bats-sale: 0 products
+  STIGA /en/category/sale/outlet: 23 products
   alert failed (410): WebPushException: Push failed: 410 Gone
 Response body:push subscription has unsubscribed or expired.
 , Response push subscription has unsubscribed or expired.
 
+  removed an expired phone connection (0 left) - reconnect from the app's bell button
+  (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
+  (no phones subscribed - alert not sent: 264 new clothing special)
+  (no phones subscribed - alert not sent: 29 new shoe specials)
+Done: 770 specials live, 295 new alerts, 0 last-day reminders.
+  Butterfly US     accessories  13
+  Butterfly US     bags         3
+  Butterfly US     balls        1
+  Butterfly US     blade        5
+  Butterfly US     clothing     37
+  Butterfly US     racket       22
+  Butterfly US     robots       5
+  Butterfly US     rubber       1
+  Butterfly US     shoes        13
+  Butterfly US     tables       32
+  Dandoy Sports    accessories  49
+  Dandoy Sports    bags         16
+  Dandoy Sports    balls        4
+  Dandoy Sports    blade        28
+  Dandoy Sports    clothing     276
+  Dandoy Sports    racket       10
+  Dandoy Sports    rubber       38
+  Dandoy Sports    shoes        13
+  JOOLA Europe     accessories  1
+  JOOLA Europe     bags         4
+  JOOLA Europe     blade        6
+  JOOLA Europe     racket       17
+  JOOLA Europe     rubber       4
+  JOOLA Europe     tables       10
+  JOOLA US         accessories  1
+  JOOLA US         tables       3
+  STIGA            accessories  2
+  STIGA            clothing     18
+  STIGA            racket       1
+  Table Tennis 11  accessories  27
+  Table Tennis 11  bags         5
+  Table Tennis 11  blade        15
+  Table Tennis 11  clothing     45
+  Table Tennis 11  racket       3
+  Table Tennis 11  rubber       33
+  Table Tennis 11  shoes        9
+  * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R744) — weekly special
+  * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R913) — weekly special
