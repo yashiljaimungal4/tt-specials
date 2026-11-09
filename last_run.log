@@ -1,16 +1,16 @@
-Run at 2026-11-09 12:56 SAST
+Run at 2026-11-09 14:35 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 61 products, 61 on special
   Table Tennis 11 /clearance: 90 products, 90 on special
 Checking Racketlon...
-  Racketlon: 150 products checked, 135 on special
+  Racketlon: 149 products checked, 134 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
-  Megaspin blade-sale: 81 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
+  Megaspin rubber-sale: 99 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
-  Megaspin rubber-sale: blocked today - using 97 products saved 2026-11-07T16:40
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
+  Megaspin blade-sale: blocked today - using 81 products saved 2026-11-09T12:56
   Megaspin racket-sale: blocked today - using 71 products saved 2026-11-07T20:37
   Megaspin table-sale: blocked today - using 38 products saved 2026-11-08T12:41
   Megaspin robot-sale: blocked today - using 24 products saved 2026-11-08T07:49
@@ -38,7 +38,7 @@ No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
   (no phones subscribed - alert not sent: 349 new clothing special)
   (no phones subscribed - alert not sent: 63 new shoe specials)
-Done: 1373 specials live, 414 new alerts, 0 last-day reminders.
+Done: 1375 specials live, 414 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -72,7 +72,7 @@ Done: 1373 specials live, 414 new alerts, 0 last-day reminders.
   Megaspin         clothing     199
   Megaspin         racket       80
   Megaspin         robots       25
-  Megaspin         rubber       102
+  Megaspin         rubber       104
   Megaspin         shoes        28
   Megaspin         tables       45
   STIGA            accessories  2
