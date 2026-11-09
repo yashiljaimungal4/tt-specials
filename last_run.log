@@ -1,19 +1,19 @@
-Run at 2026-11-09 16:54 SAST
+Run at 2026-11-09 20:50 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 62 products, 62 on special
   Table Tennis 11 /clearance: 90 products, 90 on special
 Checking Racketlon...
   Racketlon: 149 products checked, 134 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
-  Megaspin racket-sale: 70 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
+  Megaspin robot-sale: 24 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
   Megaspin rubber-sale: blocked today - using 99 products saved 2026-11-09T14:35
   Megaspin blade-sale: blocked today - using 81 products saved 2026-11-09T12:56
+  Megaspin racket-sale: blocked today - using 70 products saved 2026-11-09T16:54
   Megaspin table-sale: blocked today - using 38 products saved 2026-11-08T12:41
-  Megaspin robot-sale: blocked today - using 24 products saved 2026-11-08T07:49
   Megaspin butterfly-sale: blocked today - using 209 products saved 2026-11-08T14:12
   Megaspin butterfly-racket-sale: blocked today - using 10 products saved 2026-11-08T20:38
   Megaspin butterfly-apparel-sale: blocked today - using 132 products saved 2026-11-08T16:38
@@ -24,7 +24,7 @@ Checking Dandoy Sports...
 Checking Butterfly US...
   Butterfly US: 133 sale items
 Checking JOOLA US...
-  JOOLA US: 155 table tennis products, 8 on special
+  JOOLA US: 156 table tennis products, 8 on special
 Checking JOOLA Europe...
   JOOLA Europe: 180 table tennis products, 54 on special
 Checking Donic...
