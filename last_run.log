@@ -1,17 +1,17 @@
-Run at 2026-11-09 14:35 SAST
+Run at 2026-11-09 16:54 SAST
 Checking Table Tennis 11...
-  Table Tennis 11 /special-offers: 61 products, 61 on special
+  Table Tennis 11 /special-offers: 62 products, 62 on special
   Table Tennis 11 /clearance: 90 products, 90 on special
 Checking Racketlon...
   Racketlon: 149 products checked, 134 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
-  Megaspin rubber-sale: 99 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
+  Megaspin racket-sale: 70 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
+  Megaspin rubber-sale: blocked today - using 99 products saved 2026-11-09T14:35
   Megaspin blade-sale: blocked today - using 81 products saved 2026-11-09T12:56
-  Megaspin racket-sale: blocked today - using 71 products saved 2026-11-07T20:37
   Megaspin table-sale: blocked today - using 38 products saved 2026-11-08T12:41
   Megaspin robot-sale: blocked today - using 24 products saved 2026-11-08T07:49
   Megaspin butterfly-sale: blocked today - using 209 products saved 2026-11-08T14:12
@@ -70,7 +70,7 @@ Done: 1375 specials live, 414 new alerts, 0 last-day reminders.
   Megaspin         balls        2
   Megaspin         blade        87
   Megaspin         clothing     199
-  Megaspin         racket       80
+  Megaspin         racket       79
   Megaspin         robots       25
   Megaspin         rubber       104
   Megaspin         shoes        28
@@ -84,7 +84,7 @@ Done: 1375 specials live, 414 new alerts, 0 last-day reminders.
   Table Tennis 11  blade        18
   Table Tennis 11  clothing     49
   Table Tennis 11  racket       4
-  Table Tennis 11  rubber       33
+  Table Tennis 11  rubber       34
   Table Tennis 11  shoes        9
   * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R745) — weekly special
   * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R913) — weekly special
