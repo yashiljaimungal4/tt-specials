@@ -1,22 +1,22 @@
-Run at 2026-11-10 16:55 SAST
+Run at 2026-11-10 20:45 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 62 products, 62 on special
   Table Tennis 11 /clearance: 90 products, 90 on special
 Checking Racketlon...
-  Racketlon: 0 products checked, 0 on special
+  Racketlon: 148 products checked, 133 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
-  Megaspin butterfly-apparel-sale: 130 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
+  Megaspin butterfly-racket-sale: 10 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
   Megaspin rubber-sale: blocked today - using 99 products saved 2026-11-09T14:35
   Megaspin blade-sale: blocked today - using 81 products saved 2026-11-09T12:56
   Megaspin racket-sale: blocked today - using 70 products saved 2026-11-09T16:54
   Megaspin table-sale: blocked today - using 38 products saved 2026-11-10T12:52
   Megaspin robot-sale: blocked today - using 24 products saved 2026-11-09T20:50
   Megaspin butterfly-sale: blocked today - using 206 products saved 2026-11-10T14:27
-  Megaspin butterfly-racket-sale: blocked today - using 10 products saved 2026-11-08T20:38
+  Megaspin butterfly-apparel-sale: blocked today - using 130 products saved 2026-11-10T16:55
   Megaspin butterfly-clearance-sale: blocked today - using 122 products saved 2026-11-09T08:04
 Checking Dandoy Sports...
   Dandoy Sports /promotion: 118 products, 118 on special
