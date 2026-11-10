@@ -1,19 +1,19 @@
-Run at 2026-11-09 20:50 SAST
+Run at 2026-11-10 12:52 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 62 products, 62 on special
   Table Tennis 11 /clearance: 90 products, 90 on special
 Checking Racketlon...
-  Racketlon: 149 products checked, 134 on special
+  Racketlon: 148 products checked, 133 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
-  Megaspin robot-sale: 24 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
+  Megaspin table-sale: 38 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
   Megaspin rubber-sale: blocked today - using 99 products saved 2026-11-09T14:35
   Megaspin blade-sale: blocked today - using 81 products saved 2026-11-09T12:56
   Megaspin racket-sale: blocked today - using 70 products saved 2026-11-09T16:54
-  Megaspin table-sale: blocked today - using 38 products saved 2026-11-08T12:41
+  Megaspin robot-sale: blocked today - using 24 products saved 2026-11-09T20:50
   Megaspin butterfly-sale: blocked today - using 209 products saved 2026-11-08T14:12
   Megaspin butterfly-racket-sale: blocked today - using 10 products saved 2026-11-08T20:38
   Megaspin butterfly-apparel-sale: blocked today - using 132 products saved 2026-11-08T16:38
@@ -28,7 +28,7 @@ Checking JOOLA US...
 Checking JOOLA Europe...
   JOOLA Europe: 180 table tennis products, 54 on special
 Checking Donic...
-  Donic: 46 products checked, 0 on special
+  Donic: 64 products checked, 0 on special
 Checking STIGA...
   STIGA /en/category/sale: 0 products
   STIGA /en/category/sale/table-tennis-bats-sale: 0 products
@@ -86,5 +86,5 @@ Done: 1375 specials live, 414 new alerts, 0 last-day reminders.
   Table Tennis 11  racket       4
   Table Tennis 11  rubber       34
   Table Tennis 11  shoes        9
-  * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R745) — weekly special
-  * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R913) — weekly special
+  * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R743) — weekly special
+  * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R912) — weekly special
