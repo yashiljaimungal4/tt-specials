@@ -1,20 +1,29 @@
-Run at 2026-11-12 12:59 SAST
+Run at 2026-11-12 14:30 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 62 products, 62 on special
   Table Tennis 11 /clearance: 89 products, 89 on special
 Checking Racketlon...
-  Racketlon: 148 products checked, 133 on special
+  HTTP 403 for https://racketlon.co.za/wp-json/wc/store/v1/products
+  HTTP 403 for https://racketlon.co.za/wp-json/wc/store/v1/products
+  HTTP 403 for https://racketlon.co.za/wp-json/wc/store/v1/products
+  HTTP 403 for https://racketlon.co.za/wp-json/wc/store/v1/products
+  HTTP 403 for https://racketlon.co.za/wp-json/wc/store/v1/products
+  HTTP 403 for https://racketlon.co.za/wp-json/wc/store/v1/products
+  HTTP 403 for https://racketlon.co.za/wp-json/wc/store/v1/products
+  HTTP 403 for https://racketlon.co.za/wp-json/wc/store/v1/products
+  HTTP 403 for https://racketlon.co.za/wp-json/wc/store/v1/products
+  Racketlon: 0 products checked, 0 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
-  Megaspin table-sale: 38 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
+  Megaspin butterfly-sale: 207 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
   Megaspin rubber-sale: blocked today - using 99 products saved 2026-11-11T14:30
   Megaspin blade-sale: blocked today - using 79 products saved 2026-11-11T12:58
   Megaspin racket-sale: blocked today - using 70 products saved 2026-11-11T20:51
+  Megaspin table-sale: blocked today - using 38 products saved 2026-11-12T12:59
   Megaspin robot-sale: blocked today - using 24 products saved 2026-11-12T08:02
-  Megaspin butterfly-sale: blocked today - using 206 products saved 2026-11-10T14:27
   Megaspin butterfly-racket-sale: blocked today - using 10 products saved 2026-11-10T20:45
   Megaspin butterfly-apparel-sale: blocked today - using 130 products saved 2026-11-10T16:55
   Megaspin butterfly-clearance-sale: blocked today - using 118 products saved 2026-11-11T07:58
@@ -38,7 +47,7 @@ No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
   (no phones subscribed - alert not sent: 349 new clothing special)
   (no phones subscribed - alert not sent: 63 new shoe specials)
-Done: 1390 specials live, 414 new alerts, 0 last-day reminders.
+Done: 1391 specials live, 414 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -67,7 +76,7 @@ Done: 1390 specials live, 414 new alerts, 0 last-day reminders.
   JOOLA Europe     tables       10
   JOOLA US         accessories  1
   JOOLA US         tables       3
-  Megaspin         accessories  14
+  Megaspin         accessories  16
   Megaspin         bags         5
   Megaspin         balls        2
   Megaspin         blade        85
@@ -76,7 +85,7 @@ Done: 1390 specials live, 414 new alerts, 0 last-day reminders.
   Megaspin         robots       25
   Megaspin         rubber       104
   Megaspin         shoes        27
-  Megaspin         tables       45
+  Megaspin         tables       44
   STIGA            accessories  2
   STIGA            clothing     18
   STIGA            racket       1
