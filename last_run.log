@@ -1,19 +1,19 @@
-Run at 2026-11-11 20:51 SAST
+Run at 2026-11-12 08:02 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 62 products, 62 on special
   Table Tennis 11 /clearance: 89 products, 89 on special
 Checking Racketlon...
   Racketlon: 148 products checked, 133 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
-  Megaspin racket-sale: 70 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
+  Megaspin robot-sale: 24 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
   Megaspin rubber-sale: blocked today - using 99 products saved 2026-11-11T14:30
   Megaspin blade-sale: blocked today - using 79 products saved 2026-11-11T12:58
+  Megaspin racket-sale: blocked today - using 70 products saved 2026-11-11T20:51
   Megaspin table-sale: blocked today - using 38 products saved 2026-11-10T12:52
-  Megaspin robot-sale: blocked today - using 24 products saved 2026-11-09T20:50
   Megaspin butterfly-sale: blocked today - using 206 products saved 2026-11-10T14:27
   Megaspin butterfly-racket-sale: blocked today - using 10 products saved 2026-11-10T20:45
   Megaspin butterfly-apparel-sale: blocked today - using 130 products saved 2026-11-10T16:55
@@ -86,5 +86,5 @@ Done: 1366 specials live, 411 new alerts, 0 last-day reminders.
   Table Tennis 11  racket       4
   Table Tennis 11  rubber       34
   Table Tennis 11  shoes        9
-  * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R745) — weekly special
-  * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R914) — weekly special
+  * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R744) — weekly special
+  * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R913) — weekly special
