@@ -1,21 +1,16 @@
-Run at 2026-11-13 12:58 SAST
+Run at 2026-11-13 14:31 SAST
 Checking Table Tennis 11...
-  HTTP 403 for https://tabletennis11.com/en/special-offers
-  HTTP 403 for https://tabletennis11.com/en/clearance
-  HTTP 403 for https://tabletennis11.com/en/catalogsearch/result/?q=bluestar+a1
-  HTTP 403 for https://tabletennis11.com/en/catalogsearch/result/?q=nuzn+55
-  HTTP 403 for https://tabletennis11.com/en/catalogsearch/result/?q=dignics
-  HTTP 403 for https://tabletennis11.com/en/catalogsearch/result/?q=tenergy+05
-  HTTP 403 for https://tabletennis11.com/en/catalogsearch/result/?q=shoes
+  Table Tennis 11 /special-offers: 62 products, 62 on special
+  Table Tennis 11 /clearance: 89 products, 89 on special
 Checking Racketlon...
   Racketlon: 148 products checked, 133 on special
 Checking Megaspin...
   HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
+  Megaspin blade-sale: 79 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
   Megaspin rubber-sale: blocked today - using 99 products saved 2026-11-11T14:30
-  Megaspin blade-sale: blocked today - using 79 products saved 2026-11-11T12:58
   Megaspin racket-sale: blocked today - using 70 products saved 2026-11-11T20:51
   Megaspin table-sale: blocked today - using 38 products saved 2026-11-12T12:59
   Megaspin robot-sale: blocked today - using 24 products saved 2026-11-12T08:02
@@ -25,7 +20,7 @@ Checking Megaspin...
   Megaspin butterfly-clearance-sale: blocked today - using 117 products saved 2026-11-13T07:59
 Checking Dandoy Sports...
   Dandoy Sports /promotion: 118 products, 118 on special
-  Dandoy Sports /liquidation: 315 products, 315 on special
+  Dandoy Sports /liquidation: 313 products, 313 on special
 Checking Butterfly US...
   Butterfly US: 133 sale items
 Checking JOOLA US...
@@ -41,9 +36,9 @@ Checking STIGA...
 No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
-  (no phones subscribed - alert not sent: 313 new clothing special)
-  (no phones subscribed - alert not sent: 54 new shoe specials)
-Done: 1251 specials live, 369 new alerts, 0 last-day reminders.
+  (no phones subscribed - alert not sent: 349 new clothing special)
+  (no phones subscribed - alert not sent: 63 new shoe specials)
+Done: 1402 specials live, 414 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -54,7 +49,7 @@ Done: 1251 specials live, 369 new alerts, 0 last-day reminders.
   Butterfly US     rubber       1
   Butterfly US     shoes        13
   Butterfly US     tables       32
-  Dandoy Sports    accessories  49
+  Dandoy Sports    accessories  47
   Dandoy Sports    bags         16
   Dandoy Sports    balls        4
   Dandoy Sports    blade        28
@@ -85,5 +80,13 @@ Done: 1251 specials live, 369 new alerts, 0 last-day reminders.
   STIGA            accessories  2
   STIGA            clothing     18
   STIGA            racket       1
+  Table Tennis 11  accessories  35
+  Table Tennis 11  bags         3
+  Table Tennis 11  balls        2
+  Table Tennis 11  blade        18
+  Table Tennis 11  clothing     48
+  Table Tennis 11  racket       4
+  Table Tennis 11  rubber       34
+  Table Tennis 11  shoes        9
   * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R748) — weekly special
   * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R917) — weekly special
