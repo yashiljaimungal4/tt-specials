@@ -1,23 +1,23 @@
-Run at 2026-11-12 20:51 SAST
+Run at 2026-11-13 07:59 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 62 products, 62 on special
   Table Tennis 11 /clearance: 89 products, 89 on special
 Checking Racketlon...
   Racketlon: 148 products checked, 133 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
-  Megaspin butterfly-racket-sale: 10 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
+  Megaspin butterfly-clearance-sale: 117 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
   Megaspin rubber-sale: blocked today - using 99 products saved 2026-11-11T14:30
   Megaspin blade-sale: blocked today - using 79 products saved 2026-11-11T12:58
   Megaspin racket-sale: blocked today - using 70 products saved 2026-11-11T20:51
   Megaspin table-sale: blocked today - using 38 products saved 2026-11-12T12:59
   Megaspin robot-sale: blocked today - using 24 products saved 2026-11-12T08:02
   Megaspin butterfly-sale: blocked today - using 207 products saved 2026-11-12T14:30
+  Megaspin butterfly-racket-sale: blocked today - using 10 products saved 2026-11-12T20:51
   Megaspin butterfly-apparel-sale: blocked today - using 130 products saved 2026-11-12T16:54
-  Megaspin butterfly-clearance-sale: blocked today - using 118 products saved 2026-11-11T07:58
 Checking Dandoy Sports...
   Dandoy Sports /promotion: 118 products, 118 on special
   Dandoy Sports /liquidation: 315 products, 315 on special
@@ -38,7 +38,7 @@ No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
   (no phones subscribed - alert not sent: 349 new clothing special)
   (no phones subscribed - alert not sent: 63 new shoe specials)
-Done: 1390 specials live, 414 new alerts, 0 last-day reminders.
+Done: 1389 specials live, 414 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -71,7 +71,7 @@ Done: 1390 specials live, 414 new alerts, 0 last-day reminders.
   Megaspin         bags         5
   Megaspin         balls        2
   Megaspin         blade        85
-  Megaspin         clothing     195
+  Megaspin         clothing     194
   Megaspin         racket       78
   Megaspin         robots       25
   Megaspin         rubber       104
@@ -88,5 +88,5 @@ Done: 1390 specials live, 414 new alerts, 0 last-day reminders.
   Table Tennis 11  racket       4
   Table Tennis 11  rubber       34
   Table Tennis 11  shoes        9
-  * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R744) — weekly special
-  * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R913) — weekly special
+  * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R748) — weekly special
+  * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R917) — weekly special
