@@ -1,17 +1,17 @@
-Run at 2026-11-13 16:52 SAST
+Run at 2026-11-13 20:47 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 62 products, 62 on special
   Table Tennis 11 /clearance: 88 products, 88 on special
 Checking Racketlon...
   Racketlon: 148 products checked, 134 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
-  Megaspin rubber-sale: 106 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
+  Megaspin racket-sale: 69 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
+  Megaspin rubber-sale: blocked today - using 106 products saved 2026-11-13T16:52
   Megaspin blade-sale: blocked today - using 79 products saved 2026-11-13T14:31
-  Megaspin racket-sale: blocked today - using 70 products saved 2026-11-11T20:51
   Megaspin table-sale: blocked today - using 38 products saved 2026-11-12T12:59
   Megaspin robot-sale: blocked today - using 24 products saved 2026-11-12T08:02
   Megaspin butterfly-sale: blocked today - using 207 products saved 2026-11-12T14:30
