@@ -1,12 +1,16 @@
-Run at 2026-11-13 07:59 SAST
+Run at 2026-11-13 12:58 SAST
 Checking Table Tennis 11...
-  Table Tennis 11 /special-offers: 62 products, 62 on special
-  Table Tennis 11 /clearance: 89 products, 89 on special
+  HTTP 403 for https://tabletennis11.com/en/special-offers
+  HTTP 403 for https://tabletennis11.com/en/clearance
+  HTTP 403 for https://tabletennis11.com/en/catalogsearch/result/?q=bluestar+a1
+  HTTP 403 for https://tabletennis11.com/en/catalogsearch/result/?q=nuzn+55
+  HTTP 403 for https://tabletennis11.com/en/catalogsearch/result/?q=dignics
+  HTTP 403 for https://tabletennis11.com/en/catalogsearch/result/?q=tenergy+05
+  HTTP 403 for https://tabletennis11.com/en/catalogsearch/result/?q=shoes
 Checking Racketlon...
   Racketlon: 148 products checked, 133 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
-  Megaspin butterfly-clearance-sale: 117 products
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
@@ -18,6 +22,7 @@ Checking Megaspin...
   Megaspin butterfly-sale: blocked today - using 207 products saved 2026-11-12T14:30
   Megaspin butterfly-racket-sale: blocked today - using 10 products saved 2026-11-12T20:51
   Megaspin butterfly-apparel-sale: blocked today - using 130 products saved 2026-11-12T16:54
+  Megaspin butterfly-clearance-sale: blocked today - using 117 products saved 2026-11-13T07:59
 Checking Dandoy Sports...
   Dandoy Sports /promotion: 118 products, 118 on special
   Dandoy Sports /liquidation: 315 products, 315 on special
@@ -26,7 +31,7 @@ Checking Butterfly US...
 Checking JOOLA US...
   JOOLA US: 156 table tennis products, 8 on special
 Checking JOOLA Europe...
-  JOOLA Europe: 180 table tennis products, 86 on special
+  JOOLA Europe: 180 table tennis products, 101 on special
 Checking Donic...
   Donic: 46 products checked, 0 on special
 Checking STIGA...
@@ -36,9 +41,9 @@ Checking STIGA...
 No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
-  (no phones subscribed - alert not sent: 349 new clothing special)
-  (no phones subscribed - alert not sent: 63 new shoe specials)
-Done: 1389 specials live, 414 new alerts, 0 last-day reminders.
+  (no phones subscribed - alert not sent: 313 new clothing special)
+  (no phones subscribed - alert not sent: 54 new shoe specials)
+Done: 1251 specials live, 369 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -61,10 +66,10 @@ Done: 1389 specials live, 414 new alerts, 0 last-day reminders.
   JOOLA Europe     bags         6
   JOOLA Europe     blade        9
   JOOLA Europe     clothing     17
-  JOOLA Europe     racket       14
+  JOOLA Europe     racket       28
   JOOLA Europe     rubber       5
   JOOLA Europe     shoes        1
-  JOOLA Europe     tables       10
+  JOOLA Europe     tables       11
   JOOLA US         accessories  1
   JOOLA US         tables       3
   Megaspin         accessories  16
@@ -80,13 +85,5 @@ Done: 1389 specials live, 414 new alerts, 0 last-day reminders.
   STIGA            accessories  2
   STIGA            clothing     18
   STIGA            racket       1
-  Table Tennis 11  accessories  35
-  Table Tennis 11  bags         3
-  Table Tennis 11  balls        2
-  Table Tennis 11  blade        18
-  Table Tennis 11  clothing     48
-  Table Tennis 11  racket       4
-  Table Tennis 11  rubber       34
-  Table Tennis 11  shoes        9
   * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R748) — weekly special
   * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R917) — weekly special
