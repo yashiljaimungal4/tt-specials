@@ -1,20 +1,20 @@
-Run at 2026-11-14 14:12 SAST
+Run at 2026-11-14 16:41 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 62 products, 62 on special
   Table Tennis 11 /clearance: 88 products, 88 on special
 Checking Racketlon...
   Racketlon: 180 products checked, 165 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
-  Megaspin table-sale: 46 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
+  Megaspin butterfly-sale: 208 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
   Megaspin rubber-sale: blocked today - using 106 products saved 2026-11-13T16:52
   Megaspin blade-sale: blocked today - using 79 products saved 2026-11-13T14:31
   Megaspin racket-sale: blocked today - using 69 products saved 2026-11-13T20:47
+  Megaspin table-sale: blocked today - using 46 products saved 2026-11-14T14:12
   Megaspin robot-sale: blocked today - using 23 products saved 2026-11-14T12:41
-  Megaspin butterfly-sale: blocked today - using 207 products saved 2026-11-12T14:30
   Megaspin butterfly-racket-sale: blocked today - using 10 products saved 2026-11-12T20:51
   Megaspin butterfly-apparel-sale: blocked today - using 130 products saved 2026-11-12T16:54
   Megaspin butterfly-clearance-sale: blocked today - using 117 products saved 2026-11-13T07:59
@@ -38,8 +38,8 @@ No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
   (no phones subscribed - alert not sent: 341 new clothing special)
-  (no phones subscribed - alert not sent: 63 new shoe specials)
-Done: 1417 specials live, 407 new alerts, 0 last-day reminders.
+  (no phones subscribed - alert not sent: 64 new shoe specials)
+Done: 1419 specials live, 408 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -68,16 +68,16 @@ Done: 1417 specials live, 407 new alerts, 0 last-day reminders.
   JOOLA Europe     tables       11
   JOOLA US         accessories  1
   JOOLA US         tables       3
-  Megaspin         accessories  16
+  Megaspin         accessories  15
   Megaspin         bags         5
   Megaspin         balls        2
   Megaspin         blade        85
   Megaspin         clothing     194
-  Megaspin         racket       79
-  Megaspin         robots       25
+  Megaspin         racket       84
+  Megaspin         robots       24
   Megaspin         rubber       111
-  Megaspin         shoes        27
-  Megaspin         tables       51
+  Megaspin         shoes        28
+  Megaspin         tables       49
   Racketlon        rubber       1
   STIGA            accessories  2
   STIGA            clothing     18
