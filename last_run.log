@@ -1,20 +1,22 @@
-Run at 2026-11-15 20:40 SAST
+Run at 2026-11-16 08:11 SAST
 Checking Table Tennis 11...
-  Table Tennis 11 /special-offers: 62 products, 62 on special
+  Table Tennis 11 /special-offers: 40 products, 40 on special
   Table Tennis 11 /clearance: 86 products, 86 on special
 Checking Racketlon...
   Racketlon: 180 products checked, 165 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
-  Megaspin racket-sale: 69 products
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
+  Megaspin butterfly-sale: 208 products
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
   Megaspin rubber-sale: blocked today - using 105 products saved 2026-11-15T16:43
   Megaspin blade-sale: blocked today - using 78 products saved 2026-11-15T12:43
+  Megaspin racket-sale: blocked today - using 69 products saved 2026-11-15T20:40
   Megaspin table-sale: blocked today - using 46 products saved 2026-11-14T14:12
   Megaspin robot-sale: blocked today - using 23 products saved 2026-11-14T12:41
-  Megaspin butterfly-sale: blocked today - using 208 products saved 2026-11-14T16:41
   Megaspin butterfly-racket-sale: blocked today - using 14 products saved 2026-11-15T07:54
   Megaspin butterfly-apparel-sale: blocked today - using 131 products saved 2026-11-14T20:38
   Megaspin butterfly-clearance-sale: blocked today - using 117 products saved 2026-11-15T14:14
@@ -34,12 +36,13 @@ Checking STIGA...
   STIGA /en/category/sale/table-tennis-bats-sale: 0 products
   STIGA /en/category/sale/outlet: 23 products
 No phone connected yet - deals are shown in the app but not marked as alerted.
+  (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
   (no phones subscribed - alert not sent: Butterfly Dignics is on special)
   (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
-  (no phones subscribed - alert not sent: 340 new clothing special)
+  (no phones subscribed - alert not sent: 334 new clothing special)
   (no phones subscribed - alert not sent: 64 new shoe specials)
-Done: 1414 specials live, 407 new alerts, 0 last-day reminders.
+Done: 1392 specials live, 402 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -82,14 +85,14 @@ Done: 1414 specials live, 407 new alerts, 0 last-day reminders.
   STIGA            accessories  2
   STIGA            clothing     18
   STIGA            racket       1
-  Table Tennis 11  accessories  35
+  Table Tennis 11  accessories  31
   Table Tennis 11  bags         3
-  Table Tennis 11  balls        2
-  Table Tennis 11  blade        17
-  Table Tennis 11  clothing     46
-  Table Tennis 11  racket       4
-  Table Tennis 11  rubber       34
+  Table Tennis 11  blade        12
+  Table Tennis 11  clothing     40
+  Table Tennis 11  racket       3
+  Table Tennis 11  rubber       30
   Table Tennis 11  shoes        9
+  * Table Tennis 11 | Donic Bluestar A1 | Donic BlueStar A1: €38.96 (~R728) (was €57.30 (~R1,070), -32%) — ends Sun 22 Nov at midnight
   * Racketlon | Butterfly Dignics | Butterfly Hand Towel Dignics Black: R268.00 (was R400.00, -33%) — on sale
   * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R755) — weekly special
   * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R925) — weekly special
