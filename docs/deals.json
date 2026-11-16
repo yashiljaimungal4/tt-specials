@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-16T15:50:56.423558+02:00",
+ "updated": "2026-11-16T18:08:05.349655+02:00",
  "stores": {
   "Table Tennis 11": false,
-  "Racketlon": false,
+  "Racketlon": true,
   "Megaspin": true,
   "Dandoy Sports": true,
   "Butterfly US": true,
@@ -12,6 +12,24 @@
   "STIGA": true
  },
  "deals": [
+  {
+   "id": "racketlon-product-butterfly-hand-towel-dignics-black",
+   "store": "Racketlon",
+   "kind": "rubber",
+   "watch": "Butterfly Dignics",
+   "name": "Butterfly Hand Towel Dignics Black",
+   "url": "https://racketlon.co.za/product/butterfly-hand-towel-dignics-black/",
+   "image": "https://racketlon.co.za/wp-content/uploads/2026/04/10831-450x450.jpg",
+   "price_zar": 268,
+   "was_zar": 400,
+   "price_orig": null,
+   "pct": 33,
+   "end": null,
+   "end_text": "on sale",
+   "in_stock": true,
+   "where": "product",
+   "first_seen": "2026-11-13T16:52:44.540875+02:00"
+  },
   {
    "id": "dandoy-sports-donic-bluestar-a1-html",
    "store": "Dandoy Sports",

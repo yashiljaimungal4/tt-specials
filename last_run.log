@@ -1,4 +1,4 @@
-Run at 2026-11-16 15:50 SAST
+Run at 2026-11-16 18:08 SAST
 Checking Table Tennis 11...
   HTTP 403 for https://tabletennis11.com/en/special-offers
   HTTP 403 for https://tabletennis11.com/en/clearance
@@ -8,7 +8,7 @@ Checking Table Tennis 11...
   HTTP 403 for https://tabletennis11.com/en/catalogsearch/result/?q=tenergy+05
   HTTP 403 for https://tabletennis11.com/en/catalogsearch/result/?q=shoes
 Checking Racketlon...
-  Racketlon: 0 products checked, 0 on special
+  Racketlon: 180 products checked, 165 on special
 Checking Megaspin...
   HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
@@ -39,11 +39,12 @@ Checking STIGA...
   STIGA /en/category/sale/table-tennis-bats-sale: 0 products
   STIGA /en/category/sale/outlet: 23 products
 No phone connected yet - deals are shown in the app but not marked as alerted.
+  (no phones subscribed - alert not sent: Butterfly Dignics is on special)
   (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
   (no phones subscribed - alert not sent: 306 new clothing special)
   (no phones subscribed - alert not sent: 55 new shoe specials)
-Done: 1263 specials live, 363 new alerts, 0 last-day reminders.
+Done: 1264 specials live, 364 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -82,8 +83,10 @@ Done: 1263 specials live, 363 new alerts, 0 last-day reminders.
   Megaspin         rubber       110
   Megaspin         shoes        28
   Megaspin         tables       49
+  Racketlon        rubber       1
   STIGA            accessories  2
   STIGA            clothing     18
   STIGA            racket       1
+  * Racketlon | Butterfly Dignics | Butterfly Hand Towel Dignics Black: R268.00 (was R400.00, -33%) — on sale
   * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R755) — weekly special
   * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R925) — weekly special
