@@ -1,12 +1,11 @@
-Run at 2026-11-17 20:55 SAST
+Run at 2026-11-18 08:05 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 40 products, 40 on special
   Table Tennis 11 /clearance: 91 products, 91 on special
 Checking Racketlon...
   Racketlon: 180 products checked, 165 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
-  Megaspin butterfly-apparel-sale: 130 products
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
@@ -17,12 +16,13 @@ Checking Megaspin...
   Megaspin robot-sale: blocked today - using 23 products saved 2026-11-16T13:23
   Megaspin butterfly-sale: blocked today - using 208 products saved 2026-11-16T08:11
   Megaspin butterfly-racket-sale: blocked today - using 14 products saved 2026-11-17T08:00
+  Megaspin butterfly-apparel-sale: blocked today - using 130 products saved 2026-11-17T20:55
   Megaspin butterfly-clearance-sale: blocked today - using 117 products saved 2026-11-15T14:14
 Checking Dandoy Sports...
   Dandoy Sports /promotion: 110 products, 110 on special
   Dandoy Sports /liquidation: 313 products, 313 on special
 Checking Butterfly US...
-  Butterfly US: 133 sale items
+  Butterfly US: 132 sale items
 Checking JOOLA US...
   JOOLA US: 156 table tennis products, 8 on special
 Checking JOOLA Europe...
@@ -40,7 +40,7 @@ No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
   (no phones subscribed - alert not sent: 338 new clothing special)
   (no phones subscribed - alert not sent: 64 new shoe specials)
-Done: 1389 specials live, 406 new alerts, 0 last-day reminders.
+Done: 1388 specials live, 406 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -50,7 +50,7 @@ Done: 1389 specials live, 406 new alerts, 0 last-day reminders.
   Butterfly US     robots       5
   Butterfly US     rubber       1
   Butterfly US     shoes        13
-  Butterfly US     tables       32
+  Butterfly US     tables       31
   Dandoy Sports    accessories  47
   Dandoy Sports    bags         16
   Dandoy Sports    balls        4
@@ -90,7 +90,7 @@ Done: 1389 specials live, 406 new alerts, 0 last-day reminders.
   Table Tennis 11  racket       4
   Table Tennis 11  rubber       30
   Table Tennis 11  shoes        9
-  * Table Tennis 11 | Donic Bluestar A1 | Donic BlueStar A1: €38.96 (~R727) (was €57.30 (~R1,070), -32%) — ends Sun 22 Nov at midnight
+  * Table Tennis 11 | Donic Bluestar A1 | Donic BlueStar A1: €38.96 (~R725) (was €57.30 (~R1,067), -32%) — ends Sun 22 Nov at midnight
   * Racketlon | Butterfly Dignics | Butterfly Hand Towel Dignics Black: R268.00 (was R400.00, -33%) — on sale
-  * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R754) — weekly special
-  * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R925) — weekly special
+  * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R752) — weekly special
+  * Dandoy Sports | Andro Nuzn 55 | Andro Nuzn 55: €49.55 (~R922) — weekly special
