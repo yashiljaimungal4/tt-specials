@@ -1,4 +1,4 @@
-Run at 2026-11-19 14:33 SAST
+Run at 2026-11-19 16:54 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 40 products, 40 on special
   Table Tennis 11 /clearance: 92 products, 92 on special
@@ -6,9 +6,10 @@ Checking Racketlon...
   Racketlon: 180 products checked, 165 on special
 Checking Megaspin...
   HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
+  Megaspin robot-sale: 24 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
   Megaspin rubber-sale: blocked today - using 105 products saved 2026-11-18T20:52
   Megaspin blade-sale: blocked today - using 77 products saved 2026-11-18T16:56
   Megaspin racket-sale: blocked today - using 75 products saved 2026-11-19T08:03
@@ -18,7 +19,7 @@ Checking Megaspin...
   Megaspin butterfly-apparel-sale: blocked today - using 130 products saved 2026-11-17T20:55
   Megaspin butterfly-clearance-sale: blocked today - using 115 products saved 2026-11-18T14:30
 Checking Dandoy Sports...
-  Dandoy Sports /promotion: 86 products, 86 on special
+  Dandoy Sports /promotion: 59 products, 59 on special
   Dandoy Sports /liquidation: 306 products, 306 on special
 Checking Butterfly US...
   Butterfly US: 132 sale items
@@ -35,10 +36,9 @@ Checking STIGA...
 No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
   (no phones subscribed - alert not sent: Butterfly Dignics is on special)
-  (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
-  (no phones subscribed - alert not sent: 326 new clothing special)
-  (no phones subscribed - alert not sent: 65 new shoe specials)
-Done: 1340 specials live, 394 new alerts, 0 last-day reminders.
+  (no phones subscribed - alert not sent: 324 new clothing special)
+  (no phones subscribed - alert not sent: 64 new shoe specials)
+Done: 1334 specials live, 390 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -49,14 +49,14 @@ Done: 1340 specials live, 394 new alerts, 0 last-day reminders.
   Butterfly US     rubber       1
   Butterfly US     shoes        13
   Butterfly US     tables       31
-  Dandoy Sports    accessories  44
-  Dandoy Sports    bags         16
+  Dandoy Sports    accessories  41
+  Dandoy Sports    bags         14
   Dandoy Sports    balls        4
-  Dandoy Sports    blade        21
-  Dandoy Sports    clothing     265
+  Dandoy Sports    blade        13
+  Dandoy Sports    clothing     263
   Dandoy Sports    racket       10
-  Dandoy Sports    rubber       19
-  Dandoy Sports    shoes        13
+  Dandoy Sports    rubber       8
+  Dandoy Sports    shoes        12
   JOOLA Europe     accessories  4
   JOOLA Europe     bags         6
   JOOLA Europe     blade        9
@@ -73,8 +73,8 @@ Done: 1340 specials live, 394 new alerts, 0 last-day reminders.
   Megaspin         balls        2
   Megaspin         blade        83
   Megaspin         clothing     193
-  Megaspin         racket       88
-  Megaspin         robots       5
+  Megaspin         racket       89
+  Megaspin         robots       25
   Megaspin         rubber       109
   Megaspin         shoes        28
   Megaspin         tables       48
@@ -91,4 +91,3 @@ Done: 1340 specials live, 394 new alerts, 0 last-day reminders.
   Table Tennis 11  shoes        10
   * Table Tennis 11 | Donic Bluestar A1 | Donic BlueStar A1: €38.96 (~R737) (was €57.30 (~R1,084), -32%) — ends Sun 22 Nov at midnight
   * Racketlon | Butterfly Dignics | Butterfly Hand Towel Dignics Black: R268.00 (was R400.00, -33%) — on sale
-  * Dandoy Sports | Donic Bluestar A1 | Donic BlueStar A1: €40.41 (~R764) — weekly special
