@@ -1,25 +1,25 @@
-Run at 2026-11-20 08:05 SAST
+Run at 2026-11-20 12:59 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 40 products, 40 on special
   Table Tennis 11 /clearance: 91 products, 91 on special
 Checking Racketlon...
   Racketlon: 180 products checked, 164 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
-  Megaspin butterfly-racket-sale: 14 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
+  Megaspin butterfly-apparel-sale: 128 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
   Megaspin rubber-sale: blocked today - using 105 products saved 2026-11-18T20:52
   Megaspin blade-sale: blocked today - using 77 products saved 2026-11-18T16:56
   Megaspin racket-sale: blocked today - using 75 products saved 2026-11-19T08:03
   Megaspin table-sale: blocked today - using 46 products saved 2026-11-19T20:56
   Megaspin robot-sale: blocked today - using 24 products saved 2026-11-19T16:54
   Megaspin butterfly-sale: blocked today - using 205 products saved 2026-11-19T12:59
-  Megaspin butterfly-apparel-sale: blocked today - using 130 products saved 2026-11-17T20:55
+  Megaspin butterfly-racket-sale: blocked today - using 14 products saved 2026-11-20T08:05
   Megaspin butterfly-clearance-sale: blocked today - using 115 products saved 2026-11-18T14:30
 Checking Dandoy Sports...
-  Dandoy Sports /promotion: 59 products, 59 on special
+  Dandoy Sports /promotion: 51 products, 51 on special
   Dandoy Sports /liquidation: 306 products, 306 on special
 Checking Butterfly US...
   Butterfly US: 133 sale items
@@ -37,7 +37,7 @@ No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
   (no phones subscribed - alert not sent: 320 new clothing special)
   (no phones subscribed - alert not sent: 64 new shoe specials)
-Done: 1334 specials live, 385 new alerts, 0 last-day reminders.
+Done: 1326 specials live, 385 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -48,13 +48,13 @@ Done: 1334 specials live, 385 new alerts, 0 last-day reminders.
   Butterfly US     rubber       1
   Butterfly US     shoes        13
   Butterfly US     tables       31
-  Dandoy Sports    accessories  41
+  Dandoy Sports    accessories  37
   Dandoy Sports    bags         14
   Dandoy Sports    balls        4
-  Dandoy Sports    blade        13
+  Dandoy Sports    blade        12
   Dandoy Sports    clothing     263
   Dandoy Sports    racket       10
-  Dandoy Sports    rubber       8
+  Dandoy Sports    rubber       5
   Dandoy Sports    shoes        12
   JOOLA Europe     accessories  4
   JOOLA Europe     bags         6
