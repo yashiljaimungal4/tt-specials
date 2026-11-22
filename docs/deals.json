@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T12:45:57.054401+02:00",
+ "updated": "2026-11-22T14:20:20.129774+02:00",
  "stores": {
   "Table Tennis 11": true,
   "Racketlon": true,
@@ -11839,13 +11839,13 @@
    "first_seen": "2026-11-13T12:58:21.527317+02:00"
   },
   {
-   "id": "megaspin-store-default-asp-pid-b-wakaba-2000",
+   "id": "megaspin-store-default-asp-pid-b-r40p-12",
    "store": "Megaspin",
-   "kind": "racket",
+   "kind": "balls",
    "watch": null,
-   "name": "Butterfly Wakaba 2000",
-   "url": "https://www.megaspin.net/store/default.asp?pid=b-wakaba-2000",
-   "image": "https://cdn.megaspin.net/store/images/products/zoom_b-wakaba-2000.jpg",
+   "name": "Butterfly 3-Star Ball R40+ - Pack of 12",
+   "url": "https://www.megaspin.net/store/default.asp?pid=b-r40p-12",
+   "image": "https://cdn.megaspin.net/store/images/products/zoom_b-r40p-12.jpg",
    "price_zar": 536,
    "was_zar": 596,
    "price_orig": "$30.59",
@@ -11857,13 +11857,13 @@
    "first_seen": "2026-10-31T16:43:23.528849+02:00"
   },
   {
-   "id": "megaspin-store-default-asp-pid-b-r40p-12",
+   "id": "megaspin-store-default-asp-pid-b-wakaba-2000",
    "store": "Megaspin",
-   "kind": "balls",
+   "kind": "racket",
    "watch": null,
-   "name": "Butterfly 3-Star Ball R40+ - Pack of 12",
-   "url": "https://www.megaspin.net/store/default.asp?pid=b-r40p-12",
-   "image": "https://cdn.megaspin.net/store/images/products/zoom_b-r40p-12.jpg",
+   "name": "Butterfly Wakaba 2000",
+   "url": "https://www.megaspin.net/store/default.asp?pid=b-wakaba-2000",
+   "image": "https://cdn.megaspin.net/store/images/products/zoom_b-wakaba-2000.jpg",
    "price_zar": 536,
    "was_zar": 596,
    "price_orig": "$30.59",
