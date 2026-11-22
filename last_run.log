@@ -1,30 +1,30 @@
-Run at 2026-11-22 16:49 SAST
+Run at 2026-11-22 20:42 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 40 products, 40 on special
   Table Tennis 11 /clearance: 90 products, 90 on special
 Checking Racketlon...
+  HTTP 520 for https://racketlon.co.za/wp-json/wc/store/v1/products
   Racketlon: 178 products checked, 162 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
-  Megaspin butterfly-apparel-sale: 129 products
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
+  Megaspin rubber-sale: 111 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
-  Megaspin rubber-sale: blocked today - using 110 products saved 2026-11-21T07:57
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
   Megaspin blade-sale: blocked today - using 85 products saved 2026-11-21T12:47
   Megaspin racket-sale: blocked today - using 74 products saved 2026-11-21T14:20
   Megaspin table-sale: blocked today - using 50 products saved 2026-11-21T20:42
   Megaspin robot-sale: blocked today - using 24 products saved 2026-11-22T07:57
   Megaspin butterfly-sale: blocked today - using 206 products saved 2026-11-21T16:51
   Megaspin butterfly-racket-sale: blocked today - using 14 products saved 2026-11-22T12:45
+  Megaspin butterfly-apparel-sale: blocked today - using 129 products saved 2026-11-22T16:49
   Megaspin butterfly-clearance-sale: blocked today - using 113 products saved 2026-11-20T14:32
 Checking Dandoy Sports...
   Dandoy Sports /promotion: 51 products, 51 on special
   Dandoy Sports /liquidation: 306 products, 306 on special
 Checking Butterfly US...
-  HTTP 429 for https://shop.butterflyonline.com/api/items
-  HTTP 429 for https://shop.butterflyonline.com/api/items
-  Butterfly US: 0 sale items
+  Butterfly US: 133 sale items
 Checking JOOLA US...
   JOOLA US: 156 table tennis products, 10 on special
 Checking JOOLA Europe...
@@ -38,9 +38,19 @@ Checking STIGA...
 No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Donic Bluestar A1 is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
-  (no phones subscribed - alert not sent: 313 new clothing special)
-  (no phones subscribed - alert not sent: 51 new shoe specials)
-Done: 1213 specials live, 366 new alerts, 0 last-day reminders.
+  (no phones subscribed - alert not sent: 322 new clothing special)
+  (no phones subscribed - alert not sent: 64 new shoe specials)
+Done: 1346 specials live, 388 new alerts, 0 last-day reminders.
+  Butterfly US     accessories  13
+  Butterfly US     bags         3
+  Butterfly US     balls        1
+  Butterfly US     blade        5
+  Butterfly US     clothing     37
+  Butterfly US     racket       23
+  Butterfly US     robots       5
+  Butterfly US     rubber       1
+  Butterfly US     shoes        13
+  Butterfly US     tables       31
   Dandoy Sports    accessories  37
   Dandoy Sports    bags         14
   Dandoy Sports    balls        4
@@ -67,7 +77,7 @@ Done: 1213 specials live, 366 new alerts, 0 last-day reminders.
   Megaspin         clothing     192
   Megaspin         racket       89
   Megaspin         robots       25
-  Megaspin         rubber       114
+  Megaspin         rubber       115
   Megaspin         shoes        28
   Megaspin         tables       52
   STIGA            accessories  2
