@@ -1,20 +1,20 @@
-Run at 2026-11-23 17:02 SAST
+Run at 2026-11-23 20:56 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 98 products, 98 on special
   Table Tennis 11 /clearance: 90 products, 90 on special
 Checking Racketlon...
   Racketlon: 178 products checked, 162 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
-  Megaspin butterfly-sale: 192 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
+  Megaspin table-sale: 51 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
   Megaspin rubber-sale: blocked today - using 111 products saved 2026-11-22T20:42
   Megaspin blade-sale: blocked today - using 85 products saved 2026-11-23T08:06
   Megaspin racket-sale: blocked today - using 74 products saved 2026-11-23T14:35
-  Megaspin table-sale: blocked today - using 50 products saved 2026-11-21T20:42
   Megaspin robot-sale: blocked today - using 24 products saved 2026-11-22T07:57
+  Megaspin butterfly-sale: blocked today - using 192 products saved 2026-11-23T17:02
   Megaspin butterfly-racket-sale: blocked today - using 14 products saved 2026-11-22T12:45
   Megaspin butterfly-apparel-sale: blocked today - using 129 products saved 2026-11-22T16:49
   Megaspin butterfly-clearance-sale: blocked today - using 114 products saved 2026-11-23T13:06
@@ -22,13 +22,33 @@ Checking Dandoy Sports...
   Dandoy Sports /promotion: 51 products, 51 on special
   Dandoy Sports /liquidation: 306 products, 306 on special
 Checking Butterfly US...
-  Butterfly US: 126 sale items
+  Butterfly US: 125 sale items
 Checking JOOLA US...
   JOOLA US: 155 table tennis products, 10 on special
 Checking JOOLA Europe...
   JOOLA Europe: 176 table tennis products, 101 on special
 Checking Donic...
-  Donic: 48 products checked, 0 on special
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  HTTP 500 for https://www.donic.com/search
+  Donic: 0 products checked, 0 on special
 Checking STIGA...
   STIGA /en/category/sale: 32 products
   STIGA /en/category/sale/table-tennis-bats-sale: 10 products
@@ -44,7 +64,7 @@ Done: 1399 specials live, 388 new alerts, 0 last-day reminders.
   Butterfly US     balls        1
   Butterfly US     blade        5
   Butterfly US     clothing     31
-  Butterfly US     racket       23
+  Butterfly US     racket       22
   Butterfly US     robots       5
   Butterfly US     rubber       1
   Butterfly US     shoes        13
@@ -77,7 +97,7 @@ Done: 1399 specials live, 388 new alerts, 0 last-day reminders.
   Megaspin         robots       25
   Megaspin         rubber       115
   Megaspin         shoes        28
-  Megaspin         tables       52
+  Megaspin         tables       53
   STIGA            accessories  2
   STIGA            clothing     18
   STIGA            racket       6
