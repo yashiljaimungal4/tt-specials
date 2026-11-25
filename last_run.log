@@ -1,4 +1,4 @@
-Run at 2026-11-25 17:05 SAST
+Run at 2026-11-25 20:49 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 98 products, 98 on special
   Table Tennis 11 /clearance: 89 products, 89 on special
@@ -6,13 +6,13 @@ Checking Racketlon...
   Racketlon: 178 products checked, 162 on special
 Checking Megaspin...
   HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
+  Megaspin table-sale: 54 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
   Megaspin rubber-sale: blocked today - using 132 products saved 2026-11-24T16:59
   Megaspin blade-sale: blocked today - using 98 products saved 2026-11-24T20:56
   Megaspin racket-sale: blocked today - using 75 products saved 2026-11-25T08:00
-  Megaspin table-sale: blocked today - using 51 products saved 2026-11-23T20:56
   Megaspin robot-sale: blocked today - using 24 products saved 2026-11-24T08:00
   Megaspin butterfly-sale: blocked today - using 189 products saved 2026-11-25T12:58
   Megaspin butterfly-racket-sale: blocked today - using 14 products saved 2026-11-24T12:56
@@ -22,10 +22,9 @@ Checking Dandoy Sports...
   Dandoy Sports /promotion: 50 products, 50 on special
   Dandoy Sports /liquidation: 306 products, 306 on special
 Checking Butterfly US...
-  HTTP 429 for https://shop.butterflyonline.com/api/items
   Butterfly US: 124 sale items
 Checking JOOLA US...
-  JOOLA US: 155 table tennis products, 12 on special
+  JOOLA US: 157 table tennis products, 13 on special
 Checking JOOLA Europe...
   JOOLA Europe: 181 table tennis products, 101 on special
 Checking Donic...
@@ -39,7 +38,7 @@ No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
   (no phones subscribed - alert not sent: 306 new clothing special)
   (no phones subscribed - alert not sent: 63 new shoe specials)
-Done: 1394 specials live, 371 new alerts, 0 last-day reminders.
+Done: 1397 specials live, 371 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -78,7 +77,7 @@ Done: 1394 specials live, 371 new alerts, 0 last-day reminders.
   Megaspin         robots       25
   Megaspin         rubber       136
   Megaspin         shoes        27
-  Megaspin         tables       52
+  Megaspin         tables       55
   STIGA            accessories  2
   STIGA            clothing     18
   STIGA            racket       6
