@@ -1,17 +1,18 @@
-Run at 2026-11-24 20:56 SAST
+Run at 2026-11-25 08:00 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 98 products, 98 on special
   Table Tennis 11 /clearance: 90 products, 90 on special
 Checking Racketlon...
   Racketlon: 178 products checked, 162 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
-  Megaspin blade-sale: 98 products
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
+  Megaspin racket-sale: 75 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
   Megaspin rubber-sale: blocked today - using 132 products saved 2026-11-24T16:59
-  Megaspin racket-sale: blocked today - using 74 products saved 2026-11-23T14:35
+  Megaspin blade-sale: blocked today - using 98 products saved 2026-11-24T20:56
   Megaspin table-sale: blocked today - using 51 products saved 2026-11-23T20:56
   Megaspin robot-sale: blocked today - using 24 products saved 2026-11-24T08:00
   Megaspin butterfly-sale: blocked today - using 192 products saved 2026-11-23T17:02
@@ -22,7 +23,9 @@ Checking Dandoy Sports...
   Dandoy Sports /promotion: 50 products, 50 on special
   Dandoy Sports /liquidation: 306 products, 306 on special
 Checking Butterfly US...
-  Butterfly US: 124 sale items
+  HTTP 429 for https://shop.butterflyonline.com/api/items
+  HTTP 429 for https://shop.butterflyonline.com/api/items
+  Butterfly US: 100 sale items
 Checking JOOLA US...
   JOOLA US: 155 table tennis products, 10 on special
 Checking JOOLA Europe...
@@ -36,19 +39,18 @@ Checking STIGA...
 No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
-  (no phones subscribed - alert not sent: 329 new clothing special)
-  (no phones subscribed - alert not sent: 63 new shoe specials)
-Done: 1419 specials live, 394 new alerts, 0 last-day reminders.
-  Butterfly US     accessories  13
+  (no phones subscribed - alert not sent: 324 new clothing special)
+  (no phones subscribed - alert not sent: 61 new shoe specials)
+Done: 1396 specials live, 387 new alerts, 0 last-day reminders.
+  Butterfly US     accessories  10
   Butterfly US     bags         3
   Butterfly US     balls        1
   Butterfly US     blade        5
   Butterfly US     clothing     31
-  Butterfly US     racket       22
-  Butterfly US     robots       5
-  Butterfly US     rubber       1
-  Butterfly US     shoes        13
-  Butterfly US     tables       30
+  Butterfly US     racket       11
+  Butterfly US     robots       3
+  Butterfly US     shoes        11
+  Butterfly US     tables       25
   Dandoy Sports    accessories  37
   Dandoy Sports    bags         14
   Dandoy Sports    balls        4
@@ -73,7 +75,7 @@ Done: 1419 specials live, 394 new alerts, 0 last-day reminders.
   Megaspin         balls        2
   Megaspin         blade        103
   Megaspin         clothing     182
-  Megaspin         racket       89
+  Megaspin         racket       90
   Megaspin         robots       25
   Megaspin         rubber       136
   Megaspin         shoes        27
@@ -89,5 +91,5 @@ Done: 1419 specials live, 394 new alerts, 0 last-day reminders.
   Table Tennis 11  racket       5
   Table Tennis 11  rubber       71
   Table Tennis 11  shoes        10
-  * Table Tennis 11 | Andro Nuzn 55 | Andro Nuzn 55: €43.90 (~R835) (was €65.53 (~R1,246), -33%) — ends Sun 29 Nov at midnight
-  * Megaspin | Andro Nuzn 55 | Andro NUZN 55: $69.95 (~R1,219) (was $79.95 (~R1,393), -13%) — on sale
+  * Table Tennis 11 | Andro Nuzn 55 | Andro Nuzn 55: €43.90 (~R844) (was €65.53 (~R1,259), -33%) — ends Sun 29 Nov at midnight
+  * Megaspin | Andro Nuzn 55 | Andro NUZN 55: $69.95 (~R1,226) (was $79.95 (~R1,402), -13%) — on sale
