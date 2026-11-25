@@ -1,12 +1,11 @@
-Run at 2026-11-25 14:38 SAST
+Run at 2026-11-25 17:05 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 98 products, 98 on special
   Table Tennis 11 /clearance: 89 products, 89 on special
 Checking Racketlon...
   Racketlon: 178 products checked, 162 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
-  Megaspin butterfly-clearance-sale: 90 products
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
@@ -18,15 +17,15 @@ Checking Megaspin...
   Megaspin butterfly-sale: blocked today - using 189 products saved 2026-11-25T12:58
   Megaspin butterfly-racket-sale: blocked today - using 14 products saved 2026-11-24T12:56
   Megaspin butterfly-apparel-sale: blocked today - using 116 products saved 2026-11-24T14:35
+  Megaspin butterfly-clearance-sale: blocked today - using 90 products saved 2026-11-25T14:38
 Checking Dandoy Sports...
   Dandoy Sports /promotion: 50 products, 50 on special
   Dandoy Sports /liquidation: 306 products, 306 on special
 Checking Butterfly US...
   HTTP 429 for https://shop.butterflyonline.com/api/items
-  HTTP 429 for https://shop.butterflyonline.com/api/items
-  Butterfly US: 0 sale items
+  Butterfly US: 124 sale items
 Checking JOOLA US...
-  JOOLA US: 155 table tennis products, 10 on special
+  JOOLA US: 155 table tennis products, 12 on special
 Checking JOOLA Europe...
   JOOLA Europe: 181 table tennis products, 101 on special
 Checking Donic...
@@ -38,9 +37,19 @@ Checking STIGA...
 No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
-  (no phones subscribed - alert not sent: 297 new clothing special)
-  (no phones subscribed - alert not sent: 50 new shoe specials)
-Done: 1269 specials live, 349 new alerts, 0 last-day reminders.
+  (no phones subscribed - alert not sent: 306 new clothing special)
+  (no phones subscribed - alert not sent: 63 new shoe specials)
+Done: 1394 specials live, 371 new alerts, 0 last-day reminders.
+  Butterfly US     accessories  13
+  Butterfly US     bags         3
+  Butterfly US     balls        1
+  Butterfly US     blade        5
+  Butterfly US     clothing     31
+  Butterfly US     racket       22
+  Butterfly US     robots       5
+  Butterfly US     rubber       1
+  Butterfly US     shoes        13
+  Butterfly US     tables       30
   Dandoy Sports    accessories  37
   Dandoy Sports    bags         14
   Dandoy Sports    balls        4
@@ -57,7 +66,7 @@ Done: 1269 specials live, 349 new alerts, 0 last-day reminders.
   JOOLA Europe     rubber       5
   JOOLA Europe     shoes        1
   JOOLA Europe     tables       11
-  JOOLA US         accessories  1
+  JOOLA US         accessories  2
   JOOLA US         bags         2
   JOOLA US         tables       3
   Megaspin         accessories  14

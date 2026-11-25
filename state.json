@@ -1,7 +1,7 @@
 {
  "alerted": {},
  "fails": {
-  "Butterfly US": 1,
+  "Butterfly US": 0,
   "Dandoy Sports": 0,
   "Donic": 0,
   "JOOLA Europe": 0,
@@ -11,7 +11,7 @@
   "STIGA": 0,
   "Table Tennis 11": 0
  },
- "last_run": "2026-11-25T14:38:16.625346+02:00",
+ "last_run": "2026-11-25T17:05:00.580735+02:00",
  "seen": {
   "Butterfly US|https://shop.butterflyonline.com/Active-19-Home-Table-TAC19H|1199.99|": "2026-10-31T16:43:23.528849+02:00",
   "Butterfly US|https://shop.butterflyonline.com/Amicus-Prime-Robot-Refurbished-Grade-B|1799.99|": "2026-10-31T16:43:23.528849+02:00",
@@ -710,6 +710,7 @@
   "JOOLA US|https://joola.com/products/nova-pro-plus-outdoor-table-tennis-table|599.95|": "2026-10-31T16:43:23.528849+02:00",
   "JOOLA US|https://joola.com/products/rapid-play-180-table-tennis-table|579.95|": "2026-10-31T16:43:23.528849+02:00",
   "JOOLA US|https://joola.com/products/rapid-play-outdoor-table-tennis-table|599.95|": "2026-10-31T16:43:23.528849+02:00",
+  "JOOLA US|https://joola.com/products/x-glue-table-tennis-rubber-glue|13.95|": "2026-11-25T17:05:00.580735+02:00",
   "Megaspin|https://www.megaspin.net/store/default.asp?pid=a-novacell-off-s|63.95|": "2026-11-24T20:56:12.979401+02:00",
   "Megaspin|https://www.megaspin.net/store/default.asp?pid=a-tp-ligna-ci-off|119.95|": "2026-10-31T16:43:23.528849+02:00",
   "Megaspin|https://www.megaspin.net/store/default.asp?pid=a-tp-ligna-ci-off|156.95|": "2026-11-21T12:47:15.264608+02:00",
