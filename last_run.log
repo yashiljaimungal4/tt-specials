@@ -1,15 +1,15 @@
-Run at 2026-11-26 17:00 SAST
+Run at 2026-11-26 20:55 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 98 products, 98 on special
   Table Tennis 11 /clearance: 89 products, 89 on special
 Checking Racketlon...
-  Racketlon: 0 products checked, 0 on special
+  Racketlon: 175 products checked, 159 on special
 Checking Megaspin...
   HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
+  Megaspin rubber-sale: 131 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
-  Megaspin rubber-sale: blocked today - using 132 products saved 2026-11-24T16:59
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
   Megaspin blade-sale: blocked today - using 98 products saved 2026-11-24T20:56
   Megaspin racket-sale: blocked today - using 75 products saved 2026-11-25T08:00
   Megaspin table-sale: blocked today - using 54 products saved 2026-11-25T20:49
@@ -38,7 +38,7 @@ No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
   (no phones subscribed - alert not sent: 306 new clothing special)
   (no phones subscribed - alert not sent: 63 new shoe specials)
-Done: 1396 specials live, 371 new alerts, 0 last-day reminders.
+Done: 1395 specials live, 371 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -75,7 +75,7 @@ Done: 1396 specials live, 371 new alerts, 0 last-day reminders.
   Megaspin         clothing     158
   Megaspin         racket       89
   Megaspin         robots       24
-  Megaspin         rubber       136
+  Megaspin         rubber       135
   Megaspin         shoes        27
   Megaspin         tables       55
   STIGA            accessories  2
