@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T20:49:34.464141+02:00",
+ "updated": "2026-11-26T08:02:17.700349+02:00",
  "stores": {
   "Table Tennis 11": true,
   "Racketlon": true,
@@ -1399,13 +1399,13 @@
    "first_seen": "2026-10-31T16:43:23.528849+02:00"
   },
   {
-   "id": "table-tennis-11-en-nittaku-shirt-brekle-2210-pink",
+   "id": "table-tennis-11-en-nittaku-shirt-brekle-2210-red",
    "store": "Table Tennis 11",
    "kind": "clothing",
    "watch": null,
-   "name": "Nittaku Shirt Brekle (2210) pink",
-   "url": "https://tabletennis11.com/en/nittaku-shirt-brekle-2210-pink",
-   "image": "https://static.tabletennis11.com/media/catalog/product/cache/de4e0b33a56defa545b6a9081f9acf0e/3/1/31186_31186_655f16423c1183_05405739_Brekle_pink_2210_jpg_2.jpg",
+   "name": "Nittaku Shirt Brekle (2210) red",
+   "url": "https://tabletennis11.com/en/nittaku-shirt-brekle-2210-red",
+   "image": "https://static.tabletennis11.com/media/catalog/product/cache/de4e0b33a56defa545b6a9081f9acf0e/3/1/31178_31178_655f15c1f40441_77819717_Brekle_red_2210_jpg_2.jpg",
    "price_zar": 541,
    "was_zar": 833,
    "price_orig": "€28.15",
@@ -1417,13 +1417,13 @@
    "first_seen": "2026-10-31T16:43:23.528849+02:00"
   },
   {
-   "id": "table-tennis-11-en-nittaku-shirt-brekle-2210-red",
+   "id": "table-tennis-11-en-nittaku-shirt-brekle-2210-pink",
    "store": "Table Tennis 11",
    "kind": "clothing",
    "watch": null,
-   "name": "Nittaku Shirt Brekle (2210) red",
-   "url": "https://tabletennis11.com/en/nittaku-shirt-brekle-2210-red",
-   "image": "https://static.tabletennis11.com/media/catalog/product/cache/de4e0b33a56defa545b6a9081f9acf0e/3/1/31178_31178_655f15c1f40441_77819717_Brekle_red_2210_jpg_2.jpg",
+   "name": "Nittaku Shirt Brekle (2210) pink",
+   "url": "https://tabletennis11.com/en/nittaku-shirt-brekle-2210-pink",
+   "image": "https://static.tabletennis11.com/media/catalog/product/cache/de4e0b33a56defa545b6a9081f9acf0e/3/1/31186_31186_655f16423c1183_05405739_Brekle_pink_2210_jpg_2.jpg",
    "price_zar": 541,
    "was_zar": 833,
    "price_orig": "€28.15",
@@ -12860,7 +12860,7 @@
    "pct": 11,
    "end": null,
    "end_text": "on sale",
-   "in_stock": true,
+   "in_stock": false,
    "where": "sale",
    "first_seen": "2026-10-31T16:43:23.528849+02:00"
   },
@@ -22835,24 +22835,6 @@
    "in_stock": true,
    "where": "clearance",
    "first_seen": "2026-10-31T16:43:23.528849+02:00"
-  },
-  {
-   "id": "megaspin-store-default-asp-pid-pongbot-nova-power-bank",
-   "store": "Megaspin",
-   "kind": "robots",
-   "watch": null,
-   "name": "Pongbot Nova S Pro Power Bank",
-   "url": "https://www.megaspin.net/store/default.asp?pid=pongbot-nova-power-bank",
-   "image": "https://cdn.megaspin.net/store/images/products/zoom_pongbot-nova-power-bank.jpg",
-   "price_zar": 1122,
-   "was_zar": null,
-   "price_orig": "$63.99",
-   "pct": 0,
-   "end": null,
-   "end_text": "on sale",
-   "in_stock": true,
-   "where": "sale",
-   "first_seen": "2026-11-24T08:00:59.569147+02:00"
   },
   {
    "id": "dandoy-sports-dandoy-allround-stiga-dna-future-m-html",
