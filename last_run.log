@@ -1,17 +1,17 @@
-Run at 2026-11-27 12:56 SAST
+Run at 2026-11-27 14:33 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 98 products, 98 on special
   Table Tennis 11 /clearance: 86 products, 86 on special
 Checking Racketlon...
-  Racketlon: 0 products checked, 0 on special
+  Racketlon: 139 products checked, 126 on special
 Checking Megaspin...
   HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=racket-sale
+  Megaspin racket-sale: 78 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
   Megaspin rubber-sale: blocked today - using 131 products saved 2026-11-26T20:55
   Megaspin blade-sale: blocked today - using 97 products saved 2026-11-27T08:04
-  Megaspin racket-sale: blocked today - using 75 products saved 2026-11-25T08:00
   Megaspin table-sale: blocked today - using 54 products saved 2026-11-25T20:49
   Megaspin robot-sale: blocked today - using 23 products saved 2026-11-26T08:02
   Megaspin butterfly-sale: blocked today - using 189 products saved 2026-11-25T12:58
@@ -30,15 +30,17 @@ Checking JOOLA Europe...
 Checking Donic...
   Donic: 49 products checked, 0 on special
 Checking STIGA...
-  STIGA /en/category/sale: 70 products
+  STIGA /en/category/sale: 40 products
   STIGA /en/category/sale/table-tennis-bats-sale: 41 products
   STIGA /en/category/sale/outlet: 23 products
 No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
+  (no phones subscribed - alert not sent: Butterfly Dignics is on special)
+  (no phones subscribed - alert not sent: Butterfly Dignics is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
   (no phones subscribed - alert not sent: 304 new clothing special)
   (no phones subscribed - alert not sent: 63 new shoe specials)
-Done: 1422 specials live, 369 new alerts, 0 last-day reminders.
+Done: 1427 specials live, 371 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -73,11 +75,12 @@ Done: 1422 specials live, 369 new alerts, 0 last-day reminders.
   Megaspin         balls        2
   Megaspin         blade        102
   Megaspin         clothing     158
-  Megaspin         racket       89
+  Megaspin         racket       92
   Megaspin         robots       24
   Megaspin         rubber       135
   Megaspin         shoes        27
   Megaspin         tables       55
+  Racketlon        rubber       2
   STIGA            accessories  3
   STIGA            blade        16
   STIGA            clothing     18
@@ -91,4 +94,6 @@ Done: 1422 specials live, 369 new alerts, 0 last-day reminders.
   Table Tennis 11  rubber       70
   Table Tennis 11  shoes        10
   * Table Tennis 11 | Andro Nuzn 55 | Andro Nuzn 55: €43.90 (~R845) (was €65.53 (~R1,261), -33%) — ends Sun 29 Nov at midnight
+  * Racketlon | Butterfly Dignics | Butterfly Dignics Edge Tape 12x10mtr: R135.00 (was R150.00, -10%) — on sale
+  * Racketlon | Butterfly Dignics | Butterfly Hand Towel Dignics Black: R360.00 (was R400.00, -10%) — on sale
   * Megaspin | Andro Nuzn 55 | Andro NUZN 55: $69.95 (~R1,227) (was $79.95 (~R1,402), -13%) — on sale
