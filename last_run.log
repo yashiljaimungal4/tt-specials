@@ -1,22 +1,22 @@
-Run at 2026-11-28 12:51 SAST
+Run at 2026-11-28 14:24 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 98 products, 98 on special
   Table Tennis 11 /clearance: 86 products, 86 on special
 Checking Racketlon...
   Racketlon: 0 products checked, 0 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
-  Megaspin table-sale: 51 products
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
+  Megaspin butterfly-apparel-sale: 116 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=blade-sale
   Megaspin rubber-sale: blocked today - using 131 products saved 2026-11-26T20:55
   Megaspin blade-sale: blocked today - using 97 products saved 2026-11-27T08:04
   Megaspin racket-sale: blocked today - using 78 products saved 2026-11-27T14:33
+  Megaspin table-sale: blocked today - using 51 products saved 2026-11-28T12:51
   Megaspin robot-sale: blocked today - using 23 products saved 2026-11-28T07:59
   Megaspin butterfly-sale: blocked today - using 188 products saved 2026-11-27T16:55
   Megaspin butterfly-racket-sale: blocked today - using 14 products saved 2026-11-26T14:37
-  Megaspin butterfly-apparel-sale: blocked today - using 116 products saved 2026-11-26T12:58
   Megaspin butterfly-clearance-sale: blocked today - using 90 products saved 2026-11-27T20:54
 Checking Dandoy Sports...
   Dandoy Sports /promotion: 50 products, 50 on special
@@ -30,7 +30,7 @@ Checking JOOLA Europe...
 Checking Donic...
   Donic: 49 products checked, 0 on special
 Checking STIGA...
-  STIGA /en/category/sale: 70 products
+  STIGA /en/category/sale: 40 products
   STIGA /en/category/sale/table-tennis-bats-sale: 41 products
   STIGA /en/category/sale/outlet: 23 products
 No phone connected yet - deals are shown in the app but not marked as alerted.
