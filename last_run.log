@@ -1,36 +1,37 @@
-Run at 2026-11-27 20:54 SAST
+Run at 2026-11-28 07:59 SAST
 Checking Table Tennis 11...
   Table Tennis 11 /special-offers: 98 products, 98 on special
   Table Tennis 11 /clearance: 86 products, 86 on special
 Checking Racketlon...
   Racketlon: 139 products checked, 126 on special
 Checking Megaspin...
-  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-clearance-sale
-  Megaspin butterfly-clearance-sale: 90 products
+  HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=table-sale
-  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=robot-sale
+  Megaspin robot-sale: 23 products
   browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-apparel-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=butterfly-racket-sale
+  browser got HTTP 403 for https://www.megaspin.net/store/collection.asp?id=rubber-sale
   Megaspin rubber-sale: blocked today - using 131 products saved 2026-11-26T20:55
   Megaspin blade-sale: blocked today - using 97 products saved 2026-11-27T08:04
   Megaspin racket-sale: blocked today - using 78 products saved 2026-11-27T14:33
   Megaspin table-sale: blocked today - using 54 products saved 2026-11-25T20:49
-  Megaspin robot-sale: blocked today - using 23 products saved 2026-11-26T08:02
   Megaspin butterfly-sale: blocked today - using 188 products saved 2026-11-27T16:55
   Megaspin butterfly-racket-sale: blocked today - using 14 products saved 2026-11-26T14:37
   Megaspin butterfly-apparel-sale: blocked today - using 116 products saved 2026-11-26T12:58
+  Megaspin butterfly-clearance-sale: blocked today - using 90 products saved 2026-11-27T20:54
 Checking Dandoy Sports...
   Dandoy Sports /promotion: 50 products, 50 on special
   Dandoy Sports /liquidation: 306 products, 306 on special
 Checking Butterfly US...
   Butterfly US: 124 sale items
 Checking JOOLA US...
-  JOOLA US: 157 table tennis products, 13 on special
+  JOOLA US: 157 table tennis products, 28 on special
 Checking JOOLA Europe...
   JOOLA Europe: 181 table tennis products, 101 on special
 Checking Donic...
   Donic: 49 products checked, 0 on special
 Checking STIGA...
-  STIGA /en/category/sale: 40 products
+  STIGA /en/category/sale: 70 products
   STIGA /en/category/sale/table-tennis-bats-sale: 41 products
   STIGA /en/category/sale/outlet: 23 products
 No phone connected yet - deals are shown in the app but not marked as alerted.
@@ -38,9 +39,9 @@ No phone connected yet - deals are shown in the app but not marked as alerted.
   (no phones subscribed - alert not sent: Butterfly Dignics is on special)
   (no phones subscribed - alert not sent: Butterfly Dignics is on special)
   (no phones subscribed - alert not sent: Andro Nuzn 55 is on special)
-  (no phones subscribed - alert not sent: 304 new clothing special)
+  (no phones subscribed - alert not sent: 309 new clothing special)
   (no phones subscribed - alert not sent: 63 new shoe specials)
-Done: 1426 specials live, 371 new alerts, 0 last-day reminders.
+Done: 1430 specials live, 376 new alerts, 0 last-day reminders.
   Butterfly US     accessories  13
   Butterfly US     bags         3
   Butterfly US     balls        1
@@ -69,7 +70,9 @@ Done: 1426 specials live, 371 new alerts, 0 last-day reminders.
   JOOLA Europe     tables       11
   JOOLA US         accessories  2
   JOOLA US         bags         2
-  JOOLA US         tables       3
+  JOOLA US         racket       1
+  JOOLA US         robots       1
+  JOOLA US         tables       5
   Megaspin         accessories  13
   Megaspin         bags         5
   Megaspin         balls        2
@@ -93,7 +96,7 @@ Done: 1426 specials live, 371 new alerts, 0 last-day reminders.
   Table Tennis 11  racket       5
   Table Tennis 11  rubber       70
   Table Tennis 11  shoes        10
-  * Table Tennis 11 | Andro Nuzn 55 | Andro Nuzn 55: €43.90 (~R845) (was €65.53 (~R1,261), -33%) — ends Sun 29 Nov at midnight
+  * Table Tennis 11 | Andro Nuzn 55 | Andro Nuzn 55: €43.90 (~R835) (was €65.53 (~R1,246), -33%) — ends Sun 29 Nov at midnight
   * Racketlon | Butterfly Dignics | Butterfly Dignics Edge Tape 12x10mtr: R135.00 (was R150.00, -10%) — on sale
   * Racketlon | Butterfly Dignics | Butterfly Hand Towel Dignics Black: R360.00 (was R400.00, -10%) — on sale
-  * Megaspin | Andro Nuzn 55 | Andro NUZN 55: $69.95 (~R1,227) (was $79.95 (~R1,402), -13%) — on sale
+  * Megaspin | Andro Nuzn 55 | Andro NUZN 55: $69.95 (~R1,214) (was $79.95 (~R1,388), -13%) — on sale
